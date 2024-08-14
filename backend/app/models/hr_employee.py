@@ -5,7 +5,7 @@ from decimal import Decimal
 
 if TYPE_CHECKING:
     from .position import HRPosition
-    from .department import HRDepartment
+    from .hr_department import HRDepartment
 
 
 class HREmployeeBase(SQLModel):

@@ -4,7 +4,7 @@ from datetime import datetime
 from sqlmodel import Field, Relationship, SQLModel
 
 if TYPE_CHECKING:
-    from .department import HRDepartment
+    from .hr_department import HRDepartment
 
 
 class HRCompanyBase(SQLModel):

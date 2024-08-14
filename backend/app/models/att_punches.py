@@ -4,7 +4,7 @@ from sqlmodel import Field, SQLModel
 from datetime import datetime
 
 if TYPE_CHECKING:
-    from .employee import HREmployee
+    from .hr_employee import HREmployee
 
 
 class AttPunchesBase(SQLModel):
