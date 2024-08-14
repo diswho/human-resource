@@ -22,7 +22,7 @@ from app.models.user import (
     UserUpdate,
     UserUpdateMe,
 )
-from app.models.models import Item
+from app.models.item import Item
 from app.models.models import Message
 from app.utils import generate_new_account_email, send_email
 
