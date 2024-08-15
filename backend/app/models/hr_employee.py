@@ -4,7 +4,7 @@ from datetime import datetime
 from decimal import Decimal
 
 if TYPE_CHECKING:
-    from .position import HRPosition
+    from .hr_position import HRPosition
     from .hr_department import HRDepartment
 
 
