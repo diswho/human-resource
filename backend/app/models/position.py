@@ -3,7 +3,7 @@ from sqlalchemy import ForeignKey
 from sqlmodel import Field, SQLModel
 
 if TYPE_CHECKING:
-    from .company import HRCompany
+    from .hr_company import HRCompany
 
 
 class HRPositionBase(SQLModel):
