@@ -6,10 +6,11 @@ sqlite_db_path = 'C:\\Users\\phuong\\OneDrive\\Private\\Xokthavi\\HR\\ZKTimeNet.
 # sqlite_db_path = '/home/phuong/Documents/Database/Xothavy/ZKTimeNet.db'
 
 # PostgreSQL database details
-postgres_host = 'your_postgres_host'
-postgres_database = 'your_postgres_database'
-postgres_user = 'your_postgres_user'
-postgres_password = 'your_postgres_password'
+postgres_host = 'localhost'
+postgres_database = 'app'
+postgres_user = 'postgres'
+postgres_password = 'I536ib9E6HVxgc'
+
 
 # List of tables to migrate
 tables_to_migrate = ['att_day_summary', 'att_employee_shift', 'att_punches', 'att_shift_details', 'att_shift',
@@ -21,10 +22,10 @@ sqlite_cursor = sqlite_conn.cursor()
 
 # Connect to PostgreSQL database
 postgres_conn = psycopg2.connect(
-    host='localhost',
-    database='app',
-    user='postgres',
-    password='I536ib9E6HVxgc'
+    host=postgres_host,
+    database=postgres_database,
+    user=postgres_user,
+    password=postgres_password
 )
 postgres_cursor = postgres_conn.cursor()
 
