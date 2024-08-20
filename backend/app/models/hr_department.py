@@ -1,5 +1,4 @@
 from typing import TYPE_CHECKING, Optional
-from sqlalchemy import ForeignKey
 from sqlmodel import Field, Relationship, SQLModel
 
 if TYPE_CHECKING:
