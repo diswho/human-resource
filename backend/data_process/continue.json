@@ -3,8 +3,7 @@
     {
       "title": "Gemini flash",
       "provider": "gemini",
-      "model": "gemini-1.5-flash-latest",
-      "apiKey": "AIzaSyAdomR3E7n9PeFnrHNCw7k0__w_7BB4-WE"
+      "model": "gemini-1.5-flash-latest"
     }
   ],
   "customCommands": [
