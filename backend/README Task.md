@@ -32,10 +32,26 @@ Function Menu:
 
 ## Department Info
 
-- Get list of departments id, set name as current_list.
-- Get list of bottom departments where id not parent referenced, set name as child_list.
-- Check child_list's parent ID
-  - remove parent ID from current_list
-  - remove child ID from child_list
-  - add child ID into Parent Node
--
+- Get list of departments id, set name as common_list and current_list.
+- Check Parent_ID from common_list, remove that id from current_list.
+
+1. Get Parent_IDs from current_list, add that IDs into next_list.
+2.
+
+## Diagram
+
+```mermaid
+sequenceDiagram
+  participant Alice
+  participant Bob
+  participant Charlie
+
+  Alice->>Bob: Hello Bob, how are you?
+  activate Bob
+  Bob->>Alice: I am fine, thank you!
+  deactivate Bob
+  Alice-->>Charlie: Hello Charlie, how are you?
+  activate Charlie
+  Charlie-->>Alice: I am great, thanks!
+  deactivate Charlie
+```
