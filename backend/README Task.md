@@ -32,11 +32,8 @@ Function Menu:
 
 ## Department Info
 
-- Get list of departments id, set name as common_list and current_list.
-- Check Parent_ID from common_list, remove that id from current_list.
-
-1. Get Parent_IDs from current_list, add that IDs into next_list.
-2.
+- Get list of Department, tree structure, JSON format.
+- Each node of tree include descendants id.
 
 ## Diagram
 
