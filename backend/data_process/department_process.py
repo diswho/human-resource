@@ -20,21 +20,37 @@ def department_process(cursor):
     cursor.execute("SELECT id, dept_code, dept_name, dept_parentcode FROM hr_department")
     departments = cursor.fetchall()
 
-    department_list = {}
+    department_list = []
     nodes = {}
-    root_dept = Node(0, '0', "xokthavy")
+    # root_dept = Node(0, '0', "xokthavy")
 
     # Build the tree structure
     for id, dept_code, dept_name, dept_parentcode in departments:
+        if dept_parentcode == '0':
+            dept_parentcode = None
         node = Node(id, dept_code, dept_name, dept_parentcode)
-        nodes[id] = node  # Store the node in the dictionary
+        nodes[dept_code] = node  # Store the node in the dictionary
 
     # Link parent-child relationships
     for id, dept_code, dept_name, dept_parentcode in departments:
+        if dept_parentcode == '0':
+            dept_parentcode = None
+            department_list.append(dept_code)
         if dept_parentcode:
             parent_node = nodes[dept_parentcode]
-            parent_node.add_child(nodes[id])
+            parent_node.add_child(nodes[dept_code])
 
+    def print_tree(node, level=0):
+        """Prints the tree structure recursively."""
+        print("  " * level + f"ID: {node.id}, Code: {node.dept_code}, Name: {node.dept_name}")
+        for child in node.children:
+            print_tree(child, level + 1)
+
+    # root = nodes[departments[0][0]]
+    # print_tree(root)
+    for id in department_list:
+        print_tree(nodes[id])
+    
     return None
 
 
