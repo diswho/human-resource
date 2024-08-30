@@ -1,0 +1,124 @@
+from sqlalchemy import Column, Integer, String, Float, Date, ForeignKey
+from sqlalchemy.orm import relationship
+from sqlmodel import SQLModel, Field
+
+class Employee(SQLModel, table=True):
+    EmployeeID: int = Field(primary_key=True)
+    Code: str
+    Gender: str
+    FirstName: str
+    LastName: str
+    Position: str
+    YearsOfWork: int
+    WorkingHours: int
+    Salary: float
+    BankAccountName: str
+    AccountNumber: str
+    payments: list["Payment"] = relationship(back_populates="employee")
+    earnings: list["Earnings"] = relationship(back_populates="employee")
+    deductions: list["Deductions"] = relationship(back_populates="employee")
+
+class Payment(SQLModel, table=True):
+    PaymentID: int = Field(primary_key=True)
+    EmployeeID: int = Field(ForeignKey("employee.EmployeeID"))
+    PaymentDate: Date
+    AmountTransferred: float
+    January: float = 0
+    February: float = 0
+    March: float = 0
+    April: float = 0
+    May: float = 0
+    June: float = 0
+    July: float = 0
+    August: float = 0
+    September: float = 0
+    October: float = 0
+    employee: "Employee" = relationship(back_populates="payments")
+
+class Earnings(SQLModel, table=True):
+    EarningsID: int = Field(primary_key=True)
+    EmployeeID: int = Field(ForeignKey("employee.EmployeeID"))
+    OilMoney: float
+    RiskMoney: float
+    DiligenceMoney: float
+    WagesPerDay: float
+    WagesPerHour: float
+    OTHours: int
+    TotalOTMoney: float
+    AccumulatedInsuranceMoney: float
+    TotalIncome: float
+    employee: "Employee" = relationship(back_populates="earnings")
+
+class Deductions(SQLModel, table=True):
+    DeductionsID: int = Field(primary_key=True)
+    EmployeeID: int = Field(ForeignKey("employee.EmployeeID"))
+    AbsenceDays: int
+    AbsenceDaysMultipleOf2: int
+    AdditionalDays: int
+    AbsenceDeduction: float
+    AbsenceDeductionX2: float
+    DeductionOfAbsentDays: float
+    AmountAdded: float
+    DeductionOfLateness: float
+    DeductionOfIrregularity: float
+    ReturnOfWrongPayment: float
+    Deposit: float
+    DeductionOfAdvancePayment: float
+    InsuranceDeduction: float
+    WaterElectricityMoney: float
+    DebtToTheCompany: float
+    DeductionOfDamagedEquipmentMoney: float
+    DebtToTheDirector: float
+    LackOfMoney: float
+    TotalCompanyDebt: float
+    TotalNetCash: float
+    AccumulatedInsurancePremiums: float
+    RemainingBalance: float
+    Target: float
+    employee: "Employee" = relationship(back_populates="deductions")
+
+==============================================================================
+Mã số
+Giới tính
+Tên và họ
+Chức vụ
+W/D/Y năm làm việc
+giờ làm việc
+Lương
+Tiền dầu
+Tiền rủi ro
+Tiền chăm chỉ
+Tiền lương/ngày
+Tiền lương/giờ
+Ngày vắng mặt
+Ngày vắng mặt bội số 2
+Số ngày vắng mặt
+Ngày được cộng thêm
+Khấu trừ vắng mặt
+Khấu trừ vắng mặt X2
+Phần Khấu trừ số ngày vắng mặt
+Số tiền được cộng thêm 
+Khấu trừ tiền đến muộn
+Khấu trừ tiền làm sai quy tắc
+Gửi lại tiền thanh toán sai
+Gửi tiền đặt cọc
+Tiền bảo hiểm tích lũy
+Số giờ OT
+Tổng số tiền OT
+Tổng thu nhập
+Khấu trừ số tiền tạm ứng
+Khấu trừ bảo hiểm
+Tiền nước/điện
+Nợ công ty
+Khấu trừ tiền thiết bị hư hỏng
+Nợ giám đốc
+Tiền thiếu 
+Tổng số nợ của công ty
+Tổng tiền ròng
+TÊN TÀI KHOẢN NGÂN HÀNG
+số TÀI KHOẢN
+Ngày trả lương
+Số tiền chuyển trong tháng 1, tháng 2, tháng 3, tháng 4, tháng 5, tháng 6, tháng 7, tháng 8, tháng 9, tháng 10
+Tiền bảo hiểm tích lũy
+số dư còn lại
+mục tiêu
