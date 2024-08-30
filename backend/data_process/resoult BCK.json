@@ -1,86 +1,99 @@
 {
-  "1": {
-    "id": "1",
-    "name": "Xokthavy(3) ທົ່ງຂັນຄຳ",
-    "parent_code": "None",
-    "children": {},
-    "level": 0
+  "models": [
+    {
+      "title": "Gemini flash",
+      "provider": "gemini",
+      "model": "gemini-1.5-flash-latest",
+      "apiKey": "AIzaSyAdomR3E7n9PeFnrHNCw7k0__w_7BB4-WE"
+    },
+    {
+      "title": "Ollama Starcoder",
+      "provider": "ollama",
+      "model": "starcoder2:15b-instruct",
+      "apiBase": "http://localhost:11434"
+    }
+  ],
+  "customCommands": [
+    {
+      "name": "test",
+      "prompt": "{{{ input }}}\n\nWrite a comprehensive set of unit tests for the selected code. It should setup, run tests that check for correctness including important edge cases, and teardown. Ensure that the tests are complete and sophisticated. Give the tests just as chat output, don't edit any file.",
+      "description": "Write unit tests for highlighted code"
+    },
+    {
+      "name": "explain",
+      "prompt": "{{{ input }}}\n\nExplain the code in detail. Focus on understanding the logic, purpose, and potential issues.",
+      "description": "Explains the provided code and its functionality."
+    },
+    {
+      "name": "translate",
+      "prompt": "Translate the following code from {{ language }} to {{ target_language }}:\n\n{{{ input }}}",
+      "description": "Translates code from one programming language to another."
+    }
+  ],
+  "tabAutocompleteModel": {
+    "model": "starcoder2:3b ",
+    "title": "Ollama Starcoder",
+    "apiBase": "http://localhost:11434",
+    "provider": "ollama"
   },
-  "17": {
-    "id": "12",
-    "name": "Xokthavy(4) ໜອງປິງ",
-    "parent_code": "None",
-    "children": {},
-    "level": 0
-  },
-  "19": {
-    "id": "13",
-    "name": "Xokthavy(5) ທ່າງ່ອນ",
-    "parent_code": "None",
-    "children": {},
-    "level": 0
-  },
-  "20": {
-    "id": "14",
-    "name": "Xokthavy(6) ໜອງບອນ",
-    "parent_code": "None",
-    "children": {},
-    "level": 0
-  },
-  "21": {
-    "id": "15",
-    "name": "Xokthavy(7) ວັງຊາຍ",
-    "parent_code": "None",
-    "children": {},
-    "level": 0
-  },
-  "27": {
-    "id": "20",
-    "name": "Xokthavy(2) ໜອງວຽງຄຳ",
-    "parent_code": "None",
-    "children": {},
-    "level": 0
-  },
-  "33": {
-    "id": "24",
-    "name": "Xokthavy(1) ດອນໜູນ",
-    "parent_code": "None",
-    "children": {},
-    "level": 0
-  },
-  "90": {
-    "id": "43",
-    "name": "Xokthavy(8) ເຟສມາກດອນໜູນ",
-    "parent_code": "None",
-    "children": {},
-    "level": 0
-  },
-  "124": {
-    "id": "69",
-    "name": "XTV 09ວຽງຈັນເຊັນເຕີ",
-    "parent_code": "None",
-    "children": {},
-    "level": 0
-  },
-  "155": {
-    "id": "99",
-    "name": "Xokthavy (10) ຈອມມະນີ",
-    "parent_code": "None",
-    "children": {},
-    "level": 0
-  },
-  "172": {
-    "id": "128",
-    "name": "XOKTHAVY  (11) ດອນແດງ",
-    "parent_code": "None",
-    "children": {},
-    "level": 0
-  },
-  "181": {
-    "id": "137",
-    "name": "Office11",
-    "parent_code": "None",
-    "children": {},
-    "level": 0
-  }
+  "contextProviders": [
+    {
+      "name": "code",
+      "params": {}
+    },
+    {
+      "name": "docs",
+      "params": {}
+    },
+    {
+      "name": "diff",
+      "params": {}
+    },
+    {
+      "name": "terminal",
+      "params": {}
+    },
+    {
+      "name": "problems",
+      "params": {}
+    },
+    {
+      "name": "folder",
+      "params": {}
+    },
+    {
+      "name": "codebase",
+      "params": {}
+    }
+  ],
+  "slashCommands": [
+    {
+      "name": "edit",
+      "description": "Edit selected code"
+    },
+    {
+      "name": "comment",
+      "description": "Write comments for the selected code"
+    },
+    {
+      "name": "share",
+      "description": "Export the current chat session to markdown"
+    },
+    {
+      "name": "cmd",
+      "description": "Generate a shell command"
+    },
+    {
+      "name": "commit",
+      "description": "Generate a git commit message"
+    }
+  ],
+  "docs": []
 }
+// write a python to import some table for sqlite.db into postgresql.
+// Note: import only new record
+
+//   customCommands=[{
+//     "name": "check",
+//     "description": "Check for mistakes in my code",
+//     "

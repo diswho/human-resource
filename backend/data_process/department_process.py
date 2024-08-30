@@ -20,9 +20,8 @@ def department_process(cursor):
     cursor.execute("SELECT id, dept_code, dept_name, dept_parentcode FROM hr_department")
     departments = cursor.fetchall()
 
-    department_list = []
+    roots = []
     nodes = {}
-    # root_dept = Node(0, '0', "xokthavy")
 
     # Build the tree structure
     for id, dept_code, dept_name, dept_parentcode in departments:
@@ -35,23 +34,11 @@ def department_process(cursor):
     for id, dept_code, dept_name, dept_parentcode in departments:
         if dept_parentcode == '0':
             dept_parentcode = None
-            department_list.append(dept_code)
+            roots.append(dept_code)
         if dept_parentcode:
             parent_node = nodes[dept_parentcode]
             parent_node.add_child(nodes[dept_code])
-
-    def print_tree(node, level=0):
-        """Prints the tree structure recursively."""
-        print("  " * level + f"ID: {node.id}, Code: {node.dept_code}, Name: {node.dept_name}")
-        for child in node.children:
-            print_tree(child, level + 1)
-
-    # root = nodes[departments[0][0]]
-    # print_tree(root)
-    for id in department_list:
-        print_tree(nodes[id])
-    
-    return None
+    return nodes, roots
 
 
 connect = psycopg2.connect(
@@ -62,8 +49,32 @@ connect = psycopg2.connect(
 )
 
 cursor = connect.cursor()
-department_process = department_process(cursor)
+nodes, root = department_process(cursor)
 
-print(department_process)
+
+def tree(node, level=0):
+    """Prints the tree structure recursively."""
+    print("  " * level + f"ID: {node.id}, Code: {node.dept_code}, Name: {node.dept_name}")
+    for child in node.children:
+        tree(child, level + 1)
+
+
+def get_ids(node):
+    ids = []
+
+    def dfs(node):
+        ids.append(node.id)
+        for child in node.children:
+            dfs(child)
+
+    dfs(node)
+    return ids
+
+
+for code in root:
+    tree(nodes[code])
+
+ids = get_ids(nodes['1'])
+print(ids)
 cursor.close()
 connect.close()
