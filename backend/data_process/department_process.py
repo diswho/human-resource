@@ -10,6 +10,7 @@ class Node:
         self.dept_name = dept_name
         self.dept_parentcode = dept_parentcode
         self.children = []
+        self.children_id = {id}
 
     def add_child(self, child):
         """Adds a child node to this node."""

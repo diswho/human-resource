@@ -1,10 +1,10 @@
 import psycopg2
 
 # Database connection details
-host = "your_host"
-database = "your_database"
-user = "your_user"
-password = "your_password"
+host="localhost"
+database="app"
+user="postgres"
+password="I536ib9E6HVxgc"
 
 # Connect to the PostgreSQL database
 conn = psycopg2.connect(
@@ -52,7 +52,7 @@ def build_hierarchy(departments):
     root_departments = []
     for dept_id, dept_data in departments.items():
         parent_id = dept_data["parent_id"]
-        if parent_id == 0:  # Check for root departments
+        if parent_id == '0':  # Check for root departments
             root_departments.append(dept_id)
         else:
             departments[parent_id]["children"].append(dept_id)
