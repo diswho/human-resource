@@ -65,7 +65,7 @@ def build_department_hierarchy():
     def _set_level(department, current_level):
         # dept_data = departments[department]
         department["level"] = current_level
-        for _id, child_dept in department["children"].items():
+        for _code, child_dept in department["children"].items():
             _set_level(child_dept, current_level + 1)
 
     # Set children_ids Departments
@@ -76,7 +76,7 @@ def build_department_hierarchy():
                 list_id.append(_chd["id"])
                 _set_children_ids(_chd, list_id)
 
-    for codes, dept in departments.items():
+    for _code, dept in departments.items():
         _set_children_ids(dept, dept["children_id"])
         if dept["dept_parentcode"] == '0':
             _set_level(dept, 0)
@@ -90,9 +90,21 @@ def build_department_hierarchy():
 # Example usage:
 root_departments, departments = build_department_hierarchy()
 
-print("test")
+
+def side_list(node, node_list):
+    for _code, child in node["children"].items():
+        tab = " "*2*child["level"]
+        # node_list.append(tab + child["dept_name"])
+        node_list[_code] = tab + child["dept_name"]
+        side_list(child, node_list)
+    # print()
+
 
 # Access the hierarchical data:
 for root_dept in root_departments:
-    print(f"Department: {root_dept['dept_name']}")
-    print(f"  Children: {root_dept['children_id']}")
+    node_list = {}
+    node_list[root_dept["dept_code"]] = root_dept["dept_name"]
+    side_list(root_dept, node_list)
+    print(node_list)
+    # print(f"Department: {root_dept['dept_name']}")
+    # print(f"  Children: {root_dept['children_id']}")
