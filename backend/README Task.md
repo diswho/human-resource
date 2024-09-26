@@ -52,6 +52,17 @@ sequenceDiagram
   Charlie-->>Alice: I am great, thanks!
   deactivate Charlie
 ```
+
 # User
+
+```bash
 FIRST_SUPERUSER=admin@example.com
+```
+
+```bash
 FIRST_SUPERUSER_PASSWORD=I536ib9E6HVxgc
+```
+
+```console
+$ uvicorn backend.app.main:app --reload
+```

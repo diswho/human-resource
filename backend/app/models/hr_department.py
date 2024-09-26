@@ -25,7 +25,7 @@ class HRDepartment(HRDepartmentBase, table=True):
 
 class HRDepartmentCreate(HRDepartmentBase):
     company_id: int = Field(default=None, foreign_key="hr_company.id")
-    company: "HRCompany" = Relationship(back_populates="departments")
+    # company: "HRCompany" = Relationship(back_populates="departments")
 
 
 class HRDepartmentUpdate(HRDepartmentBase):
