@@ -43,7 +43,7 @@ class HRCompanyCreate(HRCompanyBase):
 class HRCompany(HRCompanyBase, table=True):
     __tablename__ = "hr_company"
     id: int | None = Field(default=None, primary_key=True)
-    departments: list["HRDepartment"] | None = Relationship(back_populates="company")
+    # departments: list["HRDepartment"] | None = Relationship(back_populates="company")
 
 
 class HRCompanyUpdate(HRCompanyBase):

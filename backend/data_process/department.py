@@ -37,8 +37,8 @@ def build_department_hierarchy():
     # Create a dictionary to store departments and their hierarchy
     departments = {}
     root_departments = []
-    check_list = []
-    new_list = []
+    # check_list = []
+    # new_list = []
     # Iterate through the rows and build the hierarchy
     for row in rows:
         id, _code, dept_name, dept_parentcode = row

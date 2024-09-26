@@ -1,16 +1,17 @@
 from collections.abc import Generator
-from typing import Annotated
+from typing import Annotated, List
 
 import jwt
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jwt.exceptions import InvalidTokenError
 from pydantic import ValidationError
-from sqlmodel import Session
+from sqlmodel import Session, select
 
 from app.core import security
 from app.core.config import settings
 from app.core.db import engine
+from app.models.hr_department import HRDepartment
 from app.models.models import TokenPayload
 from app.models.user import User
 
@@ -26,6 +27,21 @@ def get_db() -> Generator[Session, None, None]:
 
 SessionDep = Annotated[Session, Depends(get_db)]
 TokenDep = Annotated[str, Depends(reusable_oauth2)]
+
+
+# def get_department(session: SessionDep) -> List[HRDepartment]:
+#     statement = select(HRDepartment)
+#     departments = session.exec(statement).all()
+#     return departments
+
+
+# DepartList = Annotated[HRDepartment, Depends(get_department)]
+
+
+# def get_tree(depart_list: DepartList):
+#     departments = {}
+#     root_departments = []
+#     return
 
 
 def get_current_user(session: SessionDep, token: TokenDep) -> User:

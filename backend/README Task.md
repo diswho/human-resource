@@ -52,3 +52,6 @@ sequenceDiagram
   Charlie-->>Alice: I am great, thanks!
   deactivate Charlie
 ```
+# User
+FIRST_SUPERUSER=admin@example.com
+FIRST_SUPERUSER_PASSWORD=I536ib9E6HVxgc
