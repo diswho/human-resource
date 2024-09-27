@@ -6,7 +6,16 @@ from sqlmodel import Session, select
 from app.core.security import get_password_hash, verify_password
 from app.models.item import Item, ItemCreate
 from app.models.user import User, UserCreate, UserUpdate
+from app.models.hr_company import HRCompany, HRCompanyCreate
 # from app.models.user import User, UserCreate, UserUpdate
+
+
+def create_company(*, session: Session, company_create: HRCompanyCreate) -> HRCompany:
+    db_obj = HRCompany.model_validate(company_create)
+    session.add(db_obj)
+    session.commit()
+    session.refresh(db_obj)
+    return db_obj
 
 
 def create_user(*, session: Session, user_create: UserCreate) -> User:
