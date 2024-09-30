@@ -1,19 +1,20 @@
-from sqlmodel import SQLModel, Field, Integer, Text, DateTime, Boolean
-from typing import Optional
+from sqlmodel import SQLModel, Field
+from datetime import datetime
 
 # AttTimetable
+
 
 class AttTimetableBase(SQLModel):
     timetableType: int | None = None
     timetable_color: int | None = None
     timetable_name: str
-    timetable_start: DateTime | None = None
-    timetable_end: DateTime | None = None
-    timetable_checkin_begin: DateTime | None = None
-    timetable_checkout_end: DateTime | None = None
+    timetable_start: datetime | None = None
+    timetable_end: datetime | None = None
+    timetable_checkin_begin: datetime | None = None
+    timetable_checkout_end: datetime | None = None
     usedForSmartShift: bool | None = None
-    timetable_checkin_end: DateTime | None = None
-    timetable_checkout_begin: DateTime | None = None
+    timetable_checkin_end: datetime | None = None
+    timetable_checkout_begin: datetime | None = None
     requireWork: int | None = None
     timetable_late: bool | None = None
     timetable_latecome: int | None = None
@@ -34,14 +35,17 @@ class AttTimetableBase(SQLModel):
     countEarlyComeExceedMins: int | None = None
     countLateOutExceedMins: int | None = None
 
+
 class AttTimetableCreate(AttTimetableBase):
     pass
+
 
 class AttTimetableUpdate(AttTimetableBase):
     timetable_name: str | None = None
 
 # Set table name
+
+
 class AttTimetable(AttTimetableBase, table=True):
     __tablename__ = "att_timetable"
     id: int | None = Field(default=None, primary_key=True)
-

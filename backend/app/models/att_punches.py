@@ -1,5 +1,5 @@
 from typing import TYPE_CHECKING
-from sqlalchemy import BIGINT
+# from sqlalchemy import BIGINT
 from sqlmodel import Field, SQLModel
 from datetime import datetime
 
@@ -20,7 +20,7 @@ class AttPunchesBase(SQLModel):
     IsSelect: int | None = None
     reserved1: str | None = None
     reserved2: str | None = None
-    middleware_id: BIGINT | None = None
+    middleware_id: int | None = None
     attendance_event: str | None = None
     login_combination: int | None = None
     status: int | None = None
