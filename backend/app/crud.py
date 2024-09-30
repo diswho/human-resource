@@ -71,3 +71,11 @@ def create_item(*, session: Session, item_in: ItemCreate, owner_id: uuid.UUID) -
     session.commit()
     session.refresh(db_item)
     return db_item
+
+
+def create_department(*, session: Session, department_in: HRDepartment) -> HRDepartment:
+    db_dept = HRDepartment.model_validate(department_in)
+    session.add(db_dept)
+    session.commit()
+    session.refresh(db_dept)
+    return db_dept

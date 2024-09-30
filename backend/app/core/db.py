@@ -18,11 +18,11 @@ def init_db(session: Session) -> None:
     # Tables should be created with Alembic migrations
     # But if you don't want to use migrations, create
     # the tables un-commenting the next lines
-    # from sqlmodel import SQLModel
+    from sqlmodel import SQLModel
 
     # from app.core.engine import engine
     # This works because the models are already imported and registered from app.models
-    # SQLModel.metadata.create_all(engine)
+    SQLModel.metadata.create_all(engine)
 
     company_name = "Xokthavy trade import-export sole Co.,Ltd"
     company = session.exec(select(HRCompany).where(HRCompany.cmp_name == company_name)).first()

@@ -9,7 +9,7 @@ class HRDepartmentBase(SQLModel):
     dept_code: int
     dept_name: str
     dept_parentcode: int
-    useCode: bool | None = None
+    useCode: int | None = None
     dept_operationmode: int | None = None
     defaultDepartment: int | None = None
     lineToken: str | None = None
