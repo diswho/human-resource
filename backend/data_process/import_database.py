@@ -7,6 +7,8 @@ from app import crud
 from app.models.hr_department import HRDepartment
 import json
 
+from app.models.hr_employee import HREmployee
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -22,18 +24,17 @@ engine_postgres = create_engine(str(settings.SQLALCHEMY_DATABASE_URI))
 
 def init() -> None:
     with Session(engine_sqlite) as session_sqlite, Session(engine_postgres) as session_postgres:
-        sqlite_records = session_sqlite.exec(select(HRDepartment)).all()
-        last_postgres_id = session_postgres.exec(select(func.max(HRDepartment.id))).first()
+        dept_sqlite_records = session_sqlite.exec(select(HRDepartment)).all()
+        employee_sqlite_records = session_sqlite.exec(select(HREmployee)).all()
+        dept_last_postgres_id = session_postgres.exec(select(func.max(HRDepartment.id))).first()
+        employee_last_postgres_id = session_postgres.exec(select(func.max(HREmployee.id))).first()
 
     new_records = []
 
-    if last_postgres_id is None:
-        new_records = sqlite_records
+    if dept_last_postgres_id is None:
+        new_records = dept_sqlite_records
     else:
-        new_records = [record for record in sqlite_records if record.id > last_postgres_id]
-        # for record in sqlite_records:
-        #     if record.id > last_postgres_id:  # Assuming ID is the first column
-        #         new_records.append(record)
+        new_records = [record for record in dept_sqlite_records if record.id > dept_last_postgres_id]
 
     if new_records:
         for record in new_records:
