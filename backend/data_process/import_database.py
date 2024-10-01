@@ -26,37 +26,6 @@ engine_postgres = create_engine(str(settings.SQLALCHEMY_DATABASE_URI))
 # Function to fetch new records from SQLite
 
 
-def init() -> None:
-    with Session(engine_sqlite) as session_sqlite, Session(engine_postgres) as session_postgres:
-        dept_sqlite_records = session_sqlite.exec(select(HRDepartment)).all()
-        dept_last_postgres_id = session_postgres.exec(select(func.max(HRDepartment.id))).first()
-        employee_sqlite_records = session_sqlite.exec(select(HREmployee)).all()
-        employee_last_postgres_id = session_postgres.exec(select(func.max(HREmployee.id))).first()
-
-    new_records = []
-
-    if dept_last_postgres_id is None:
-        new_records = dept_sqlite_records
-    else:
-        new_records = [record for record in dept_sqlite_records if record.id > dept_last_postgres_id]
-
-    if new_records:
-        for record in new_records:
-            record_dict = record.model_dump()
-            crud.create_department(session=session_postgres, department_in=record_dict)
-
-    new_records = []
-    if employee_last_postgres_id is None:
-        new_records = employee_sqlite_records
-    else:
-        new_records = [record for record in employee_sqlite_records if record.id > employee_last_postgres_id]
-
-    if new_records:
-        for record in new_records:
-            record_dict = record.model_dump()
-            crud.create_employee(session=session_postgres, employee_in=record_dict)
-
-
 def init_model(model: SQLModel) -> None:
     with Session(engine_sqlite) as session_sqlite, Session(engine_postgres) as session_postgres:
         date_string = '2023-01-01 00:00:00.000'
@@ -79,6 +48,31 @@ def init_model(model: SQLModel) -> None:
             session_postgres.add(obj)
             session_postgres.commit()
             session_postgres.refresh(obj)
+
+# def init() -> None:
+#     with Session(engine_sqlite) as session_sqlite, Session(engine_postgres) as session_postgres:
+#         dept_sqlite_records = session_sqlite.exec(select(HRDepartment)).all()
+#         dept_last_postgres_id = session_postgres.exec(select(func.max(HRDepartment.id))).first()
+#         employee_sqlite_records = session_sqlite.exec(select(HREmployee)).all()
+#         employee_last_postgres_id = session_postgres.exec(select(func.max(HREmployee.id))).first()
+#     new_records = []
+#     if dept_last_postgres_id is None:
+#         new_records = dept_sqlite_records
+#     else:
+#         new_records = [record for record in dept_sqlite_records if record.id > dept_last_postgres_id]
+#     if new_records:
+#         for record in new_records:
+#             record_dict = record.model_dump()
+#             crud.create_department(session=session_postgres, department_in=record_dict)
+#     new_records = []
+#     if employee_last_postgres_id is None:
+#         new_records = employee_sqlite_records
+#     else:
+#         new_records = [record for record in employee_sqlite_records if record.id > employee_last_postgres_id]
+#     if new_records:
+#         for record in new_records:
+#             record_dict = record.model_dump()
+#             crud.create_employee(session=session_postgres, employee_in=record_dict)
 
 
 def main() -> None:
