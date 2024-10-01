@@ -9,10 +9,7 @@ if TYPE_CHECKING:
 
 
 class HREmployeeBase(SQLModel):
-    email: str = Field(unique=True, index=True)
-    is_active: bool = True
-    is_superuser: bool = False
-    full_name: str | None = None
+    emp_email: str | None = None
     emp_pin: str | None = None
     emp_ssn: str | None = None
     emp_role: str | None = None
@@ -72,7 +69,6 @@ class HREmployeeBase(SQLModel):
 class HREmployee(HREmployeeBase, table=True):
     __tablename__ = "hr_employee"
     id: int | None = Field(default=None, primary_key=True)
-    hashed_password: str
 
 
 class HREmployeeCreate(HREmployeeBase):
@@ -80,19 +76,19 @@ class HREmployeeCreate(HREmployeeBase):
 
 
 class HREmployeeCreateOpen(SQLModel):
-    email: str
+    emp_email: str
     password: str
     full_name: str | None = None
 
 
 class HREmployeeUpdate(HREmployeeBase):
-    email: str | None = None  # type: ignore
+    emp_email: str | None = None  # type: ignore
     password: str | None = None
 
 
 class HREmployeeUpdateMe(HREmployeeBase):
     full_name: str | None = None
-    email: str | None = None
+    emp_email: str | None = None
 
 
 class UpdatePassword(SQLModel):

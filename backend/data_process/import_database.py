@@ -1,13 +1,17 @@
 import logging
 # import sqlite3
 from sqlalchemy import func
-from sqlmodel import Session, create_engine, select
+from sqlmodel import SQLModel, Session, create_engine, select
 from app.core.config import settings
 from app import crud
+from app.models.att_punches import AttPunches
+from app.models.att_shift import AttShift
+from app.models.att_timetable import AttTimetable
 from app.models.hr_department import HRDepartment
-import json
+from datetime import datetime
 
 from app.models.hr_employee import HREmployee
+from app.models.hr_position import HRPosition
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -25,8 +29,8 @@ engine_postgres = create_engine(str(settings.SQLALCHEMY_DATABASE_URI))
 def init() -> None:
     with Session(engine_sqlite) as session_sqlite, Session(engine_postgres) as session_postgres:
         dept_sqlite_records = session_sqlite.exec(select(HRDepartment)).all()
-        employee_sqlite_records = session_sqlite.exec(select(HREmployee)).all()
         dept_last_postgres_id = session_postgres.exec(select(func.max(HRDepartment.id))).first()
+        employee_sqlite_records = session_sqlite.exec(select(HREmployee)).all()
         employee_last_postgres_id = session_postgres.exec(select(func.max(HREmployee.id))).first()
 
     new_records = []
@@ -41,10 +45,51 @@ def init() -> None:
             record_dict = record.model_dump()
             crud.create_department(session=session_postgres, department_in=record_dict)
 
+    new_records = []
+    if employee_last_postgres_id is None:
+        new_records = employee_sqlite_records
+    else:
+        new_records = [record for record in employee_sqlite_records if record.id > employee_last_postgres_id]
+
+    if new_records:
+        for record in new_records:
+            record_dict = record.model_dump()
+            crud.create_employee(session=session_postgres, employee_in=record_dict)
+
+
+def init_model(model: SQLModel) -> None:
+    with Session(engine_sqlite) as session_sqlite, Session(engine_postgres) as session_postgres:
+        date_string = '2023-01-01 00:00:00.000'
+        date_object = datetime.strptime(date_string, '%Y-%m-%d %H:%M:%S.%f')
+        statement = select(model).where(model.punch_time > date_object)
+        sqlite_records = session_sqlite.exec(statement).all()
+        last_postgres_id = session_postgres.exec(select(func.max(model.id))).first()
+        print(last_postgres_id)
+
+    new_records = []
+    if last_postgres_id is None:
+        new_records = sqlite_records
+    else:
+        new_records = [record for record in sqlite_records if record.id > last_postgres_id]
+
+    if new_records:
+        for record in new_records:
+            record_dict = record.model_dump()
+            obj = model.model_validate(record_dict)
+            session_postgres.add(obj)
+            session_postgres.commit()
+            session_postgres.refresh(obj)
+
 
 def main() -> None:
     logger.info("Creating import data")
-    init()
+    # init()
+    # init_model(HRDepartment)
+    # init_model(HRPosition)
+    # init_model(HREmployee)
+    # init_model(AttTimetable)
+    # init_model(AttShift)
+    init_model(AttPunches)
     logger.info("import data finish")
 
 

@@ -74,8 +74,16 @@ def create_item(*, session: Session, item_in: ItemCreate, owner_id: uuid.UUID) -
 
 
 def create_department(*, session: Session, department_in: HRDepartment) -> HRDepartment:
-    db_dept = HRDepartment.model_validate(department_in)
-    session.add(db_dept)
+    obj = HRDepartment.model_validate(department_in)
+    session.add(obj)
     session.commit()
-    session.refresh(db_dept)
-    return db_dept
+    session.refresh(obj)
+    return obj
+
+
+def create_employee(*, session: Session, employee_in: HREmployee) -> HREmployee:
+    obj = HREmployee.model_validate(employee_in)
+    session.add(obj)
+    session.commit()
+    session.refresh(obj)
+    return obj
