@@ -1,8 +1,7 @@
-from sqlmodel import Field, SQLModel
+from typing import TYPE_CHECKING
+from sqlmodel import Field, Relationship, SQLModel
 from datetime import datetime
 from decimal import Decimal
-
-# AttDaySummary
 
 
 class AttDaySummaryBase(SQLModel):
@@ -17,9 +16,9 @@ class AttDaySummaryBase(SQLModel):
     cuser2: str | None = None
     cuser3: str | None = None
     remark: str | None = None
-    dt_id: int
-    item_id: int
-    employee_id: int | None = Field(default=None, foreign_key="hr_employee.id")
+    dt_id: int | None = None
+    item_id: int | None = None
+    employee_id: int | None = None
     timetable_id: int | None = None
     paycode_id: int | None = None
 
@@ -33,11 +32,13 @@ class AttDaySummaryUpdate(AttDaySummaryBase):
     item_results: Decimal | None = None
     recordsFrom: datetime | None = None
     recordsTo: datetime | None = None
-    dt_id: int | None = None
     item_id: int | None = None
-    employee_id: int | None = Field(default=None, foreign_key="hr_employee.id")
+    dt_id: int | None = None
 
 
 class AttDaySummary(AttDaySummaryBase, table=True):
     __tablename__ = "att_day_summary"
     id: int | None = Field(default=None, primary_key=True)
+    dt_id: int | None = Field(default=None, foreign_key="att_DayType.id")
+    item_id: int | None = Field(default=None, foreign_key="att_StatisticItem.id")
+    employee_id: int | None = Field(default=None, foreign_key="hr_employee.id")
