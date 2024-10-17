@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Optional
+from typing import TYPE_CHECKING, Any, Dict, List, Optional
 from sqlmodel import Field, Relationship, SQLModel
 
 if TYPE_CHECKING:
@@ -33,3 +33,23 @@ class HRDepartmentUpdate(HRDepartmentBase):
     dept_name: str | None = None
     dept_parentcode: int | None = None
     company_id: int | None = None
+
+
+class HRDepartmentExport(SQLModel):
+    id: int
+    dept_code: int
+    dept_name: str
+    dept_parentcode: int
+    children: Dict[int, HRDepartment]
+    descendants: List[int]
+    level: int
+
+
+class HRDepartmentPublic(SQLModel):
+    id: int
+    dept_code: int
+    dept_name: str
+    dept_parentcode: int
+    children: Dict[int, HRDepartmentExport]
+    descendants: List[int]
+    level: int
