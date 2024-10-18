@@ -40,7 +40,7 @@ class HRDepartmentExport(SQLModel):
     dept_code: int
     dept_name: str
     dept_parentcode: int
-    children: Dict[int, HRDepartment]
+    # children: Dict[int, HRDepartment]
     descendants: List[int]
     level: int
 

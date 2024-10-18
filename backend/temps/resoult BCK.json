@@ -10,7 +10,6 @@
         "dept_code": 2,
         "dept_name": "Office3",
         "dept_parentcode": 1,
-        "children": {},
         "descendants": [2],
         "level": 1
       },
@@ -19,68 +18,6 @@
         "dept_code": 4,
         "dept_name": "ຝ່າຍຂາຍ3",
         "dept_parentcode": 1,
-        "children": {
-          "12": {
-            "dept_code": 12,
-            "dept_name": "Fresh Food3",
-            "dept_parentcode": 4,
-            "id": 8,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "13": {
-            "dept_code": 13,
-            "dept_name": "TKK ZONE DryB3",
-            "dept_parentcode": 4,
-            "id": 9,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "14": {
-            "dept_code": 14,
-            "dept_name": "TKK ZONE DryC3",
-            "dept_parentcode": 4,
-            "id": 10,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "15": {
-            "dept_code": 15,
-            "dept_name": "TKK ZONE Hardline3",
-            "dept_parentcode": 4,
-            "id": 11,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "151": {
-            "dept_code": 151,
-            "dept_name": "TKK ZONE DryA3",
-            "dept_parentcode": 4,
-            "id": 95,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          }
-        },
         "descendants": [3, 8, 9, 10, 11, 95],
         "level": 1
       },
@@ -89,7 +26,6 @@
         "dept_code": 6,
         "dept_name": "ແຄັດເຊຍ3",
         "dept_parentcode": 1,
-        "children": {},
         "descendants": [4],
         "level": 1
       },
@@ -98,7 +34,6 @@
         "dept_code": 7,
         "dept_name": "Backroom3",
         "dept_parentcode": 1,
-        "children": {},
         "descendants": [5],
         "level": 1
       },
@@ -107,7 +42,6 @@
         "dept_code": 8,
         "dept_name": "LPS3",
         "dept_parentcode": 1,
-        "children": {},
         "descendants": [6],
         "level": 1
       },
@@ -116,7 +50,6 @@
         "dept_code": 9,
         "dept_name": "IT Support3",
         "dept_parentcode": 1,
-        "children": {},
         "descendants": [7],
         "level": 1
       }
@@ -144,7 +77,6 @@
         "dept_code": 12,
         "dept_name": "Fresh Food3",
         "dept_parentcode": 4,
-        "children": {},
         "descendants": [8],
         "level": 2
       },
@@ -153,7 +85,6 @@
         "dept_code": 13,
         "dept_name": "TKK ZONE DryB3",
         "dept_parentcode": 4,
-        "children": {},
         "descendants": [9],
         "level": 2
       },
@@ -162,7 +93,6 @@
         "dept_code": 14,
         "dept_name": "TKK ZONE DryC3",
         "dept_parentcode": 4,
-        "children": {},
         "descendants": [10],
         "level": 2
       },
@@ -171,7 +101,6 @@
         "dept_code": 15,
         "dept_name": "TKK ZONE Hardline3",
         "dept_parentcode": 4,
-        "children": {},
         "descendants": [11],
         "level": 2
       },
@@ -180,7 +109,6 @@
         "dept_code": 151,
         "dept_name": "TKK ZONE DryA3",
         "dept_parentcode": 4,
-        "children": {},
         "descendants": [95],
         "level": 2
       }
@@ -280,7 +208,6 @@
         "dept_code": 24,
         "dept_name": "ແຄັດເຊຍ5",
         "dept_parentcode": 19,
-        "children": {},
         "descendants": [17],
         "level": 1
       },
@@ -289,68 +216,6 @@
         "dept_code": 25,
         "dept_name": "ຝ່າຍຂາຍ5",
         "dept_parentcode": 19,
-        "children": {
-          "166": {
-            "dept_code": 166,
-            "dept_name": "Dry A5",
-            "dept_parentcode": 25,
-            "id": 122,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "167": {
-            "dept_code": 167,
-            "dept_name": "Dry B5",
-            "dept_parentcode": 25,
-            "id": 123,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "168": {
-            "dept_code": 168,
-            "dept_name": "DryC5",
-            "dept_parentcode": 25,
-            "id": 124,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "169": {
-            "dept_code": 169,
-            "dept_name": "Hardline&Apparel5",
-            "dept_parentcode": 25,
-            "id": 125,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "170": {
-            "dept_code": 170,
-            "dept_name": "FreshFood5",
-            "dept_parentcode": 25,
-            "id": 126,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          }
-        },
         "descendants": [18, 122, 123, 124, 125, 126],
         "level": 1
       },
@@ -359,7 +224,6 @@
         "dept_code": 26,
         "dept_name": "LPS5",
         "dept_parentcode": 19,
-        "children": {},
         "descendants": [19],
         "level": 1
       },
@@ -368,7 +232,6 @@
         "dept_code": 123,
         "dept_name": "Backroom5",
         "dept_parentcode": 19,
-        "children": {},
         "descendants": [68],
         "level": 1
       },
@@ -377,7 +240,6 @@
         "dept_code": 135,
         "dept_name": "ຫ້ອງການ5",
         "dept_parentcode": 19,
-        "children": {},
         "descendants": [79],
         "level": 1
       }
@@ -396,7 +258,6 @@
         "dept_code": 72,
         "dept_name": "Fresh food6",
         "dept_parentcode": 20,
-        "children": {},
         "descendants": [37],
         "level": 1
       },
@@ -405,7 +266,6 @@
         "dept_code": 73,
         "dept_name": "ແຄັດເຊຍ6",
         "dept_parentcode": 20,
-        "children": {},
         "descendants": [38],
         "level": 1
       },
@@ -414,7 +274,6 @@
         "dept_code": 121,
         "dept_name": "LPS6",
         "dept_parentcode": 20,
-        "children": {},
         "descendants": [66],
         "level": 1
       },
@@ -423,7 +282,6 @@
         "dept_code": 122,
         "dept_name": "Backroom6",
         "dept_parentcode": 20,
-        "children": {},
         "descendants": [67],
         "level": 1
       },
@@ -432,7 +290,6 @@
         "dept_code": 136,
         "dept_name": "ຫ້ອງການ6",
         "dept_parentcode": 20,
-        "children": {},
         "descendants": [80],
         "level": 1
       },
@@ -441,7 +298,6 @@
         "dept_code": 137,
         "dept_name": "DrygroceryA6",
         "dept_parentcode": 20,
-        "children": {},
         "descendants": [81],
         "level": 1
       },
@@ -450,7 +306,6 @@
         "dept_code": 138,
         "dept_name": "DrygroceryB6",
         "dept_parentcode": 20,
-        "children": {},
         "descendants": [82],
         "level": 1
       },
@@ -459,7 +314,6 @@
         "dept_code": 139,
         "dept_name": "DrygroceryC6",
         "dept_parentcode": 20,
-        "children": {},
         "descendants": [83],
         "level": 1
       },
@@ -468,7 +322,6 @@
         "dept_code": 140,
         "dept_name": "Hard Line6",
         "dept_parentcode": 20,
-        "children": {},
         "descendants": [84],
         "level": 1
       }
@@ -487,7 +340,6 @@
         "dept_code": 22,
         "dept_name": "ແຄັດເຊຍ7",
         "dept_parentcode": 21,
-        "children": {},
         "descendants": [16],
         "level": 1
       },
@@ -496,7 +348,6 @@
         "dept_code": 97,
         "dept_name": "Backroom7",
         "dept_parentcode": 21,
-        "children": {},
         "descendants": [46],
         "level": 1
       },
@@ -505,7 +356,6 @@
         "dept_code": 100,
         "dept_name": "LPS7",
         "dept_parentcode": 21,
-        "children": {},
         "descendants": [48],
         "level": 1
       },
@@ -514,7 +364,6 @@
         "dept_code": 101,
         "dept_name": "ຫ້ອງການ7",
         "dept_parentcode": 21,
-        "children": {},
         "descendants": [49],
         "level": 1
       },
@@ -523,7 +372,6 @@
         "dept_code": 108,
         "dept_name": "DrygroceryA7",
         "dept_parentcode": 21,
-        "children": {},
         "descendants": [56],
         "level": 1
       },
@@ -532,7 +380,6 @@
         "dept_code": 109,
         "dept_name": "DrygroceryB7",
         "dept_parentcode": 21,
-        "children": {},
         "descendants": [57],
         "level": 1
       },
@@ -541,7 +388,6 @@
         "dept_code": 110,
         "dept_name": "DrygroceryC7",
         "dept_parentcode": 21,
-        "children": {},
         "descendants": [58],
         "level": 1
       },
@@ -550,7 +396,6 @@
         "dept_code": 111,
         "dept_name": "HardlineAB7",
         "dept_parentcode": 21,
-        "children": {},
         "descendants": [59],
         "level": 1
       },
@@ -559,7 +404,6 @@
         "dept_code": 141,
         "dept_name": "Fresh Food7",
         "dept_parentcode": 21,
-        "children": {},
         "descendants": [85],
         "level": 1
       }
@@ -596,7 +440,6 @@
         "dept_code": 166,
         "dept_name": "Dry A5",
         "dept_parentcode": 25,
-        "children": {},
         "descendants": [122],
         "level": 2
       },
@@ -605,7 +448,6 @@
         "dept_code": 167,
         "dept_name": "Dry B5",
         "dept_parentcode": 25,
-        "children": {},
         "descendants": [123],
         "level": 2
       },
@@ -614,7 +456,6 @@
         "dept_code": 168,
         "dept_name": "DryC5",
         "dept_parentcode": 25,
-        "children": {},
         "descendants": [124],
         "level": 2
       },
@@ -623,7 +464,6 @@
         "dept_code": 169,
         "dept_name": "Hardline&Apparel5",
         "dept_parentcode": 25,
-        "children": {},
         "descendants": [125],
         "level": 2
       },
@@ -632,7 +472,6 @@
         "dept_code": 170,
         "dept_name": "FreshFood5",
         "dept_parentcode": 25,
-        "children": {},
         "descendants": [126],
         "level": 2
       }
@@ -660,7 +499,6 @@
         "dept_code": 30,
         "dept_name": "ແຄັດເຊຍ2",
         "dept_parentcode": 27,
-        "children": {},
         "descendants": [22],
         "level": 1
       },
@@ -669,7 +507,6 @@
         "dept_code": 31,
         "dept_name": "LPS2",
         "dept_parentcode": 27,
-        "children": {},
         "descendants": [23],
         "level": 1
       },
@@ -678,7 +515,6 @@
         "dept_code": 86,
         "dept_name": "DrygroceryA/ອາຫານແຫ້ງ2",
         "dept_parentcode": 27,
-        "children": {},
         "descendants": [40],
         "level": 1
       },
@@ -687,7 +523,6 @@
         "dept_code": 87,
         "dept_name": "DrygroceryB/ອາຫານແຫ້ງ2",
         "dept_parentcode": 27,
-        "children": {},
         "descendants": [41],
         "level": 1
       },
@@ -696,7 +531,6 @@
         "dept_code": 88,
         "dept_name": "DrygroceryC/ອາຫານແຫ້ງ2",
         "dept_parentcode": 27,
-        "children": {},
         "descendants": [42],
         "level": 1
       },
@@ -705,32 +539,6 @@
         "dept_code": 92,
         "dept_name": "ຫ້ອງການ 2",
         "dept_parentcode": 27,
-        "children": {
-          "99": {
-            "dept_code": 99,
-            "dept_name": "ການເງິນ2",
-            "dept_parentcode": 92,
-            "id": 47,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "114": {
-            "dept_code": 114,
-            "dept_name": "ແມ່ບ້ານ2",
-            "dept_parentcode": 92,
-            "id": 61,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          }
-        },
         "descendants": [44, 47, 61],
         "level": 1
       },
@@ -739,7 +547,6 @@
         "dept_code": 93,
         "dept_name": "Backroom2",
         "dept_parentcode": 27,
-        "children": {},
         "descendants": [45],
         "level": 1
       },
@@ -748,7 +555,6 @@
         "dept_code": 117,
         "dept_name": "Fresh Food2",
         "dept_parentcode": 27,
-        "children": {},
         "descendants": [64],
         "level": 1
       },
@@ -757,7 +563,6 @@
         "dept_code": 152,
         "dept_name": "Hardline&Apparel2",
         "dept_parentcode": 27,
-        "children": {},
         "descendants": [96],
         "level": 1
       }
@@ -794,7 +599,6 @@
         "dept_code": 107,
         "dept_name": "ບໍລິຫານ1",
         "dept_parentcode": 33,
-        "children": {},
         "descendants": [55],
         "level": 1
       },
@@ -803,68 +607,6 @@
         "dept_code": 113,
         "dept_name": "ສໍານັກງານໃຫຍ່ດອນໜູນ",
         "dept_parentcode": 33,
-        "children": {
-          "34": {
-            "dept_code": 34,
-            "dept_name": "ຝ່າຍບຸກຄົນ+ອໍດິດ+ຊ່າງ+ໄອທີ",
-            "dept_parentcode": 113,
-            "id": 25,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "74": {
-            "dept_code": 74,
-            "dept_name": "ການເງິນ-ການບັນຊີ1",
-            "dept_parentcode": 113,
-            "id": 39,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "102": {
-            "dept_code": 102,
-            "dept_name": "ຈັດຊື້1",
-            "dept_parentcode": 113,
-            "id": 50,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "104": {
-            "dept_code": 104,
-            "dept_name": "ການຕະຫຼາດ+ກາບຟິກ1",
-            "dept_parentcode": 113,
-            "id": 52,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "105": {
-            "dept_code": 105,
-            "dept_name": "SCM1",
-            "dept_parentcode": 113,
-            "id": 53,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          }
-        },
         "descendants": [
           60, 25, 34, 36, 54, 91, 92, 93, 94, 121, 39, 50, 52, 53
         ],
@@ -875,68 +617,6 @@
         "dept_code": 115,
         "dept_name": "ຮ້ານດອນໜູນ",
         "dept_parentcode": 33,
-        "children": {
-          "35": {
-            "dept_code": 35,
-            "dept_name": "ຈັດລຽງມິນິມາກ1",
-            "dept_parentcode": 115,
-            "id": 26,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "36": {
-            "dept_code": 36,
-            "dept_name": "ແຄັດເຊຍ1",
-            "dept_parentcode": 115,
-            "id": 27,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "65": {
-            "dept_code": 65,
-            "dept_name": "LPS1",
-            "dept_parentcode": 115,
-            "id": 33,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "67": {
-            "dept_code": 67,
-            "dept_name": "ຂາຍສົ່ງໜ້າບ້ານ1",
-            "dept_parentcode": 115,
-            "id": 35,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "120": {
-            "dept_code": 120,
-            "dept_name": "ສາງມິນິມາກ",
-            "dept_parentcode": 115,
-            "id": 65,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          }
-        },
         "descendants": [62, 26, 27, 33, 35, 65],
         "level": 1
       },
@@ -945,68 +625,6 @@
         "dept_code": 116,
         "dept_name": "ພະແນກສາງ DC",
         "dept_parentcode": 33,
-        "children": {
-          "39": {
-            "dept_code": 39,
-            "dept_name": "ສາງແດງ1",
-            "dept_parentcode": 116,
-            "id": 28,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "40": {
-            "dept_code": 40,
-            "dept_name": "ຂົນສົ່ງ+ໂຊເຟີ+ຈັດບິນ",
-            "dept_parentcode": 116,
-            "id": 29,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "41": {
-            "dept_code": 41,
-            "dept_name": "ດາຕ້າ1",
-            "dept_parentcode": 116,
-            "id": 30,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "43": {
-            "dept_code": 43,
-            "dept_name": "ສາງຂາວ1",
-            "dept_parentcode": 116,
-            "id": 32,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "103": {
-            "dept_code": 103,
-            "dept_name": "ສາງຮ້ານ1",
-            "dept_parentcode": 116,
-            "id": 51,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          }
-        },
         "descendants": [63, 28, 29, 86, 87, 89, 90, 30, 32, 51, 88],
         "level": 1
       }
@@ -1028,7 +646,6 @@
         "dept_code": 66,
         "dept_name": "IT1",
         "dept_parentcode": 34,
-        "children": {},
         "descendants": [34],
         "level": 3
       },
@@ -1037,7 +654,6 @@
         "dept_code": 69,
         "dept_name": "ແມ່ບ້ານ1",
         "dept_parentcode": 34,
-        "children": {},
         "descendants": [36],
         "level": 3
       },
@@ -1046,7 +662,6 @@
         "dept_code": 106,
         "dept_name": "ຊ່າງທົ່ວໄປ1",
         "dept_parentcode": 34,
-        "children": {},
         "descendants": [54],
         "level": 3
       },
@@ -1055,7 +670,6 @@
         "dept_code": 147,
         "dept_name": "ບຸກຄົນ1",
         "dept_parentcode": 34,
-        "children": {},
         "descendants": [91],
         "level": 3
       },
@@ -1064,7 +678,6 @@
         "dept_code": 148,
         "dept_name": "ອໍດິດ1",
         "dept_parentcode": 34,
-        "children": {},
         "descendants": [92],
         "level": 3
       },
@@ -1073,7 +686,6 @@
         "dept_code": 149,
         "dept_name": "ແຜນຜັງ1",
         "dept_parentcode": 34,
-        "children": {},
         "descendants": [93],
         "level": 3
       },
@@ -1082,7 +694,6 @@
         "dept_code": 150,
         "dept_name": "ບໍລິຫານສໍານັກງານໃຫຍ່",
         "dept_parentcode": 34,
-        "children": {},
         "descendants": [94],
         "level": 3
       },
@@ -1091,7 +702,6 @@
         "dept_code": 165,
         "dept_name": "ໂຊເຟີບໍລິຫານ1",
         "dept_parentcode": 34,
-        "children": {},
         "descendants": [121],
         "level": 3
       }
@@ -1137,7 +747,6 @@
         "dept_code": 142,
         "dept_name": "ຂົນສົ່ງ1",
         "dept_parentcode": 40,
-        "children": {},
         "descendants": [86],
         "level": 3
       },
@@ -1146,7 +755,6 @@
         "dept_code": 143,
         "dept_name": "ຂາຍສົ່ງຫຼັງບ້ານ1",
         "dept_parentcode": 40,
-        "children": {},
         "descendants": [87],
         "level": 3
       },
@@ -1155,7 +763,6 @@
         "dept_code": 145,
         "dept_name": "ໂຊເຟີ1",
         "dept_parentcode": 40,
-        "children": {},
         "descendants": [89],
         "level": 3
       },
@@ -1164,7 +771,6 @@
         "dept_code": 146,
         "dept_name": "ແອັດລົດ1",
         "dept_parentcode": 40,
-        "children": {},
         "descendants": [90],
         "level": 3
       }
@@ -1300,7 +906,6 @@
         "dept_code": 99,
         "dept_name": "ການເງິນ2",
         "dept_parentcode": 92,
-        "children": {},
         "descendants": [47],
         "level": 2
       },
@@ -1309,7 +914,6 @@
         "dept_code": 114,
         "dept_name": "ແມ່ບ້ານ2",
         "dept_parentcode": 92,
-        "children": {},
         "descendants": [61],
         "level": 2
       }
@@ -1382,7 +986,6 @@
         "dept_code": 144,
         "dept_name": "ຈັດບິນຫຼັງບ້ານ1",
         "dept_parentcode": 103,
-        "children": {},
         "descendants": [88],
         "level": 3
       }
@@ -1473,104 +1076,6 @@
         "dept_code": 34,
         "dept_name": "ຝ່າຍບຸກຄົນ+ອໍດິດ+ຊ່າງ+ໄອທີ",
         "dept_parentcode": 113,
-        "children": {
-          "66": {
-            "dept_code": 66,
-            "dept_name": "IT1",
-            "dept_parentcode": 34,
-            "id": 34,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "69": {
-            "dept_code": 69,
-            "dept_name": "ແມ່ບ້ານ1",
-            "dept_parentcode": 34,
-            "id": 36,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "106": {
-            "dept_code": 106,
-            "dept_name": "ຊ່າງທົ່ວໄປ1",
-            "dept_parentcode": 34,
-            "id": 54,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "147": {
-            "dept_code": 147,
-            "dept_name": "ບຸກຄົນ1",
-            "dept_parentcode": 34,
-            "id": 91,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "148": {
-            "dept_code": 148,
-            "dept_name": "ອໍດິດ1",
-            "dept_parentcode": 34,
-            "id": 92,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "149": {
-            "dept_code": 149,
-            "dept_name": "ແຜນຜັງ1",
-            "dept_parentcode": 34,
-            "id": 93,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "150": {
-            "dept_code": 150,
-            "dept_name": "ບໍລິຫານສໍານັກງານໃຫຍ່",
-            "dept_parentcode": 34,
-            "id": 94,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "165": {
-            "dept_code": 165,
-            "dept_name": "ໂຊເຟີບໍລິຫານ1",
-            "dept_parentcode": 34,
-            "id": 121,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          }
-        },
         "descendants": [25, 34, 36, 54, 91, 92, 93, 94, 121],
         "level": 2
       },
@@ -1579,7 +1084,6 @@
         "dept_code": 74,
         "dept_name": "ການເງິນ-ການບັນຊີ1",
         "dept_parentcode": 113,
-        "children": {},
         "descendants": [39],
         "level": 2
       },
@@ -1588,7 +1092,6 @@
         "dept_code": 102,
         "dept_name": "ຈັດຊື້1",
         "dept_parentcode": 113,
-        "children": {},
         "descendants": [50],
         "level": 2
       },
@@ -1597,7 +1100,6 @@
         "dept_code": 104,
         "dept_name": "ການຕະຫຼາດ+ກາບຟິກ1",
         "dept_parentcode": 113,
-        "children": {},
         "descendants": [52],
         "level": 2
       },
@@ -1606,7 +1108,6 @@
         "dept_code": 105,
         "dept_name": "SCM1",
         "dept_parentcode": 113,
-        "children": {},
         "descendants": [53],
         "level": 2
       }
@@ -1634,7 +1135,6 @@
         "dept_code": 35,
         "dept_name": "ຈັດລຽງມິນິມາກ1",
         "dept_parentcode": 115,
-        "children": {},
         "descendants": [26],
         "level": 2
       },
@@ -1643,7 +1143,6 @@
         "dept_code": 36,
         "dept_name": "ແຄັດເຊຍ1",
         "dept_parentcode": 115,
-        "children": {},
         "descendants": [27],
         "level": 2
       },
@@ -1652,7 +1151,6 @@
         "dept_code": 65,
         "dept_name": "LPS1",
         "dept_parentcode": 115,
-        "children": {},
         "descendants": [33],
         "level": 2
       },
@@ -1661,7 +1159,6 @@
         "dept_code": 67,
         "dept_name": "ຂາຍສົ່ງໜ້າບ້ານ1",
         "dept_parentcode": 115,
-        "children": {},
         "descendants": [35],
         "level": 2
       },
@@ -1670,7 +1167,6 @@
         "dept_code": 120,
         "dept_name": "ສາງມິນິມາກ",
         "dept_parentcode": 115,
-        "children": {},
         "descendants": [65],
         "level": 2
       }
@@ -1689,7 +1185,6 @@
         "dept_code": 39,
         "dept_name": "ສາງແດງ1",
         "dept_parentcode": 116,
-        "children": {},
         "descendants": [28],
         "level": 2
       },
@@ -1698,56 +1193,6 @@
         "dept_code": 40,
         "dept_name": "ຂົນສົ່ງ+ໂຊເຟີ+ຈັດບິນ",
         "dept_parentcode": 116,
-        "children": {
-          "142": {
-            "dept_code": 142,
-            "dept_name": "ຂົນສົ່ງ1",
-            "dept_parentcode": 40,
-            "id": 86,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "143": {
-            "dept_code": 143,
-            "dept_name": "ຂາຍສົ່ງຫຼັງບ້ານ1",
-            "dept_parentcode": 40,
-            "id": 87,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "145": {
-            "dept_code": 145,
-            "dept_name": "ໂຊເຟີ1",
-            "dept_parentcode": 40,
-            "id": 89,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          },
-          "146": {
-            "dept_code": 146,
-            "dept_name": "ແອັດລົດ1",
-            "dept_parentcode": 40,
-            "id": 90,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          }
-        },
         "descendants": [29, 86, 87, 89, 90],
         "level": 2
       },
@@ -1756,7 +1201,6 @@
         "dept_code": 41,
         "dept_name": "ດາຕ້າ1",
         "dept_parentcode": 116,
-        "children": {},
         "descendants": [30],
         "level": 2
       },
@@ -1765,7 +1209,6 @@
         "dept_code": 43,
         "dept_name": "ສາງຂາວ1",
         "dept_parentcode": 116,
-        "children": {},
         "descendants": [32],
         "level": 2
       },
@@ -1774,20 +1217,6 @@
         "dept_code": 103,
         "dept_name": "ສາງຮ້ານ1",
         "dept_parentcode": 116,
-        "children": {
-          "144": {
-            "dept_code": 144,
-            "dept_name": "ຈັດບິນຫຼັງບ້ານ1",
-            "dept_parentcode": 103,
-            "id": 88,
-            "useCode": null,
-            "dept_operationmode": null,
-            "defaultDepartment": null,
-            "lineToken": null,
-            "description": null,
-            "company_id": null
-          }
-        },
         "descendants": [51, 88],
         "level": 2
       }
@@ -1851,7 +1280,6 @@
         "dept_code": 125,
         "dept_name": "BrackRomm9",
         "dept_parentcode": 124,
-        "children": {},
         "descendants": [70],
         "level": 1
       },
@@ -1860,7 +1288,6 @@
         "dept_code": 126,
         "dept_name": "Office9",
         "dept_parentcode": 124,
-        "children": {},
         "descendants": [71],
         "level": 1
       },
@@ -1869,7 +1296,6 @@
         "dept_code": 127,
         "dept_name": "LPS9",
         "dept_parentcode": 124,
-        "children": {},
         "descendants": [72],
         "level": 1
       },
@@ -1878,7 +1304,6 @@
         "dept_code": 128,
         "dept_name": "Service9",
         "dept_parentcode": 124,
-        "children": {},
         "descendants": [73],
         "level": 1
       },
@@ -1887,7 +1312,6 @@
         "dept_code": 130,
         "dept_name": "Fresh Food9",
         "dept_parentcode": 124,
-        "children": {},
         "descendants": [74],
         "level": 1
       },
@@ -1896,7 +1320,6 @@
         "dept_code": 131,
         "dept_name": "DrygroceryA9",
         "dept_parentcode": 124,
-        "children": {},
         "descendants": [75],
         "level": 1
       },
@@ -1905,7 +1328,6 @@
         "dept_code": 132,
         "dept_name": "DrygroceryB9",
         "dept_parentcode": 124,
-        "children": {},
         "descendants": [76],
         "level": 1
       },
@@ -1914,7 +1336,6 @@
         "dept_code": 133,
         "dept_name": "DrygroceryC9",
         "dept_parentcode": 124,
-        "children": {},
         "descendants": [77],
         "level": 1
       },
@@ -1923,7 +1344,6 @@
         "dept_code": 134,
         "dept_name": "Hardline A9",
         "dept_parentcode": 124,
-        "children": {},
         "descendants": [78],
         "level": 1
       }
@@ -2185,7 +1605,6 @@
         "dept_code": 156,
         "dept_name": "Office10",
         "dept_parentcode": 155,
-        "children": {},
         "descendants": [112],
         "level": 1
       },
@@ -2194,7 +1613,6 @@
         "dept_code": 157,
         "dept_name": "Backroom10",
         "dept_parentcode": 155,
-        "children": {},
         "descendants": [113],
         "level": 1
       },
@@ -2203,7 +1621,6 @@
         "dept_code": 158,
         "dept_name": "ແຄັດເຊຍ10",
         "dept_parentcode": 155,
-        "children": {},
         "descendants": [114],
         "level": 1
       },
@@ -2212,7 +1629,6 @@
         "dept_code": 159,
         "dept_name": "DrygroceryA10",
         "dept_parentcode": 155,
-        "children": {},
         "descendants": [115],
         "level": 1
       },
@@ -2221,7 +1637,6 @@
         "dept_code": 160,
         "dept_name": "DrygroceryB10",
         "dept_parentcode": 155,
-        "children": {},
         "descendants": [116],
         "level": 1
       },
@@ -2230,7 +1645,6 @@
         "dept_code": 161,
         "dept_name": "DrygroceryC10",
         "dept_parentcode": 155,
-        "children": {},
         "descendants": [117],
         "level": 1
       },
@@ -2239,7 +1653,6 @@
         "dept_code": 162,
         "dept_name": "Hardline&Apparel10",
         "dept_parentcode": 155,
-        "children": {},
         "descendants": [118],
         "level": 1
       },
@@ -2248,7 +1661,6 @@
         "dept_code": 163,
         "dept_name": "FreshFood10",
         "dept_parentcode": 155,
-        "children": {},
         "descendants": [119],
         "level": 1
       },
@@ -2257,7 +1669,6 @@
         "dept_code": 164,
         "dept_name": "LPS10",
         "dept_parentcode": 155,
-        "children": {},
         "descendants": [120],
         "level": 1
       }
@@ -2411,7 +1822,6 @@
         "dept_code": 173,
         "dept_name": "LPS11",
         "dept_parentcode": 172,
-        "children": {},
         "descendants": [129],
         "level": 1
       },
@@ -2420,7 +1830,6 @@
         "dept_code": 174,
         "dept_name": "Backroom11",
         "dept_parentcode": 172,
-        "children": {},
         "descendants": [130],
         "level": 1
       },
@@ -2429,7 +1838,6 @@
         "dept_code": 175,
         "dept_name": "Cashier11",
         "dept_parentcode": 172,
-        "children": {},
         "descendants": [131],
         "level": 1
       },
@@ -2438,7 +1846,6 @@
         "dept_code": 176,
         "dept_name": "Freshfood11",
         "dept_parentcode": 172,
-        "children": {},
         "descendants": [132],
         "level": 1
       },
@@ -2447,7 +1854,6 @@
         "dept_code": 177,
         "dept_name": "DrygroceryA11",
         "dept_parentcode": 172,
-        "children": {},
         "descendants": [133],
         "level": 1
       },
@@ -2456,7 +1862,6 @@
         "dept_code": 178,
         "dept_name": "DrygroceryB11",
         "dept_parentcode": 172,
-        "children": {},
         "descendants": [134],
         "level": 1
       },
@@ -2465,7 +1870,6 @@
         "dept_code": 179,
         "dept_name": "DrygroceryC11",
         "dept_parentcode": 172,
-        "children": {},
         "descendants": [135],
         "level": 1
       },
@@ -2474,7 +1878,6 @@
         "dept_code": 180,
         "dept_name": "Hardline&Apparel11",
         "dept_parentcode": 172,
-        "children": {},
         "descendants": [136],
         "level": 1
       }
