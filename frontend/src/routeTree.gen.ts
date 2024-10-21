@@ -16,6 +16,7 @@ import { Route as ResetPasswordImport } from "./routes/reset-password";
 import { Route as RecoverPasswordImport } from "./routes/recover-password";
 import { Route as LoginImport } from "./routes/login";
 import { Route as LayoutImport } from "./routes/_layout";
+import { Route as LayoutEmployeeImport } from "./routes/_layout/employee";
 import { Route as LayoutIndexImport } from "./routes/_layout/index";
 import { Route as LayoutSettingsImport } from "./routes/_layout/settings";
 import { Route as LayoutItemsImport } from "./routes/_layout/items";
@@ -68,6 +69,10 @@ const LayoutAdminRoute = LayoutAdminImport.update({
   getParentRoute: () => LayoutRoute,
 } as any);
 
+const LayoutEmployeeRoute = LayoutEmployeeImport.update({
+  path: "/employee",
+  getParentRoute: () => LayoutRoute,
+} as any);
 // Populate the FileRoutesByPath interface
 
 declare module "@tanstack/react-router" {
@@ -108,6 +113,10 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof LayoutIndexImport;
       parentRoute: typeof LayoutImport;
     };
+    "/_layout/employee": {
+      preLoaderRoute: typeof LayoutEmployeeImport;
+      parentRoute: typeof LayoutImport;
+    };
   }
 }
 
@@ -119,6 +128,7 @@ export const routeTree = rootRoute.addChildren([
     LayoutItemsRoute,
     LayoutSettingsRoute,
     LayoutIndexRoute,
+    LayoutEmployeeRoute,
   ]),
   LoginRoute,
   RecoverPasswordRoute,
