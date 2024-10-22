@@ -29,9 +29,6 @@ def get_department(departList: DepartList) -> Dict[int, HRDepartmentPublic]:
     """
     Get departments.
 
-    Args:
-    departList (DepartList): List of HRDepartment records
-
     Returns:
     List[HRDepartmentPublic]: List of department records
     """
