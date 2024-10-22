@@ -405,7 +405,7 @@ export type TDataUpdateItem = {
 export type TDataDeleteItem = {
   id: string
 }
-
+// ============================================================
 export class ItemsService {
   /**
    * Read Items
@@ -508,6 +508,36 @@ export class ItemsService {
       url: "/api/v1/items/{id}",
       path: {
         id,
+      },
+      errors: {
+        422: "Validation Error",
+      },
+    })
+  }
+}
+
+// ============================================================
+
+export type TDataGetDepartment = {
+  departList: DepartList
+}
+
+export class DepartmentService {
+  /**
+   * Get Department
+   * Get departments.
+   * @returns List<HRDepartmentPublic> Successful Response
+   * @throws ApiError
+   */
+  public static getDepartment(
+    data: TDataGetDepartment,
+  ): CancelablePromise<Record<string, HRDepartmentPublic>> {
+    const { departList } = data
+    return __request(OpenAPI, {
+      method: "GET",
+      url: "/api/v1/utils/get-department/",
+      query: {
+        departList,
       },
       errors: {
         422: "Validation Error",
