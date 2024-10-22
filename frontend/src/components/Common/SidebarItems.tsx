@@ -9,6 +9,7 @@ const items = [
   { icon: FiHome, title: "Dashboard", path: "/" },
   { icon: FiBriefcase, title: "Items", path: "/items" },
   { icon: FiSettings, title: "User Settings", path: "/settings" },
+  { icon: FiUsers,    title: "Employee",    path: "/employee",  },
 ]
 
 interface SidebarItemsProps {
@@ -54,3 +55,4 @@ const SidebarItems = ({ onClose }: SidebarItemsProps) => {
 }
 
 export default SidebarItems
+
