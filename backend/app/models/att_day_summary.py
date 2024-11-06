@@ -42,3 +42,12 @@ class AttDaySummary(AttDaySummaryBase, table=True):
     dt_id: int | None = Field(default=None, foreign_key="att_DayType.id")
     item_id: int | None = Field(default=None, foreign_key="att_StatisticItem.id")
     employee_id: int | None = Field(default=None, foreign_key="hr_employee.id")
+
+
+class AttDaySummaryPublic(AttDaySummaryUpdate):
+    pass
+
+
+class AttDaySummariesPublic(SQLModel):
+    data: list[AttDaySummaryPublic]
+    count: int

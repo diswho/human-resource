@@ -1,5 +1,4 @@
 services:
-
   proxy:
     image: traefik:3.0
     volumes:
@@ -74,13 +73,13 @@ services:
       - "1080:1080"
       - "1025:1025"
 
-  frontend:
-    restart: "no"
-    build:
-      context: ./frontend
-      args:
-        - VITE_API_URL=http://${DOMAIN?Variable not set}
-        - NODE_ENV=development
+  # frontend:
+  #   restart: "no"
+  #   build:
+  #     context: ./frontend
+  #     args:
+  #       - VITE_API_URL=http://${DOMAIN?Variable not set}
+  #       - NODE_ENV=development
 
 networks:
   traefik-public:

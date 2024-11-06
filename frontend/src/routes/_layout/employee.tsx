@@ -32,13 +32,6 @@ function EmployeeTable() {
   //   { id: 3, name: "Mike Johnson", position: "Manager", department: "HR" },
   // ];
 
-  const { data: departments,
-    isPending,
-    isPlaceholderData
-  } = useQuery({
-    ...getDepartmentService()
-  });
-
   return (
     <TableContainer>
       <Table size={{ base: "sm", md: "md" }}>
@@ -49,7 +42,7 @@ function EmployeeTable() {
             <Th>Department</Th>
           </Tr>
         </Thead>
-        {isPending ? (<Tbody>
+        <Tbody>
           <Tr>
             {new Array(3).fill(null).map((_, index) => (
               <Td key={index}>
@@ -57,16 +50,7 @@ function EmployeeTable() {
               </Td>
             ))}
           </Tr>
-        </Tbody>) : (<Tbody>
-          <Tr>
-            {new Array(3).fill(null).map((_, index) => (
-              <Td key={index}>
-                <SkeletonText noOfLines={1} paddingBlock="16px" />
-              </Td>
-            ))}
-          </Tr>
-        </Tbody>)}
-
+        </Tbody>
       </Table>
     </TableContainer>
   );
