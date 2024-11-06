@@ -51,6 +51,7 @@ function UsersTable() {
   const setPage = (page: number) =>
     navigate({ search: (prev) => ({ ...prev, page }) })
 
+  
   const {
     data: users,
     isPending,
