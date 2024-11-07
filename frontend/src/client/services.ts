@@ -4,6 +4,7 @@ import { request as __request } from "./core/request";
 
 import type {
   Body_login_login_access_token,
+  EmployeesPublic,
   HRDepartmentPublic,
   ItemCreate,
   ItemPublic,
@@ -363,6 +364,38 @@ export class UsersService {
   }
 }
 
+// ============================================================
+export type TDataReadEmployees = {
+  limit?: number;
+  skip?: number;
+};
+
+export class EmployeesService {
+  /**
+   * Read Employees
+   * Retrieve employees.
+   * @returns EmployeesPublic Successful Response
+   * @throws ApiError
+   */
+  public static readEmployees(
+    data: TDataReadEmployees = {}
+  ): CancelablePromise<EmployeesPublic> {
+    const { limit = 100, skip = 0 } = data;
+    return __request(OpenAPI, {
+      method: "GET",
+      url: "/api/v1/employee/",
+      query: {
+        skip,
+        limit,
+      },
+      errors: {
+        422: "Validation Error",
+      },
+    });
+  }
+}
+// 21.824
+// 22.037
 export type TDataTestEmail = {
   emailTo: string;
 };
@@ -517,11 +550,7 @@ export class ItemsService {
   }
 }
 
-// ============================================================
 
-// export type TDataGetDepartment = {
-//   departList: DepartList
-// }
 
 export class DepartmentService {
   /**
@@ -531,7 +560,7 @@ export class DepartmentService {
    * @throws ApiError
    */
   public static getDepartment() // data: TDataGetDepartment,
-  : CancelablePromise<Record<string, HRDepartmentPublic>> {
+    : CancelablePromise<Record<string, HRDepartmentPublic>> {
     // const { departList } = data;
     return __request(OpenAPI, {
       method: "GET",

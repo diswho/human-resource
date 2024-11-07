@@ -98,6 +98,69 @@ export type ValidationError = {
   type: string;
 };
 
+export type EmployeePublic = {
+  emp_email: string;
+  emp_pin: string;
+  emp_ssn: string;
+  emp_role: string;
+  emp_firstname: string;
+  emp_lastname: string;
+  emp_username: string;
+  emp_pwd: string;
+  emp_timezone: string;
+  emp_phone: string;
+  emp_payroll_id: string;
+  emp_payroll_type: string;
+  emp_pin2: string;
+  emp_photo: string;
+  emp_privilege: string;
+  emp_group: string;
+  emp_hiredate: string; // date in ISO format
+  emp_address: string;
+  emp_active: number; // 0 or 1
+  emp_firedate: string; // date in ISO format
+  emp_firereason: string;
+  emp_emergencyphone1: string;
+  emp_emergencyphone2: string;
+  emp_emergencyname: string;
+  emp_emergencyaddress: string;
+  emp_cardNumber: string;
+  emp_country: string;
+  emp_city: string;
+  emp_state: string;
+  emp_postal: string;
+  emp_fax: string;
+  emp_title: string;
+  emp_hourlyrate1: string;
+  emp_hourlyrate2: string;
+  emp_hourlyrate3: string;
+  emp_hourlyrate4: string;
+  emp_hourlyrate5: string;
+  emp_gender: number; // 0 or 1
+  emp_birthday: string; // date in ISO format
+  emp_operationmode: number; // 0 or 1
+  emp_OtherName: string;
+  emp_Line: string;
+  emp_Passport: string;
+  emp_MotobikeLicence: string;
+  emp_CarLicence: string;
+  emp_customName1: string;
+  emp_customInfo1: string;
+  emp_customName2: string;
+  emp_customInfo2: string;
+  IsSelect: number; // 0 or 1
+  nationalID: string;
+  emp_Verify: string;
+  emp_ViceCard: string;
+  department_id: number;
+  position_id: number;
+  id: number;
+};
+export type EmployeesPublic = {
+  data: Array<EmployeePublic>;
+  count: number;
+};
+
 export type HRDepartmentExport = {
   id: number;
   dept_code: number;
