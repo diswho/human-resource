@@ -5,7 +5,7 @@ import { request as __request } from "./core/request";
 import type {
   Body_login_login_access_token,
   EmployeesPublic,
-  HRDepartmentPublic,
+  HRDepartmentsPublic,
   ItemCreate,
   ItemPublic,
   ItemUpdate,
@@ -21,7 +21,7 @@ import type {
   UserUpdateMe,
   UsersPublic,
 } from "./models";
-
+// ============================================================
 export type TDataLoginAccessToken = {
   formData: Body_login_login_access_token;
 };
@@ -135,7 +135,7 @@ export class LoginService {
     });
   }
 }
-
+// ============================================================
 export type TDataReadUsers = {
   limit?: number;
   skip?: number;
@@ -394,8 +394,30 @@ export class EmployeesService {
     });
   }
 }
-// 21.824
-// 22.037
+// ============================================================
+export class DepartmentService {
+  /**
+   * Get Department
+   * Retrieve hierarchical department structure.
+   * @returns HRDepartmentsPublic Successful Response
+   * @throws ApiError
+   */
+  public static getDepartment() // data: TDataGetDepartment,
+    : CancelablePromise<HRDepartmentsPublic> {
+    // const { departList } = data;
+    return __request(OpenAPI, {
+      method: "GET",
+      url: "/api/v1/utils/get-department/",
+      query: {
+        // departList,
+      },
+      errors: {
+        422: "Validation Error",
+      },
+    });
+  }
+}
+// ============================================================
 export type TDataTestEmail = {
   emailTo: string;
 };
@@ -421,7 +443,7 @@ export class UtilsService {
     });
   }
 }
-
+// ============================================================
 export type TDataReadItems = {
   limit?: number;
   skip?: number;
@@ -551,26 +573,3 @@ export class ItemsService {
 }
 
 
-
-export class DepartmentService {
-  /**
-   * Get Department
-   * Get departments.
-   * @returns List<HRDepartmentPublic> Successful Response
-   * @throws ApiError
-   */
-  public static getDepartment() // data: TDataGetDepartment,
-    : CancelablePromise<Record<string, HRDepartmentPublic>> {
-    // const { departList } = data;
-    return __request(OpenAPI, {
-      method: "GET",
-      url: "/api/v1/utils/get-department/",
-      query: {
-        // departList,
-      },
-      errors: {
-        422: "Validation Error",
-      },
-    });
-  }
-}

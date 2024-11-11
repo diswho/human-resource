@@ -15,13 +15,14 @@ import {
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { z } from "zod"
 // import useAuth from "../../hooks/useAuth";
-import { EmployeesService } from "../../client";
+import { DepartmentService, EmployeesService } from "../../client";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const employeesSearchSchema = z.object({
   page: z.number().catch(1),
 })
+
 export const Route = createFileRoute("/_layout/employee")({
   component: Employee,
   validateSearch: (search) => employeesSearchSchema.parse(search),
@@ -34,11 +35,21 @@ function getEmployeeService({ page }: { page: number }) {
     queryKey: ["employees", { page }]
   }
 }
+function getDepartmentService() {
+  return {
+    queryFn: () => DepartmentService.getDepartment(),
+    queryKey: ["departments", {}]
+  }
+}
+function CascadingDropdown() {
+  // cascading dropdown menu for departments
+  
+}
 function EmployeeTable() {
   const queryClient = useQueryClient()
   const { page } = Route.useSearch()
   const navigate = useNavigate({ from: Route.fullPath })
-  const setPage = (page: number) =>    navigate({ search: (prev) => ({ ...prev, page }) })
+  const setPage = (page: number) => navigate({ search: (prev) => ({ ...prev, page }) })
   const { data: employees, isPending, isPlaceholderData } = useQuery({
     ...getEmployeeService({ page }),
     placeholderData: (prevData) => prevData,
@@ -106,7 +117,7 @@ function EmployeeTable() {
         <Button isDisabled={!hasNextPage} onClick={() => setPage(page + 1)}>
           Next
         </Button>
-        </Flex>
+      </Flex>
     </>
   );
 }
@@ -121,6 +132,7 @@ function Employee() {
         <Heading size="lg" textAlign={{ base: "center", md: "left" }} py={12}>
           Employee Dashboard
         </Heading>
+        <CascadingDropdown />
         <EmployeeTable />
       </Container>
     </>

@@ -178,3 +178,8 @@ export type HRDepartmentPublic = {
   descendants: number[];
   level: number;
 };
+
+export type HRDepartmentsPublic = {
+  data: Array<HRDepartmentPublic>;
+  count: number;
+};
