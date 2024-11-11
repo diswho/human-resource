@@ -10,9 +10,7 @@
         "dept_code": 2,
         "dept_name": "Office3",
         "dept_parentcode": 1,
-        "descendants": [
-          2
-        ],
+        "descendants": [2],
         "level": 1
       },
       "4": {
@@ -20,14 +18,7 @@
         "dept_code": 4,
         "dept_name": "ຝ່າຍຂາຍ3",
         "dept_parentcode": 1,
-        "descendants": [
-          3,
-          8,
-          9,
-          10,
-          11,
-          95
-        ],
+        "descendants": [3, 8, 9, 10, 11, 95],
         "level": 1
       },
       "6": {
@@ -35,9 +26,7 @@
         "dept_code": 6,
         "dept_name": "ແຄັດເຊຍ3",
         "dept_parentcode": 1,
-        "descendants": [
-          4
-        ],
+        "descendants": [4],
         "level": 1
       },
       "7": {
@@ -45,9 +34,7 @@
         "dept_code": 7,
         "dept_name": "Backroom3",
         "dept_parentcode": 1,
-        "descendants": [
-          5
-        ],
+        "descendants": [5],
         "level": 1
       },
       "8": {
@@ -55,9 +42,7 @@
         "dept_code": 8,
         "dept_name": "LPS3",
         "dept_parentcode": 1,
-        "descendants": [
-          6
-        ],
+        "descendants": [6],
         "level": 1
       },
       "9": {
@@ -65,27 +50,1920 @@
         "dept_code": 9,
         "dept_name": "IT Support3",
         "dept_parentcode": 1,
+        "descendants": [7],
+        "level": 1
+      }
+    },
+    "descendants": [1, 2, 3, 8, 9, 10, 11, 95, 4, 5, 6, 7],
+    "level": 0
+  },
+  "2": {
+    "id": 2,
+    "dept_code": 2,
+    "dept_name": "Office3",
+    "dept_parentcode": 1,
+    "children": {},
+    "descendants": [2],
+    "level": 1
+  },
+  "4": {
+    "id": 3,
+    "dept_code": 4,
+    "dept_name": "ຝ່າຍຂາຍ3",
+    "dept_parentcode": 1,
+    "children": {
+      "12": {
+        "id": 8,
+        "dept_code": 12,
+        "dept_name": "Fresh Food3",
+        "dept_parentcode": 4,
+        "descendants": [8],
+        "level": 2
+      },
+      "13": {
+        "id": 9,
+        "dept_code": 13,
+        "dept_name": "TKK ZONE DryB3",
+        "dept_parentcode": 4,
+        "descendants": [9],
+        "level": 2
+      },
+      "14": {
+        "id": 10,
+        "dept_code": 14,
+        "dept_name": "TKK ZONE DryC3",
+        "dept_parentcode": 4,
+        "descendants": [10],
+        "level": 2
+      },
+      "15": {
+        "id": 11,
+        "dept_code": 15,
+        "dept_name": "TKK ZONE Hardline3",
+        "dept_parentcode": 4,
+        "descendants": [11],
+        "level": 2
+      },
+      "151": {
+        "id": 95,
+        "dept_code": 151,
+        "dept_name": "TKK ZONE DryA3",
+        "dept_parentcode": 4,
+        "descendants": [95],
+        "level": 2
+      }
+    },
+    "descendants": [3, 8, 9, 10, 11, 95],
+    "level": 1
+  },
+  "6": {
+    "id": 4,
+    "dept_code": 6,
+    "dept_name": "ແຄັດເຊຍ3",
+    "dept_parentcode": 1,
+    "children": {},
+    "descendants": [4],
+    "level": 1
+  },
+  "7": {
+    "id": 5,
+    "dept_code": 7,
+    "dept_name": "Backroom3",
+    "dept_parentcode": 1,
+    "children": {},
+    "descendants": [5],
+    "level": 1
+  },
+  "8": {
+    "id": 6,
+    "dept_code": 8,
+    "dept_name": "LPS3",
+    "dept_parentcode": 1,
+    "children": {},
+    "descendants": [6],
+    "level": 1
+  },
+  "9": {
+    "id": 7,
+    "dept_code": 9,
+    "dept_name": "IT Support3",
+    "dept_parentcode": 1,
+    "children": {},
+    "descendants": [7],
+    "level": 1
+  },
+  "12": {
+    "id": 8,
+    "dept_code": 12,
+    "dept_name": "Fresh Food3",
+    "dept_parentcode": 4,
+    "children": {},
+    "descendants": [8],
+    "level": 2
+  },
+  "13": {
+    "id": 9,
+    "dept_code": 13,
+    "dept_name": "TKK ZONE DryB3",
+    "dept_parentcode": 4,
+    "children": {},
+    "descendants": [9],
+    "level": 2
+  },
+  "14": {
+    "id": 10,
+    "dept_code": 14,
+    "dept_name": "TKK ZONE DryC3",
+    "dept_parentcode": 4,
+    "children": {},
+    "descendants": [10],
+    "level": 2
+  },
+  "15": {
+    "id": 11,
+    "dept_code": 15,
+    "dept_name": "TKK ZONE Hardline3",
+    "dept_parentcode": 4,
+    "children": {},
+    "descendants": [11],
+    "level": 2
+  },
+  "17": {
+    "id": 12,
+    "dept_code": 17,
+    "dept_name": "Xokthavy(4) ໜອງປິງ",
+    "dept_parentcode": 0,
+    "children": {},
+    "descendants": [12],
+    "level": 0
+  },
+  "19": {
+    "id": 13,
+    "dept_code": 19,
+    "dept_name": "Xokthavy(5) ທ່າງ່ອນ",
+    "dept_parentcode": 0,
+    "children": {
+      "24": {
+        "id": 17,
+        "dept_code": 24,
+        "dept_name": "ແຄັດເຊຍ5",
+        "dept_parentcode": 19,
+        "descendants": [17],
+        "level": 1
+      },
+      "25": {
+        "id": 18,
+        "dept_code": 25,
+        "dept_name": "ຝ່າຍຂາຍ5",
+        "dept_parentcode": 19,
+        "descendants": [18, 122, 123, 124, 125, 126],
+        "level": 1
+      },
+      "26": {
+        "id": 19,
+        "dept_code": 26,
+        "dept_name": "LPS5",
+        "dept_parentcode": 19,
+        "descendants": [19],
+        "level": 1
+      },
+      "123": {
+        "id": 68,
+        "dept_code": 123,
+        "dept_name": "Backroom5",
+        "dept_parentcode": 19,
+        "descendants": [68],
+        "level": 1
+      },
+      "135": {
+        "id": 79,
+        "dept_code": 135,
+        "dept_name": "ຫ້ອງການ5",
+        "dept_parentcode": 19,
+        "descendants": [79],
+        "level": 1
+      }
+    },
+    "descendants": [13, 17, 18, 122, 123, 124, 125, 126, 19, 68, 79],
+    "level": 0
+  },
+  "20": {
+    "id": 14,
+    "dept_code": 20,
+    "dept_name": "Xokthavy(6) ໜອງບອນ",
+    "dept_parentcode": 0,
+    "children": {
+      "72": {
+        "id": 37,
+        "dept_code": 72,
+        "dept_name": "Fresh food6",
+        "dept_parentcode": 20,
+        "descendants": [37],
+        "level": 1
+      },
+      "73": {
+        "id": 38,
+        "dept_code": 73,
+        "dept_name": "ແຄັດເຊຍ6",
+        "dept_parentcode": 20,
+        "descendants": [38],
+        "level": 1
+      },
+      "121": {
+        "id": 66,
+        "dept_code": 121,
+        "dept_name": "LPS6",
+        "dept_parentcode": 20,
+        "descendants": [66],
+        "level": 1
+      },
+      "122": {
+        "id": 67,
+        "dept_code": 122,
+        "dept_name": "Backroom6",
+        "dept_parentcode": 20,
+        "descendants": [67],
+        "level": 1
+      },
+      "136": {
+        "id": 80,
+        "dept_code": 136,
+        "dept_name": "ຫ້ອງການ6",
+        "dept_parentcode": 20,
+        "descendants": [80],
+        "level": 1
+      },
+      "137": {
+        "id": 81,
+        "dept_code": 137,
+        "dept_name": "DrygroceryA6",
+        "dept_parentcode": 20,
+        "descendants": [81],
+        "level": 1
+      },
+      "138": {
+        "id": 82,
+        "dept_code": 138,
+        "dept_name": "DrygroceryB6",
+        "dept_parentcode": 20,
+        "descendants": [82],
+        "level": 1
+      },
+      "139": {
+        "id": 83,
+        "dept_code": 139,
+        "dept_name": "DrygroceryC6",
+        "dept_parentcode": 20,
+        "descendants": [83],
+        "level": 1
+      },
+      "140": {
+        "id": 84,
+        "dept_code": 140,
+        "dept_name": "Hard Line6",
+        "dept_parentcode": 20,
+        "descendants": [84],
+        "level": 1
+      }
+    },
+    "descendants": [14, 37, 38, 66, 67, 80, 81, 82, 83, 84],
+    "level": 0
+  },
+  "21": {
+    "id": 15,
+    "dept_code": 21,
+    "dept_name": "Xokthavy(7) ວັງຊາຍ",
+    "dept_parentcode": 0,
+    "children": {
+      "22": {
+        "id": 16,
+        "dept_code": 22,
+        "dept_name": "ແຄັດເຊຍ7",
+        "dept_parentcode": 21,
+        "descendants": [16],
+        "level": 1
+      },
+      "97": {
+        "id": 46,
+        "dept_code": 97,
+        "dept_name": "Backroom7",
+        "dept_parentcode": 21,
+        "descendants": [46],
+        "level": 1
+      },
+      "100": {
+        "id": 48,
+        "dept_code": 100,
+        "dept_name": "LPS7",
+        "dept_parentcode": 21,
+        "descendants": [48],
+        "level": 1
+      },
+      "101": {
+        "id": 49,
+        "dept_code": 101,
+        "dept_name": "ຫ້ອງການ7",
+        "dept_parentcode": 21,
+        "descendants": [49],
+        "level": 1
+      },
+      "108": {
+        "id": 56,
+        "dept_code": 108,
+        "dept_name": "DrygroceryA7",
+        "dept_parentcode": 21,
+        "descendants": [56],
+        "level": 1
+      },
+      "109": {
+        "id": 57,
+        "dept_code": 109,
+        "dept_name": "DrygroceryB7",
+        "dept_parentcode": 21,
+        "descendants": [57],
+        "level": 1
+      },
+      "110": {
+        "id": 58,
+        "dept_code": 110,
+        "dept_name": "DrygroceryC7",
+        "dept_parentcode": 21,
+        "descendants": [58],
+        "level": 1
+      },
+      "111": {
+        "id": 59,
+        "dept_code": 111,
+        "dept_name": "HardlineAB7",
+        "dept_parentcode": 21,
+        "descendants": [59],
+        "level": 1
+      },
+      "141": {
+        "id": 85,
+        "dept_code": 141,
+        "dept_name": "Fresh Food7",
+        "dept_parentcode": 21,
+        "descendants": [85],
+        "level": 1
+      }
+    },
+    "descendants": [15, 16, 46, 48, 49, 56, 57, 58, 59, 85],
+    "level": 0
+  },
+  "22": {
+    "id": 16,
+    "dept_code": 22,
+    "dept_name": "ແຄັດເຊຍ7",
+    "dept_parentcode": 21,
+    "children": {},
+    "descendants": [16],
+    "level": 1
+  },
+  "24": {
+    "id": 17,
+    "dept_code": 24,
+    "dept_name": "ແຄັດເຊຍ5",
+    "dept_parentcode": 19,
+    "children": {},
+    "descendants": [17],
+    "level": 1
+  },
+  "25": {
+    "id": 18,
+    "dept_code": 25,
+    "dept_name": "ຝ່າຍຂາຍ5",
+    "dept_parentcode": 19,
+    "children": {
+      "166": {
+        "id": 122,
+        "dept_code": 166,
+        "dept_name": "Dry A5",
+        "dept_parentcode": 25,
+        "descendants": [122],
+        "level": 2
+      },
+      "167": {
+        "id": 123,
+        "dept_code": 167,
+        "dept_name": "Dry B5",
+        "dept_parentcode": 25,
+        "descendants": [123],
+        "level": 2
+      },
+      "168": {
+        "id": 124,
+        "dept_code": 168,
+        "dept_name": "DryC5",
+        "dept_parentcode": 25,
+        "descendants": [124],
+        "level": 2
+      },
+      "169": {
+        "id": 125,
+        "dept_code": 169,
+        "dept_name": "Hardline&Apparel5",
+        "dept_parentcode": 25,
+        "descendants": [125],
+        "level": 2
+      },
+      "170": {
+        "id": 126,
+        "dept_code": 170,
+        "dept_name": "FreshFood5",
+        "dept_parentcode": 25,
+        "descendants": [126],
+        "level": 2
+      }
+    },
+    "descendants": [18, 122, 123, 124, 125, 126],
+    "level": 1
+  },
+  "26": {
+    "id": 19,
+    "dept_code": 26,
+    "dept_name": "LPS5",
+    "dept_parentcode": 19,
+    "children": {},
+    "descendants": [19],
+    "level": 1
+  },
+  "27": {
+    "id": 20,
+    "dept_code": 27,
+    "dept_name": "Xokthavy(2) ໜອງວຽງຄຳ",
+    "dept_parentcode": 0,
+    "children": {
+      "30": {
+        "id": 22,
+        "dept_code": 30,
+        "dept_name": "ແຄັດເຊຍ2",
+        "dept_parentcode": 27,
+        "descendants": [22],
+        "level": 1
+      },
+      "31": {
+        "id": 23,
+        "dept_code": 31,
+        "dept_name": "LPS2",
+        "dept_parentcode": 27,
+        "descendants": [23],
+        "level": 1
+      },
+      "86": {
+        "id": 40,
+        "dept_code": 86,
+        "dept_name": "DrygroceryA/ອາຫານແຫ້ງ2",
+        "dept_parentcode": 27,
+        "descendants": [40],
+        "level": 1
+      },
+      "87": {
+        "id": 41,
+        "dept_code": 87,
+        "dept_name": "DrygroceryB/ອາຫານແຫ້ງ2",
+        "dept_parentcode": 27,
+        "descendants": [41],
+        "level": 1
+      },
+      "88": {
+        "id": 42,
+        "dept_code": 88,
+        "dept_name": "DrygroceryC/ອາຫານແຫ້ງ2",
+        "dept_parentcode": 27,
+        "descendants": [42],
+        "level": 1
+      },
+      "92": {
+        "id": 44,
+        "dept_code": 92,
+        "dept_name": "ຫ້ອງການ 2",
+        "dept_parentcode": 27,
+        "descendants": [44, 47, 61],
+        "level": 1
+      },
+      "93": {
+        "id": 45,
+        "dept_code": 93,
+        "dept_name": "Backroom2",
+        "dept_parentcode": 27,
+        "descendants": [45],
+        "level": 1
+      },
+      "117": {
+        "id": 64,
+        "dept_code": 117,
+        "dept_name": "Fresh Food2",
+        "dept_parentcode": 27,
+        "descendants": [64],
+        "level": 1
+      },
+      "152": {
+        "id": 96,
+        "dept_code": 152,
+        "dept_name": "Hardline&Apparel2",
+        "dept_parentcode": 27,
+        "descendants": [96],
+        "level": 1
+      }
+    },
+    "descendants": [20, 22, 23, 40, 41, 42, 44, 47, 61, 45, 64, 96],
+    "level": 0
+  },
+  "30": {
+    "id": 22,
+    "dept_code": 30,
+    "dept_name": "ແຄັດເຊຍ2",
+    "dept_parentcode": 27,
+    "children": {},
+    "descendants": [22],
+    "level": 1
+  },
+  "31": {
+    "id": 23,
+    "dept_code": 31,
+    "dept_name": "LPS2",
+    "dept_parentcode": 27,
+    "children": {},
+    "descendants": [23],
+    "level": 1
+  },
+  "33": {
+    "id": 24,
+    "dept_code": 33,
+    "dept_name": "Xokthavy(1) ດອນໜູນ",
+    "dept_parentcode": 0,
+    "children": {
+      "107": {
+        "id": 55,
+        "dept_code": 107,
+        "dept_name": "ບໍລິຫານ1",
+        "dept_parentcode": 33,
+        "descendants": [55],
+        "level": 1
+      },
+      "113": {
+        "id": 60,
+        "dept_code": 113,
+        "dept_name": "ສໍານັກງານໃຫຍ່ດອນໜູນ",
+        "dept_parentcode": 33,
         "descendants": [
-          7
+          60, 25, 34, 36, 54, 91, 92, 93, 94, 121, 39, 50, 52, 53
         ],
+        "level": 1
+      },
+      "115": {
+        "id": 62,
+        "dept_code": 115,
+        "dept_name": "ຮ້ານດອນໜູນ",
+        "dept_parentcode": 33,
+        "descendants": [62, 26, 27, 33, 35, 65],
+        "level": 1
+      },
+      "116": {
+        "id": 63,
+        "dept_code": 116,
+        "dept_name": "ພະແນກສາງ DC",
+        "dept_parentcode": 33,
+        "descendants": [63, 28, 29, 86, 87, 89, 90, 30, 32, 51, 88],
         "level": 1
       }
     },
     "descendants": [
-      1,
-      2,
-      3,
-      8,
-      9,
-      10,
-      11,
-      95,
-      4,
-      5,
-      6,
-      7
+      24, 55, 60, 25, 34, 36, 54, 91, 92, 93, 94, 121, 39, 50, 52, 53, 62, 26,
+      27, 33, 35, 65, 63, 28, 29, 86, 87, 89, 90, 30, 32, 51, 88
     ],
+    "level": 0
+  },
+  "34": {
+    "id": 25,
+    "dept_code": 34,
+    "dept_name": "ຝ່າຍບຸກຄົນ+ອໍດິດ+ຊ່າງ+ໄອທີ",
+    "dept_parentcode": 113,
+    "children": {
+      "66": {
+        "id": 34,
+        "dept_code": 66,
+        "dept_name": "IT1",
+        "dept_parentcode": 34,
+        "descendants": [34],
+        "level": 3
+      },
+      "69": {
+        "id": 36,
+        "dept_code": 69,
+        "dept_name": "ແມ່ບ້ານ1",
+        "dept_parentcode": 34,
+        "descendants": [36],
+        "level": 3
+      },
+      "106": {
+        "id": 54,
+        "dept_code": 106,
+        "dept_name": "ຊ່າງທົ່ວໄປ1",
+        "dept_parentcode": 34,
+        "descendants": [54],
+        "level": 3
+      },
+      "147": {
+        "id": 91,
+        "dept_code": 147,
+        "dept_name": "ບຸກຄົນ1",
+        "dept_parentcode": 34,
+        "descendants": [91],
+        "level": 3
+      },
+      "148": {
+        "id": 92,
+        "dept_code": 148,
+        "dept_name": "ອໍດິດ1",
+        "dept_parentcode": 34,
+        "descendants": [92],
+        "level": 3
+      },
+      "149": {
+        "id": 93,
+        "dept_code": 149,
+        "dept_name": "ແຜນຜັງ1",
+        "dept_parentcode": 34,
+        "descendants": [93],
+        "level": 3
+      },
+      "150": {
+        "id": 94,
+        "dept_code": 150,
+        "dept_name": "ບໍລິຫານສໍານັກງານໃຫຍ່",
+        "dept_parentcode": 34,
+        "descendants": [94],
+        "level": 3
+      },
+      "165": {
+        "id": 121,
+        "dept_code": 165,
+        "dept_name": "ໂຊເຟີບໍລິຫານ1",
+        "dept_parentcode": 34,
+        "descendants": [121],
+        "level": 3
+      }
+    },
+    "descendants": [25, 34, 36, 54, 91, 92, 93, 94, 121],
+    "level": 2
+  },
+  "35": {
+    "id": 26,
+    "dept_code": 35,
+    "dept_name": "ຈັດລຽງມິນິມາກ1",
+    "dept_parentcode": 115,
+    "children": {},
+    "descendants": [26],
+    "level": 2
+  },
+  "36": {
+    "id": 27,
+    "dept_code": 36,
+    "dept_name": "ແຄັດເຊຍ1",
+    "dept_parentcode": 115,
+    "children": {},
+    "descendants": [27],
+    "level": 2
+  },
+  "39": {
+    "id": 28,
+    "dept_code": 39,
+    "dept_name": "ສາງແດງ1",
+    "dept_parentcode": 116,
+    "children": {},
+    "descendants": [28],
+    "level": 2
+  },
+  "40": {
+    "id": 29,
+    "dept_code": 40,
+    "dept_name": "ຂົນສົ່ງ+ໂຊເຟີ+ຈັດບິນ",
+    "dept_parentcode": 116,
+    "children": {
+      "142": {
+        "id": 86,
+        "dept_code": 142,
+        "dept_name": "ຂົນສົ່ງ1",
+        "dept_parentcode": 40,
+        "descendants": [86],
+        "level": 3
+      },
+      "143": {
+        "id": 87,
+        "dept_code": 143,
+        "dept_name": "ຂາຍສົ່ງຫຼັງບ້ານ1",
+        "dept_parentcode": 40,
+        "descendants": [87],
+        "level": 3
+      },
+      "145": {
+        "id": 89,
+        "dept_code": 145,
+        "dept_name": "ໂຊເຟີ1",
+        "dept_parentcode": 40,
+        "descendants": [89],
+        "level": 3
+      },
+      "146": {
+        "id": 90,
+        "dept_code": 146,
+        "dept_name": "ແອັດລົດ1",
+        "dept_parentcode": 40,
+        "descendants": [90],
+        "level": 3
+      }
+    },
+    "descendants": [29, 86, 87, 89, 90],
+    "level": 2
+  },
+  "41": {
+    "id": 30,
+    "dept_code": 41,
+    "dept_name": "ດາຕ້າ1",
+    "dept_parentcode": 116,
+    "children": {},
+    "descendants": [30],
+    "level": 2
+  },
+  "43": {
+    "id": 32,
+    "dept_code": 43,
+    "dept_name": "ສາງຂາວ1",
+    "dept_parentcode": 116,
+    "children": {},
+    "descendants": [32],
+    "level": 2
+  },
+  "65": {
+    "id": 33,
+    "dept_code": 65,
+    "dept_name": "LPS1",
+    "dept_parentcode": 115,
+    "children": {},
+    "descendants": [33],
+    "level": 2
+  },
+  "66": {
+    "id": 34,
+    "dept_code": 66,
+    "dept_name": "IT1",
+    "dept_parentcode": 34,
+    "children": {},
+    "descendants": [34],
+    "level": 3
+  },
+  "67": {
+    "id": 35,
+    "dept_code": 67,
+    "dept_name": "ຂາຍສົ່ງໜ້າບ້ານ1",
+    "dept_parentcode": 115,
+    "children": {},
+    "descendants": [35],
+    "level": 2
+  },
+  "69": {
+    "id": 36,
+    "dept_code": 69,
+    "dept_name": "ແມ່ບ້ານ1",
+    "dept_parentcode": 34,
+    "children": {},
+    "descendants": [36],
+    "level": 3
+  },
+  "72": {
+    "id": 37,
+    "dept_code": 72,
+    "dept_name": "Fresh food6",
+    "dept_parentcode": 20,
+    "children": {},
+    "descendants": [37],
+    "level": 1
+  },
+  "73": {
+    "id": 38,
+    "dept_code": 73,
+    "dept_name": "ແຄັດເຊຍ6",
+    "dept_parentcode": 20,
+    "children": {},
+    "descendants": [38],
+    "level": 1
+  },
+  "74": {
+    "id": 39,
+    "dept_code": 74,
+    "dept_name": "ການເງິນ-ການບັນຊີ1",
+    "dept_parentcode": 113,
+    "children": {},
+    "descendants": [39],
+    "level": 2
+  },
+  "86": {
+    "id": 40,
+    "dept_code": 86,
+    "dept_name": "DrygroceryA/ອາຫານແຫ້ງ2",
+    "dept_parentcode": 27,
+    "children": {},
+    "descendants": [40],
+    "level": 1
+  },
+  "87": {
+    "id": 41,
+    "dept_code": 87,
+    "dept_name": "DrygroceryB/ອາຫານແຫ້ງ2",
+    "dept_parentcode": 27,
+    "children": {},
+    "descendants": [41],
+    "level": 1
+  },
+  "88": {
+    "id": 42,
+    "dept_code": 88,
+    "dept_name": "DrygroceryC/ອາຫານແຫ້ງ2",
+    "dept_parentcode": 27,
+    "children": {},
+    "descendants": [42],
+    "level": 1
+  },
+  "90": {
+    "id": 43,
+    "dept_code": 90,
+    "dept_name": "Xokthavy(8) ເຟສມາກດອນໜູນ",
+    "dept_parentcode": 0,
+    "children": {},
+    "descendants": [43],
+    "level": 0
+  },
+  "92": {
+    "id": 44,
+    "dept_code": 92,
+    "dept_name": "ຫ້ອງການ 2",
+    "dept_parentcode": 27,
+    "children": {
+      "99": {
+        "id": 47,
+        "dept_code": 99,
+        "dept_name": "ການເງິນ2",
+        "dept_parentcode": 92,
+        "descendants": [47],
+        "level": 2
+      },
+      "114": {
+        "id": 61,
+        "dept_code": 114,
+        "dept_name": "ແມ່ບ້ານ2",
+        "dept_parentcode": 92,
+        "descendants": [61],
+        "level": 2
+      }
+    },
+    "descendants": [44, 47, 61],
+    "level": 1
+  },
+  "93": {
+    "id": 45,
+    "dept_code": 93,
+    "dept_name": "Backroom2",
+    "dept_parentcode": 27,
+    "children": {},
+    "descendants": [45],
+    "level": 1
+  },
+  "97": {
+    "id": 46,
+    "dept_code": 97,
+    "dept_name": "Backroom7",
+    "dept_parentcode": 21,
+    "children": {},
+    "descendants": [46],
+    "level": 1
+  },
+  "99": {
+    "id": 47,
+    "dept_code": 99,
+    "dept_name": "ການເງິນ2",
+    "dept_parentcode": 92,
+    "children": {},
+    "descendants": [47],
+    "level": 2
+  },
+  "100": {
+    "id": 48,
+    "dept_code": 100,
+    "dept_name": "LPS7",
+    "dept_parentcode": 21,
+    "children": {},
+    "descendants": [48],
+    "level": 1
+  },
+  "101": {
+    "id": 49,
+    "dept_code": 101,
+    "dept_name": "ຫ້ອງການ7",
+    "dept_parentcode": 21,
+    "children": {},
+    "descendants": [49],
+    "level": 1
+  },
+  "102": {
+    "id": 50,
+    "dept_code": 102,
+    "dept_name": "ຈັດຊື້1",
+    "dept_parentcode": 113,
+    "children": {},
+    "descendants": [50],
+    "level": 2
+  },
+  "103": {
+    "id": 51,
+    "dept_code": 103,
+    "dept_name": "ສາງຮ້ານ1",
+    "dept_parentcode": 116,
+    "children": {
+      "144": {
+        "id": 88,
+        "dept_code": 144,
+        "dept_name": "ຈັດບິນຫຼັງບ້ານ1",
+        "dept_parentcode": 103,
+        "descendants": [88],
+        "level": 3
+      }
+    },
+    "descendants": [51, 88],
+    "level": 2
+  },
+  "104": {
+    "id": 52,
+    "dept_code": 104,
+    "dept_name": "ການຕະຫຼາດ+ກາບຟິກ1",
+    "dept_parentcode": 113,
+    "children": {},
+    "descendants": [52],
+    "level": 2
+  },
+  "105": {
+    "id": 53,
+    "dept_code": 105,
+    "dept_name": "SCM1",
+    "dept_parentcode": 113,
+    "children": {},
+    "descendants": [53],
+    "level": 2
+  },
+  "106": {
+    "id": 54,
+    "dept_code": 106,
+    "dept_name": "ຊ່າງທົ່ວໄປ1",
+    "dept_parentcode": 34,
+    "children": {},
+    "descendants": [54],
+    "level": 3
+  },
+  "107": {
+    "id": 55,
+    "dept_code": 107,
+    "dept_name": "ບໍລິຫານ1",
+    "dept_parentcode": 33,
+    "children": {},
+    "descendants": [55],
+    "level": 1
+  },
+  "108": {
+    "id": 56,
+    "dept_code": 108,
+    "dept_name": "DrygroceryA7",
+    "dept_parentcode": 21,
+    "children": {},
+    "descendants": [56],
+    "level": 1
+  },
+  "109": {
+    "id": 57,
+    "dept_code": 109,
+    "dept_name": "DrygroceryB7",
+    "dept_parentcode": 21,
+    "children": {},
+    "descendants": [57],
+    "level": 1
+  },
+  "110": {
+    "id": 58,
+    "dept_code": 110,
+    "dept_name": "DrygroceryC7",
+    "dept_parentcode": 21,
+    "children": {},
+    "descendants": [58],
+    "level": 1
+  },
+  "111": {
+    "id": 59,
+    "dept_code": 111,
+    "dept_name": "HardlineAB7",
+    "dept_parentcode": 21,
+    "children": {},
+    "descendants": [59],
+    "level": 1
+  },
+  "113": {
+    "id": 60,
+    "dept_code": 113,
+    "dept_name": "ສໍານັກງານໃຫຍ່ດອນໜູນ",
+    "dept_parentcode": 33,
+    "children": {
+      "34": {
+        "id": 25,
+        "dept_code": 34,
+        "dept_name": "ຝ່າຍບຸກຄົນ+ອໍດິດ+ຊ່າງ+ໄອທີ",
+        "dept_parentcode": 113,
+        "descendants": [25, 34, 36, 54, 91, 92, 93, 94, 121],
+        "level": 2
+      },
+      "74": {
+        "id": 39,
+        "dept_code": 74,
+        "dept_name": "ການເງິນ-ການບັນຊີ1",
+        "dept_parentcode": 113,
+        "descendants": [39],
+        "level": 2
+      },
+      "102": {
+        "id": 50,
+        "dept_code": 102,
+        "dept_name": "ຈັດຊື້1",
+        "dept_parentcode": 113,
+        "descendants": [50],
+        "level": 2
+      },
+      "104": {
+        "id": 52,
+        "dept_code": 104,
+        "dept_name": "ການຕະຫຼາດ+ກາບຟິກ1",
+        "dept_parentcode": 113,
+        "descendants": [52],
+        "level": 2
+      },
+      "105": {
+        "id": 53,
+        "dept_code": 105,
+        "dept_name": "SCM1",
+        "dept_parentcode": 113,
+        "descendants": [53],
+        "level": 2
+      }
+    },
+    "descendants": [60, 25, 34, 36, 54, 91, 92, 93, 94, 121, 39, 50, 52, 53],
+    "level": 1
+  },
+  "114": {
+    "id": 61,
+    "dept_code": 114,
+    "dept_name": "ແມ່ບ້ານ2",
+    "dept_parentcode": 92,
+    "children": {},
+    "descendants": [61],
+    "level": 2
+  },
+  "115": {
+    "id": 62,
+    "dept_code": 115,
+    "dept_name": "ຮ້ານດອນໜູນ",
+    "dept_parentcode": 33,
+    "children": {
+      "35": {
+        "id": 26,
+        "dept_code": 35,
+        "dept_name": "ຈັດລຽງມິນິມາກ1",
+        "dept_parentcode": 115,
+        "descendants": [26],
+        "level": 2
+      },
+      "36": {
+        "id": 27,
+        "dept_code": 36,
+        "dept_name": "ແຄັດເຊຍ1",
+        "dept_parentcode": 115,
+        "descendants": [27],
+        "level": 2
+      },
+      "65": {
+        "id": 33,
+        "dept_code": 65,
+        "dept_name": "LPS1",
+        "dept_parentcode": 115,
+        "descendants": [33],
+        "level": 2
+      },
+      "67": {
+        "id": 35,
+        "dept_code": 67,
+        "dept_name": "ຂາຍສົ່ງໜ້າບ້ານ1",
+        "dept_parentcode": 115,
+        "descendants": [35],
+        "level": 2
+      },
+      "120": {
+        "id": 65,
+        "dept_code": 120,
+        "dept_name": "ສາງມິນິມາກ",
+        "dept_parentcode": 115,
+        "descendants": [65],
+        "level": 2
+      }
+    },
+    "descendants": [62, 26, 27, 33, 35, 65],
+    "level": 1
+  },
+  "116": {
+    "id": 63,
+    "dept_code": 116,
+    "dept_name": "ພະແນກສາງ DC",
+    "dept_parentcode": 33,
+    "children": {
+      "39": {
+        "id": 28,
+        "dept_code": 39,
+        "dept_name": "ສາງແດງ1",
+        "dept_parentcode": 116,
+        "descendants": [28],
+        "level": 2
+      },
+      "40": {
+        "id": 29,
+        "dept_code": 40,
+        "dept_name": "ຂົນສົ່ງ+ໂຊເຟີ+ຈັດບິນ",
+        "dept_parentcode": 116,
+        "descendants": [29, 86, 87, 89, 90],
+        "level": 2
+      },
+      "41": {
+        "id": 30,
+        "dept_code": 41,
+        "dept_name": "ດາຕ້າ1",
+        "dept_parentcode": 116,
+        "descendants": [30],
+        "level": 2
+      },
+      "43": {
+        "id": 32,
+        "dept_code": 43,
+        "dept_name": "ສາງຂາວ1",
+        "dept_parentcode": 116,
+        "descendants": [32],
+        "level": 2
+      },
+      "103": {
+        "id": 51,
+        "dept_code": 103,
+        "dept_name": "ສາງຮ້ານ1",
+        "dept_parentcode": 116,
+        "descendants": [51, 88],
+        "level": 2
+      }
+    },
+    "descendants": [63, 28, 29, 86, 87, 89, 90, 30, 32, 51, 88],
+    "level": 1
+  },
+  "117": {
+    "id": 64,
+    "dept_code": 117,
+    "dept_name": "Fresh Food2",
+    "dept_parentcode": 27,
+    "children": {},
+    "descendants": [64],
+    "level": 1
+  },
+  "120": {
+    "id": 65,
+    "dept_code": 120,
+    "dept_name": "ສາງມິນິມາກ",
+    "dept_parentcode": 115,
+    "children": {},
+    "descendants": [65],
+    "level": 2
+  },
+  "121": {
+    "id": 66,
+    "dept_code": 121,
+    "dept_name": "LPS6",
+    "dept_parentcode": 20,
+    "children": {},
+    "descendants": [66],
+    "level": 1
+  },
+  "122": {
+    "id": 67,
+    "dept_code": 122,
+    "dept_name": "Backroom6",
+    "dept_parentcode": 20,
+    "children": {},
+    "descendants": [67],
+    "level": 1
+  },
+  "123": {
+    "id": 68,
+    "dept_code": 123,
+    "dept_name": "Backroom5",
+    "dept_parentcode": 19,
+    "children": {},
+    "descendants": [68],
+    "level": 1
+  },
+  "124": {
+    "id": 69,
+    "dept_code": 124,
+    "dept_name": "XTV 09ວຽງຈັນເຊັນເຕີ",
+    "dept_parentcode": 0,
+    "children": {
+      "125": {
+        "id": 70,
+        "dept_code": 125,
+        "dept_name": "BrackRomm9",
+        "dept_parentcode": 124,
+        "descendants": [70],
+        "level": 1
+      },
+      "126": {
+        "id": 71,
+        "dept_code": 126,
+        "dept_name": "Office9",
+        "dept_parentcode": 124,
+        "descendants": [71],
+        "level": 1
+      },
+      "127": {
+        "id": 72,
+        "dept_code": 127,
+        "dept_name": "LPS9",
+        "dept_parentcode": 124,
+        "descendants": [72],
+        "level": 1
+      },
+      "128": {
+        "id": 73,
+        "dept_code": 128,
+        "dept_name": "Service9",
+        "dept_parentcode": 124,
+        "descendants": [73],
+        "level": 1
+      },
+      "130": {
+        "id": 74,
+        "dept_code": 130,
+        "dept_name": "Fresh Food9",
+        "dept_parentcode": 124,
+        "descendants": [74],
+        "level": 1
+      },
+      "131": {
+        "id": 75,
+        "dept_code": 131,
+        "dept_name": "DrygroceryA9",
+        "dept_parentcode": 124,
+        "descendants": [75],
+        "level": 1
+      },
+      "132": {
+        "id": 76,
+        "dept_code": 132,
+        "dept_name": "DrygroceryB9",
+        "dept_parentcode": 124,
+        "descendants": [76],
+        "level": 1
+      },
+      "133": {
+        "id": 77,
+        "dept_code": 133,
+        "dept_name": "DrygroceryC9",
+        "dept_parentcode": 124,
+        "descendants": [77],
+        "level": 1
+      },
+      "134": {
+        "id": 78,
+        "dept_code": 134,
+        "dept_name": "Hardline A9",
+        "dept_parentcode": 124,
+        "descendants": [78],
+        "level": 1
+      }
+    },
+    "descendants": [69, 70, 71, 72, 73, 74, 75, 76, 77, 78],
+    "level": 0
+  },
+  "125": {
+    "id": 70,
+    "dept_code": 125,
+    "dept_name": "BrackRomm9",
+    "dept_parentcode": 124,
+    "children": {},
+    "descendants": [70],
+    "level": 1
+  },
+  "126": {
+    "id": 71,
+    "dept_code": 126,
+    "dept_name": "Office9",
+    "dept_parentcode": 124,
+    "children": {},
+    "descendants": [71],
+    "level": 1
+  },
+  "127": {
+    "id": 72,
+    "dept_code": 127,
+    "dept_name": "LPS9",
+    "dept_parentcode": 124,
+    "children": {},
+    "descendants": [72],
+    "level": 1
+  },
+  "128": {
+    "id": 73,
+    "dept_code": 128,
+    "dept_name": "Service9",
+    "dept_parentcode": 124,
+    "children": {},
+    "descendants": [73],
+    "level": 1
+  },
+  "130": {
+    "id": 74,
+    "dept_code": 130,
+    "dept_name": "Fresh Food9",
+    "dept_parentcode": 124,
+    "children": {},
+    "descendants": [74],
+    "level": 1
+  },
+  "131": {
+    "id": 75,
+    "dept_code": 131,
+    "dept_name": "DrygroceryA9",
+    "dept_parentcode": 124,
+    "children": {},
+    "descendants": [75],
+    "level": 1
+  },
+  "132": {
+    "id": 76,
+    "dept_code": 132,
+    "dept_name": "DrygroceryB9",
+    "dept_parentcode": 124,
+    "children": {},
+    "descendants": [76],
+    "level": 1
+  },
+  "133": {
+    "id": 77,
+    "dept_code": 133,
+    "dept_name": "DrygroceryC9",
+    "dept_parentcode": 124,
+    "children": {},
+    "descendants": [77],
+    "level": 1
+  },
+  "134": {
+    "id": 78,
+    "dept_code": 134,
+    "dept_name": "Hardline A9",
+    "dept_parentcode": 124,
+    "children": {},
+    "descendants": [78],
+    "level": 1
+  },
+  "135": {
+    "id": 79,
+    "dept_code": 135,
+    "dept_name": "ຫ້ອງການ5",
+    "dept_parentcode": 19,
+    "children": {},
+    "descendants": [79],
+    "level": 1
+  },
+  "136": {
+    "id": 80,
+    "dept_code": 136,
+    "dept_name": "ຫ້ອງການ6",
+    "dept_parentcode": 20,
+    "children": {},
+    "descendants": [80],
+    "level": 1
+  },
+  "137": {
+    "id": 81,
+    "dept_code": 137,
+    "dept_name": "DrygroceryA6",
+    "dept_parentcode": 20,
+    "children": {},
+    "descendants": [81],
+    "level": 1
+  },
+  "138": {
+    "id": 82,
+    "dept_code": 138,
+    "dept_name": "DrygroceryB6",
+    "dept_parentcode": 20,
+    "children": {},
+    "descendants": [82],
+    "level": 1
+  },
+  "139": {
+    "id": 83,
+    "dept_code": 139,
+    "dept_name": "DrygroceryC6",
+    "dept_parentcode": 20,
+    "children": {},
+    "descendants": [83],
+    "level": 1
+  },
+  "140": {
+    "id": 84,
+    "dept_code": 140,
+    "dept_name": "Hard Line6",
+    "dept_parentcode": 20,
+    "children": {},
+    "descendants": [84],
+    "level": 1
+  },
+  "141": {
+    "id": 85,
+    "dept_code": 141,
+    "dept_name": "Fresh Food7",
+    "dept_parentcode": 21,
+    "children": {},
+    "descendants": [85],
+    "level": 1
+  },
+  "142": {
+    "id": 86,
+    "dept_code": 142,
+    "dept_name": "ຂົນສົ່ງ1",
+    "dept_parentcode": 40,
+    "children": {},
+    "descendants": [86],
+    "level": 3
+  },
+  "143": {
+    "id": 87,
+    "dept_code": 143,
+    "dept_name": "ຂາຍສົ່ງຫຼັງບ້ານ1",
+    "dept_parentcode": 40,
+    "children": {},
+    "descendants": [87],
+    "level": 3
+  },
+  "144": {
+    "id": 88,
+    "dept_code": 144,
+    "dept_name": "ຈັດບິນຫຼັງບ້ານ1",
+    "dept_parentcode": 103,
+    "children": {},
+    "descendants": [88],
+    "level": 3
+  },
+  "145": {
+    "id": 89,
+    "dept_code": 145,
+    "dept_name": "ໂຊເຟີ1",
+    "dept_parentcode": 40,
+    "children": {},
+    "descendants": [89],
+    "level": 3
+  },
+  "146": {
+    "id": 90,
+    "dept_code": 146,
+    "dept_name": "ແອັດລົດ1",
+    "dept_parentcode": 40,
+    "children": {},
+    "descendants": [90],
+    "level": 3
+  },
+  "147": {
+    "id": 91,
+    "dept_code": 147,
+    "dept_name": "ບຸກຄົນ1",
+    "dept_parentcode": 34,
+    "children": {},
+    "descendants": [91],
+    "level": 3
+  },
+  "148": {
+    "id": 92,
+    "dept_code": 148,
+    "dept_name": "ອໍດິດ1",
+    "dept_parentcode": 34,
+    "children": {},
+    "descendants": [92],
+    "level": 3
+  },
+  "149": {
+    "id": 93,
+    "dept_code": 149,
+    "dept_name": "ແຜນຜັງ1",
+    "dept_parentcode": 34,
+    "children": {},
+    "descendants": [93],
+    "level": 3
+  },
+  "150": {
+    "id": 94,
+    "dept_code": 150,
+    "dept_name": "ບໍລິຫານສໍານັກງານໃຫຍ່",
+    "dept_parentcode": 34,
+    "children": {},
+    "descendants": [94],
+    "level": 3
+  },
+  "151": {
+    "id": 95,
+    "dept_code": 151,
+    "dept_name": "TKK ZONE DryA3",
+    "dept_parentcode": 4,
+    "children": {},
+    "descendants": [95],
+    "level": 2
+  },
+  "152": {
+    "id": 96,
+    "dept_code": 152,
+    "dept_name": "Hardline&Apparel2",
+    "dept_parentcode": 27,
+    "children": {},
+    "descendants": [96],
+    "level": 1
+  },
+  "155": {
+    "id": 99,
+    "dept_code": 155,
+    "dept_name": "Xokthavy (10) ຈອມມະນີ",
+    "dept_parentcode": 0,
+    "children": {
+      "156": {
+        "id": 112,
+        "dept_code": 156,
+        "dept_name": "Office10",
+        "dept_parentcode": 155,
+        "descendants": [112],
+        "level": 1
+      },
+      "157": {
+        "id": 113,
+        "dept_code": 157,
+        "dept_name": "Backroom10",
+        "dept_parentcode": 155,
+        "descendants": [113],
+        "level": 1
+      },
+      "158": {
+        "id": 114,
+        "dept_code": 158,
+        "dept_name": "ແຄັດເຊຍ10",
+        "dept_parentcode": 155,
+        "descendants": [114],
+        "level": 1
+      },
+      "159": {
+        "id": 115,
+        "dept_code": 159,
+        "dept_name": "DrygroceryA10",
+        "dept_parentcode": 155,
+        "descendants": [115],
+        "level": 1
+      },
+      "160": {
+        "id": 116,
+        "dept_code": 160,
+        "dept_name": "DrygroceryB10",
+        "dept_parentcode": 155,
+        "descendants": [116],
+        "level": 1
+      },
+      "161": {
+        "id": 117,
+        "dept_code": 161,
+        "dept_name": "DrygroceryC10",
+        "dept_parentcode": 155,
+        "descendants": [117],
+        "level": 1
+      },
+      "162": {
+        "id": 118,
+        "dept_code": 162,
+        "dept_name": "Hardline&Apparel10",
+        "dept_parentcode": 155,
+        "descendants": [118],
+        "level": 1
+      },
+      "163": {
+        "id": 119,
+        "dept_code": 163,
+        "dept_name": "FreshFood10",
+        "dept_parentcode": 155,
+        "descendants": [119],
+        "level": 1
+      },
+      "164": {
+        "id": 120,
+        "dept_code": 164,
+        "dept_name": "LPS10",
+        "dept_parentcode": 155,
+        "descendants": [120],
+        "level": 1
+      }
+    },
+    "descendants": [99, 112, 113, 114, 115, 116, 117, 118, 119, 120],
+    "level": 0
+  },
+  "156": {
+    "id": 112,
+    "dept_code": 156,
+    "dept_name": "Office10",
+    "dept_parentcode": 155,
+    "children": {},
+    "descendants": [112],
+    "level": 1
+  },
+  "157": {
+    "id": 113,
+    "dept_code": 157,
+    "dept_name": "Backroom10",
+    "dept_parentcode": 155,
+    "children": {},
+    "descendants": [113],
+    "level": 1
+  },
+  "158": {
+    "id": 114,
+    "dept_code": 158,
+    "dept_name": "ແຄັດເຊຍ10",
+    "dept_parentcode": 155,
+    "children": {},
+    "descendants": [114],
+    "level": 1
+  },
+  "159": {
+    "id": 115,
+    "dept_code": 159,
+    "dept_name": "DrygroceryA10",
+    "dept_parentcode": 155,
+    "children": {},
+    "descendants": [115],
+    "level": 1
+  },
+  "160": {
+    "id": 116,
+    "dept_code": 160,
+    "dept_name": "DrygroceryB10",
+    "dept_parentcode": 155,
+    "children": {},
+    "descendants": [116],
+    "level": 1
+  },
+  "161": {
+    "id": 117,
+    "dept_code": 161,
+    "dept_name": "DrygroceryC10",
+    "dept_parentcode": 155,
+    "children": {},
+    "descendants": [117],
+    "level": 1
+  },
+  "162": {
+    "id": 118,
+    "dept_code": 162,
+    "dept_name": "Hardline&Apparel10",
+    "dept_parentcode": 155,
+    "children": {},
+    "descendants": [118],
+    "level": 1
+  },
+  "163": {
+    "id": 119,
+    "dept_code": 163,
+    "dept_name": "FreshFood10",
+    "dept_parentcode": 155,
+    "children": {},
+    "descendants": [119],
+    "level": 1
+  },
+  "164": {
+    "id": 120,
+    "dept_code": 164,
+    "dept_name": "LPS10",
+    "dept_parentcode": 155,
+    "children": {},
+    "descendants": [120],
+    "level": 1
+  },
+  "165": {
+    "id": 121,
+    "dept_code": 165,
+    "dept_name": "ໂຊເຟີບໍລິຫານ1",
+    "dept_parentcode": 34,
+    "children": {},
+    "descendants": [121],
+    "level": 3
+  },
+  "166": {
+    "id": 122,
+    "dept_code": 166,
+    "dept_name": "Dry A5",
+    "dept_parentcode": 25,
+    "children": {},
+    "descendants": [122],
+    "level": 2
+  },
+  "167": {
+    "id": 123,
+    "dept_code": 167,
+    "dept_name": "Dry B5",
+    "dept_parentcode": 25,
+    "children": {},
+    "descendants": [123],
+    "level": 2
+  },
+  "168": {
+    "id": 124,
+    "dept_code": 168,
+    "dept_name": "DryC5",
+    "dept_parentcode": 25,
+    "children": {},
+    "descendants": [124],
+    "level": 2
+  },
+  "169": {
+    "id": 125,
+    "dept_code": 169,
+    "dept_name": "Hardline&Apparel5",
+    "dept_parentcode": 25,
+    "children": {},
+    "descendants": [125],
+    "level": 2
+  },
+  "170": {
+    "id": 126,
+    "dept_code": 170,
+    "dept_name": "FreshFood5",
+    "dept_parentcode": 25,
+    "children": {},
+    "descendants": [126],
+    "level": 2
+  },
+  "172": {
+    "id": 128,
+    "dept_code": 172,
+    "dept_name": "XOKTHAVY  (11) ດອນແດງ",
+    "dept_parentcode": 0,
+    "children": {
+      "173": {
+        "id": 129,
+        "dept_code": 173,
+        "dept_name": "LPS11",
+        "dept_parentcode": 172,
+        "descendants": [129],
+        "level": 1
+      },
+      "174": {
+        "id": 130,
+        "dept_code": 174,
+        "dept_name": "Backroom11",
+        "dept_parentcode": 172,
+        "descendants": [130],
+        "level": 1
+      },
+      "175": {
+        "id": 131,
+        "dept_code": 175,
+        "dept_name": "Cashier11",
+        "dept_parentcode": 172,
+        "descendants": [131],
+        "level": 1
+      },
+      "176": {
+        "id": 132,
+        "dept_code": 176,
+        "dept_name": "Freshfood11",
+        "dept_parentcode": 172,
+        "descendants": [132],
+        "level": 1
+      },
+      "177": {
+        "id": 133,
+        "dept_code": 177,
+        "dept_name": "DrygroceryA11",
+        "dept_parentcode": 172,
+        "descendants": [133],
+        "level": 1
+      },
+      "178": {
+        "id": 134,
+        "dept_code": 178,
+        "dept_name": "DrygroceryB11",
+        "dept_parentcode": 172,
+        "descendants": [134],
+        "level": 1
+      },
+      "179": {
+        "id": 135,
+        "dept_code": 179,
+        "dept_name": "DrygroceryC11",
+        "dept_parentcode": 172,
+        "descendants": [135],
+        "level": 1
+      },
+      "180": {
+        "id": 136,
+        "dept_code": 180,
+        "dept_name": "Hardline&Apparel11",
+        "dept_parentcode": 172,
+        "descendants": [136],
+        "level": 1
+      }
+    },
+    "descendants": [128, 129, 130, 131, 132, 133, 134, 135, 136],
+    "level": 0
+  },
+  "173": {
+    "id": 129,
+    "dept_code": 173,
+    "dept_name": "LPS11",
+    "dept_parentcode": 172,
+    "children": {},
+    "descendants": [129],
+    "level": 1
+  },
+  "174": {
+    "id": 130,
+    "dept_code": 174,
+    "dept_name": "Backroom11",
+    "dept_parentcode": 172,
+    "children": {},
+    "descendants": [130],
+    "level": 1
+  },
+  "175": {
+    "id": 131,
+    "dept_code": 175,
+    "dept_name": "Cashier11",
+    "dept_parentcode": 172,
+    "children": {},
+    "descendants": [131],
+    "level": 1
+  },
+  "176": {
+    "id": 132,
+    "dept_code": 176,
+    "dept_name": "Freshfood11",
+    "dept_parentcode": 172,
+    "children": {},
+    "descendants": [132],
+    "level": 1
+  },
+  "177": {
+    "id": 133,
+    "dept_code": 177,
+    "dept_name": "DrygroceryA11",
+    "dept_parentcode": 172,
+    "children": {},
+    "descendants": [133],
+    "level": 1
+  },
+  "178": {
+    "id": 134,
+    "dept_code": 178,
+    "dept_name": "DrygroceryB11",
+    "dept_parentcode": 172,
+    "children": {},
+    "descendants": [134],
+    "level": 1
+  },
+  "179": {
+    "id": 135,
+    "dept_code": 179,
+    "dept_name": "DrygroceryC11",
+    "dept_parentcode": 172,
+    "children": {},
+    "descendants": [135],
+    "level": 1
+  },
+  "180": {
+    "id": 136,
+    "dept_code": 180,
+    "dept_name": "Hardline&Apparel11",
+    "dept_parentcode": 172,
+    "children": {},
+    "descendants": [136],
+    "level": 1
+  },
+  "181": {
+    "id": 137,
+    "dept_code": 181,
+    "dept_name": "Office11",
+    "dept_parentcode": 0,
+    "children": {},
+    "descendants": [137],
     "level": 0
   }
 }
-  
