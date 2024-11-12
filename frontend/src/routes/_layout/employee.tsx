@@ -15,7 +15,7 @@ import {
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { z } from "zod";
 // import useAuth from "../../hooks/useAuth";
-import { DepartmentService, EmployeesService } from "../../client";
+import { DepartmentService, EmployeesService, HRDepartmentExport, HRDepartmentPublic, HRDepartmentsPublic } from "../../client";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 
@@ -40,17 +40,17 @@ function getEmployeeService({ page }: { page: number }) {
   };
 }
 
-interface Department {
-  id: number;
-  dept_code: number;
-  dept_name: string;
-  dept_parentcode: number;
-  children?: { [key: string]: Department };
-  descendants: number[];
-  level: number;
-}
+// interface Department {
+//   id: number;
+//   dept_code: number;
+//   dept_name: string;
+//   dept_parentcode: number;
+//   children?: { [key: string]: Department };
+//   descendants: number[];
+//   level: number;
+// }
 interface Departments {
-  [key: string]: Department;
+  [key: string]: HRDepartmentPublic;
 }
 
 function getDepartmentService() {
@@ -63,72 +63,67 @@ function getDepartmentService() {
 //   // multi cascading dropdown menu for departments
 // }
 
-const DepartmentDropdown: React.FC<{ department: Department }> = ({
-  department,
-}) => {
-  const [isOpen, setIsOpen] = useState(false);
+// const DepartmentDropdown: React.FC<{ department: Department }> = ({
+//   department,
+// }) => {
+//   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsOpen((prev) => !prev);
-  };
+//   const toggleDropdown = () => {
+//     setIsOpen((prev) => !prev);
+//   };
 
-  return (
-    <div style={{ marginLeft: `${department.level * 20}px`, padding: "5px 0" }}>
-      <button
-        onClick={toggleDropdown}
-        style={{
-          cursor: "pointer",
-          background: "none",
-          border: "none",
-          textAlign: "left",
-          fontWeight: "bold",
-        }}
-      >
-        {department.dept_name} {department.children && (isOpen ? "▲" : "▼")}
-      </button>
-      {isOpen && department.children && (
-        <div
-          style={{
-            marginTop: "5px",
-            paddingLeft: "10px",
-            borderLeft: "1px solid #ccc",
-          }}
-        >
-          {Object.values(department.children).map((child) => (
-            <DepartmentDropdown key={child.dept_code} department={child} />
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
-const DepartmentsMenu: React.FC<{ departments: Departments }> = ({
-  departments,
-}) => {
-  // Filter root-level departments (dept_parentcode === 0)
-  const rootDepartments = Object.values(departments).filter(
-    (dept) => dept.dept_parentcode === 0
-  );
+//   return (
+//     <div style={{ marginLeft: `${department.level * 20}px`, padding: "5px 0" }}>
+//       <button
+//         onClick={toggleDropdown}
+//         style={{
+//           cursor: "pointer",
+//           background: "none",
+//           border: "none",
+//           textAlign: "left",
+//           fontWeight: "bold",
+//         }}
+//       >
+//         {department.dept_name} {department.children && (isOpen ? "▲" : "▼")}
+//       </button>
+//       {isOpen && department.children && (
+//         <div
+//           style={{
+//             marginTop: "5px",
+//             paddingLeft: "10px",
+//             borderLeft: "1px solid #ccc",
+//           }}
+//         >
+//           {Object.values(department.children).map((child) => (
+//             <DepartmentDropdown key={child.dept_code} department={child} />
+//           ))}
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
 
-  return (
-    <div>
-      {rootDepartments.map((department) => (
-        <DepartmentDropdown
-          key={department.dept_code}
-          department={department}
-        />
-      ))}
-    </div>
-  );
-};
-/**
- * A table component that displays employee data. It fetches data from the server
- * and manages pagination. It also prefetches the next page when the user is on
- * the last page. It displays a skeleton while the data is loading.
- *
- * @returns A React component that displays a table of employee data and
- *   pagination controls.
- */
+
+// const DepartmentsMenu: React.FC<{ departments: Departments }> = ({
+//   departments,
+// }) => {
+//   // Filter root-level departments (dept_parentcode === 0)
+//   const rootDepartments = Object.values(departments).filter(
+//     (dept) => dept.dept_parentcode === 0
+//   );
+
+//   return (
+//     <div>
+//       {rootDepartments.map((department) => (
+//         <DepartmentDropdown
+//           key={department.dept_code}
+//           department={department}
+//         />
+//       ))}
+//     </div>
+//   );
+// };
+
 function EmployeeTable() {
   const queryClient = useQueryClient();
 
@@ -215,9 +210,7 @@ function EmployeeTable() {
     </>
   );
 }
-
-function Employee() {
-  // const { user: currentUser } = useAuth();
+function DepartmentsMenu() {
   const {
     data: departments,
     isLoading,
@@ -225,7 +218,16 @@ function Employee() {
     error,
     isFetching,
     // isPlaceholderData,
-  } = useQuery<Departments, Error>({ ...getDepartmentService() });
+  } = useQuery({
+    ...getDepartmentService()
+  });
+  // useQuery<Departments, Error>({ ...getDepartmentService() });
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   if (isLoading) {
     return <div>Loading departments...</div>;
   }
@@ -233,6 +235,32 @@ function Employee() {
   if (isError) {
     return <div>Error loading departments: {error.message}</div>;
   }
+  return (
+    <>
+      <div>DepartmentsMenu</div>;
+      {isFetching && <div>Updating...</div>}
+
+    </>
+  )
+}
+function DepartmentDropdown(departments: Departments) {
+  const rootDepartments = Object.values(departments).filter(
+    (dept) => dept.dept_parentcode === 0
+  );
+
+  return (
+    <div>
+      {rootDepartments.map((department) => (
+        <DepartmentDropdown
+          key={department.dept_code}
+          department={department}
+        />
+      ))}
+    </div>
+  );
+}
+function Employee() {
+  // const { user: currentUser } = useAuth();  
 
   return (
     <>
@@ -240,8 +268,8 @@ function Employee() {
         <Heading size="lg" textAlign={{ base: "center", md: "left" }} py={12}>
           Employee Dashboard
         </Heading>
-        <DepartmentsMenu departments={departments} />
-        {isFetching && <div>Updating...</div>}
+        <DepartmentsMenu />
+
         <EmployeeTable />
       </Container>
     </>
