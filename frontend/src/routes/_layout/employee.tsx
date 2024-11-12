@@ -15,7 +15,12 @@ import {
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { z } from "zod";
 // import useAuth from "../../hooks/useAuth";
-import { DepartmentService, EmployeesService, HRDepartmentExport, HRDepartmentPublic, HRDepartmentsPublic } from "../../client";
+import {
+  DepartmentService,
+  EmployeesService,
+  HRDepartmentPublic,
+  HRDepartmentsPublic,
+} from "../../client";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 
@@ -40,89 +45,9 @@ function getEmployeeService({ page }: { page: number }) {
   };
 }
 
-// interface Department {
-//   id: number;
-//   dept_code: number;
-//   dept_name: string;
-//   dept_parentcode: number;
-//   children?: { [key: string]: Department };
-//   descendants: number[];
-//   level: number;
-// }
-interface Departments {
-  [key: string]: HRDepartmentPublic;
-}
-
-function getDepartmentService() {
-  return {
-    queryFn: () => DepartmentService.getDepartment(),
-    queryKey: ["departments", {}],
-  };
-}
 // function CascadingDropdown() {
 //   // multi cascading dropdown menu for departments
 // }
-
-// const DepartmentDropdown: React.FC<{ department: Department }> = ({
-//   department,
-// }) => {
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   const toggleDropdown = () => {
-//     setIsOpen((prev) => !prev);
-//   };
-
-//   return (
-//     <div style={{ marginLeft: `${department.level * 20}px`, padding: "5px 0" }}>
-//       <button
-//         onClick={toggleDropdown}
-//         style={{
-//           cursor: "pointer",
-//           background: "none",
-//           border: "none",
-//           textAlign: "left",
-//           fontWeight: "bold",
-//         }}
-//       >
-//         {department.dept_name} {department.children && (isOpen ? "▲" : "▼")}
-//       </button>
-//       {isOpen && department.children && (
-//         <div
-//           style={{
-//             marginTop: "5px",
-//             paddingLeft: "10px",
-//             borderLeft: "1px solid #ccc",
-//           }}
-//         >
-//           {Object.values(department.children).map((child) => (
-//             <DepartmentDropdown key={child.dept_code} department={child} />
-//           ))}
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-
-// const DepartmentsMenu: React.FC<{ departments: Departments }> = ({
-//   departments,
-// }) => {
-//   // Filter root-level departments (dept_parentcode === 0)
-//   const rootDepartments = Object.values(departments).filter(
-//     (dept) => dept.dept_parentcode === 0
-//   );
-
-//   return (
-//     <div>
-//       {rootDepartments.map((department) => (
-//         <DepartmentDropdown
-//           key={department.dept_code}
-//           department={department}
-//         />
-//       ))}
-//     </div>
-//   );
-// };
 
 function EmployeeTable() {
   const queryClient = useQueryClient();
@@ -210,22 +135,113 @@ function EmployeeTable() {
     </>
   );
 }
-function DepartmentsMenu() {
+interface Departments {
+  [key: string]: HRDepartmentPublic;
+}
+
+function getDepartmentService() {
+  return {
+    queryFn: () => DepartmentService.getDepartment(),
+    queryKey: ["departments", {}],
+  };
+}
+
+const DepartmentDropdown: React.FC<{ department: HRDepartmentPublic }> = ({
+  department,
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  return (
+    <div style={{ marginLeft: `${department.level * 20}px`, padding: "5px 0" }}>
+      <button
+        onClick={toggleDropdown}
+        style={{
+          cursor: "pointer",
+          background: "none",
+          border: "none",
+          textAlign: "left",
+          fontWeight: "bold",
+        }}
+      >
+        {department.dept_name} {department.children && (isOpen ? "▲" : "▼")}
+      </button>
+      {isOpen && department.children && (
+        <div
+          style={{
+            marginTop: "5px",
+            paddingLeft: "10px",
+            borderLeft: "1px solid #ccc",
+          }}
+        >
+          {Object.values(department.children).map((child) => (
+            <DepartmentDropdown key={child.dept_code} department={child} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const DepartmentsMenu: React.FC<{ departments: Departments }> = ({
+  departments,
+}) => {
+  const rootDepartments = Object.values(departments).filter(
+    (dept) => dept.dept_parentcode === 0
+  );
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleDropdown = () => {
+    setIsOpen((prev) => !prev);
+  };
+  return (
+    <>
+      <div style={{ padding: "5px 0" }}>
+        <button
+          onClick={toggleDropdown}
+          style={{
+            cursor: "pointer",
+            background: "none",
+            border: "none",
+            textAlign: "left",
+            fontWeight: "bold",
+          }}
+        >
+          Departent {isOpen ? "▲" : "▼"}
+        </button>
+        {isOpen && (
+          <div>
+            {rootDepartments.map((department) => (
+              <DepartmentDropdown
+                key={department.dept_code}
+                department={department}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </>
+  );
+};
+
+function Employee() {
+  const queryClient = useQueryClient();
+
   const {
     data: departments,
     isLoading,
     isError,
     error,
     isFetching,
-    // isPlaceholderData,
   } = useQuery({
-    ...getDepartmentService()
+    ...getDepartmentService(),
+    placeholderData: { data: [], count: 0 },
   });
-  // useQuery<Departments, Error>({ ...getDepartmentService() });
-  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsOpen((prev) => !prev);
+  const handleRefreshDepartments = () => {
+    queryClient.invalidateQueries(["departments"]);
   };
 
   if (isLoading) {
@@ -235,32 +251,6 @@ function DepartmentsMenu() {
   if (isError) {
     return <div>Error loading departments: {error.message}</div>;
   }
-  return (
-    <>
-      <div>DepartmentsMenu</div>;
-      {isFetching && <div>Updating...</div>}
-
-    </>
-  )
-}
-function DepartmentDropdown(departments: Departments) {
-  const rootDepartments = Object.values(departments).filter(
-    (dept) => dept.dept_parentcode === 0
-  );
-
-  return (
-    <div>
-      {rootDepartments.map((department) => (
-        <DepartmentDropdown
-          key={department.dept_code}
-          department={department}
-        />
-      ))}
-    </div>
-  );
-}
-function Employee() {
-  // const { user: currentUser } = useAuth();  
 
   return (
     <>
@@ -268,8 +258,8 @@ function Employee() {
         <Heading size="lg" textAlign={{ base: "center", md: "left" }} py={12}>
           Employee Dashboard
         </Heading>
-        <DepartmentsMenu />
-
+        <DepartmentsMenu departments={departments} />
+        {isFetching && <div>Updating...</div>}
         <EmployeeTable />
       </Container>
     </>
