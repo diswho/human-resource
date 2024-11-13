@@ -239,10 +239,6 @@ function Employee() {
     placeholderData: { data: [], count: 0 },
   });
 
-  const handleRefreshDepartments = () => {
-    queryClient.invalidateQueries(["departments"]);
-  };
-
   if (isLoading) {
     return <div>Loading departments...</div>;
   }
@@ -250,7 +246,9 @@ function Employee() {
   if (isError) {
     return <div>Error loading departments: {error.message}</div>;
   }
-
+  if (!departments) {
+    return <div>No departments found</div>;
+  }
   return (
     <>
       <Container maxW="full">
