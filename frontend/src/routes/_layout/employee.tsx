@@ -19,7 +19,6 @@ import {
   DepartmentService,
   EmployeesService,
   HRDepartmentPublic,
-  HRDepartmentsPublic,
 } from "../../client";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
@@ -47,7 +46,7 @@ function getEmployeeService({ page }: { page: number }) {
 
 // function CascadingDropdown() {
 //   // multi cascading dropdown menu for departments
-// }
+// }r
 
 function EmployeeTable() {
   const queryClient = useQueryClient();
