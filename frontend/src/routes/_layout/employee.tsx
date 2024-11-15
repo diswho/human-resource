@@ -44,9 +44,7 @@ function getEmployeeService({ page }: { page: number }) {
   };
 }
 
-// function CascadingDropdown() {
-//   // multi cascading dropdown menu for departments
-// }r
+
 
 function EmployeeTable() {
   const queryClient = useQueryClient();
@@ -144,7 +142,76 @@ function getDepartmentService() {
     queryKey: ["departments", {}],
   };
 }
+function CascadingDropdown(department:HRDepartmentPublic) {
+  // multi cascading dropdown menu for departments
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggleDropdown = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  return (
+    <div style={{ marginLeft: `${department.level * 20}px`, padding: "5px 0" }}>
+      <button
+        onClick={toggleDropdown}
+        style={{
+          cursor: "pointer",
+          background: "none",
+          border: "none",
+          textAlign: "left",
+          fontWeight: "bold",
+        }}
+      >
+        {department.dept_name} {department.children && (isOpen ? "▲" : "▼")}
+      </button>
+      {isOpen && department.children && (
+        <div
+          style={{
+            marginTop: "5px",
+            paddingLeft: "10px",
+            borderLeft: "1px solid #ccc",
+          }}
+        >
+          {Object.values(department.children).map((child) => (
+            <CascadingDropdown key={child.dept_code} {...child} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+function CascadingMenu(departments: Departments) {
+  const rootDepartments = Object.values(departments).filter(
+    (dept) => dept.dept_parentcode === 0
+  );
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleDropdown = () => {
+    setIsOpen((prev) => !prev);
+  };
+  return (<>
+  <div style={{ padding: "5px 0" }}>
+  <button
+          onClick={toggleDropdown}
+          style={{
+            cursor: "pointer",
+            background: "none",
+            border: "none",
+            textAlign: "left",
+            fontWeight: "bold",
+          }}
+        >
+          Departent {isOpen ? "▲" : "▼"}
+        </button>
+        {isOpen && (
+          <div>
+            {rootDepartments.map((department) => (
+              <CascadingDropdown key={department.dept_code} {...department} />
+            ))}
+          </div>
+        )}
+  </div>
+  </>)
+}
 const DepartmentDropdown: React.FC<{ department: HRDepartmentPublic }> = ({
   department,
 }) => {
@@ -255,7 +322,7 @@ function Employee() {
         <Heading size="lg" textAlign={{ base: "center", md: "left" }} py={12}>
           Employee Dashboard
         </Heading>
-        <DepartmentsMenu departments={departments} />
+        <CascadingMenu departments={departments} />
         {isFetching && <div>Updating...</div>}
         <EmployeeTable />
       </Container>
