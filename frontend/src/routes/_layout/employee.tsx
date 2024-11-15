@@ -44,8 +44,6 @@ function getEmployeeService({ page }: { page: number }) {
   };
 }
 
-
-
 function EmployeeTable() {
   const queryClient = useQueryClient();
 
@@ -142,7 +140,7 @@ function getDepartmentService() {
     queryKey: ["departments", {}],
   };
 }
-function CascadingDropdown(department:HRDepartmentPublic) {
+function CascadingDropdown({ department }: { department: HRDepartmentPublic }) {
   // multi cascading dropdown menu for departments
   const [isOpen, setIsOpen] = useState(false);
 
@@ -173,14 +171,18 @@ function CascadingDropdown(department:HRDepartmentPublic) {
           }}
         >
           {Object.values(department.children).map((child) => (
-            <CascadingDropdown key={child.dept_code} {...child} />
+            <CascadingDropdown key={child.dept_code} department={child} />
           ))}
         </div>
       )}
     </div>
   );
 }
-function CascadingMenu(departments: Departments) {
+function CascadingMenu({
+  departments,
+}: {
+  departments: { [key: string]: HRDepartmentPublic };
+}) {
   const rootDepartments = Object.values(departments).filter(
     (dept) => dept.dept_parentcode === 0
   );
@@ -188,9 +190,10 @@ function CascadingMenu(departments: Departments) {
   const toggleDropdown = () => {
     setIsOpen((prev) => !prev);
   };
-  return (<>
-  <div style={{ padding: "5px 0" }}>
-  <button
+  return (
+    <>
+      <div style={{ padding: "5px 0" }}>
+        <button
           onClick={toggleDropdown}
           style={{
             cursor: "pointer",
@@ -205,12 +208,16 @@ function CascadingMenu(departments: Departments) {
         {isOpen && (
           <div>
             {rootDepartments.map((department) => (
-              <CascadingDropdown key={department.dept_code} {...department} />
+              <CascadingDropdown
+                key={department.dept_code}
+                department={department}
+              />
             ))}
           </div>
         )}
-  </div>
-  </>)
+      </div>
+    </>
+  );
 }
 const DepartmentDropdown: React.FC<{ department: HRDepartmentPublic }> = ({
   department,
@@ -313,16 +320,27 @@ function Employee() {
   if (isError) {
     return <div>Error loading departments: {error.message}</div>;
   }
-  if (!departments) {
-    return <div>No departments found</div>;
-  }
+  // const departments = (payload?.data || []).reduce(
+  //   (acc, dept) => {
+  //     acc[dept.dept_code] = dept;
+  //     return acc;
+  //   },
+  //   {} as { [key: string]: HRDepartmentPublic }
+  // );
+
+  // const departments =
+  //   (payload?.data || []).reduce((acc, dept) => {
+  //     acc[dept.dept_code] = dept;
+  //     return acc;
+  //   }, {} as Departments) || {};
+
   return (
     <>
       <Container maxW="full">
         <Heading size="lg" textAlign={{ base: "center", md: "left" }} py={12}>
           Employee Dashboard
         </Heading>
-        <CascadingMenu departments={departments} />
+        <CascadingMenu departments={departments?.departments || []} />
         {isFetching && <div>Updating...</div>}
         <EmployeeTable />
       </Container>
