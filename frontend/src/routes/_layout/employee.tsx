@@ -178,11 +178,7 @@ function CascadingDropdown({ department }: { department: HRDepartmentPublic }) {
     </div>
   );
 }
-function CascadingMenu({
-  departments,
-}: {
-  departments: { [key: string]: HRDepartmentPublic };
-}) {
+function CascadingMenu({  departments= {}}: {  departments?: { [key: string]: HRDepartmentPublic };}) {
   const rootDepartments = Object.values(departments).filter(
     (dept) => dept.dept_parentcode === 0
   );
@@ -340,7 +336,7 @@ function Employee() {
         <Heading size="lg" textAlign={{ base: "center", md: "left" }} py={12}>
           Employee Dashboard
         </Heading>
-        <CascadingMenu departments={departments?.departments || []} />
+        <CascadingMenu departments={departments} />
         {isFetching && <div>Updating...</div>}
         <EmployeeTable />
       </Container>
