@@ -178,7 +178,11 @@ function CascadingDropdown({ department }: { department: HRDepartmentPublic }) {
     </div>
   );
 }
-function CascadingMenu({  departments= {}}: {  departments?: { [key: string]: HRDepartmentPublic };}) {
+function CascadingMenu({
+  departments = {},
+}: {
+  departments?: { [key: string]: HRDepartmentPublic };
+}) {
   const rootDepartments = Object.values(departments).filter(
     (dept) => dept.dept_parentcode === 0
   );
@@ -329,6 +333,9 @@ function Employee() {
   //     acc[dept.dept_code] = dept;
   //     return acc;
   //   }, {} as Departments) || {};
+  if (!departments) {
+    return <div>Departments data is not available.</div>;
+  }
 
   return (
     <>
