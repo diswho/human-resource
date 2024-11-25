@@ -350,3 +350,7 @@ function Employee() {
     </>
   );
 }
+// riser height 18
+// tread depth 30
+// Width 90 
+// Headroom 2 m
