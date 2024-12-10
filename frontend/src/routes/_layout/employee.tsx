@@ -320,11 +320,12 @@ function Employee() {
 
   const departmentshape = (payload?.data || []).reduce((acc, dept) => {
     acc[dept.dept_code] = dept;
-    console.log(dept);
+    console.log("=== departmentshape ===");
     return acc;
   }, {} as Departments);
 
-  console.log("departments");
+  // console.log("=== departmentshape ===");
+  console.log(payload);
 
   return (
     <>
