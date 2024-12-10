@@ -300,7 +300,7 @@ function Employee() {
   // const queryClient = useQueryClient();
 
   const {
-    data: payload,
+    data: departments,
     isLoading,
     isError,
     error,
@@ -318,14 +318,14 @@ function Employee() {
     return <div>Error loading departments: {error.message}</div>;
   }
 
-  const departmentshape = (payload?.data || []).reduce((acc, dept) => {
+  const departmentshape = (departments?.data || []).reduce((acc, dept) => {
     acc[dept.dept_code] = dept;
     console.log("=== departmentshape ===");
     return acc;
   }, {} as Departments);
 
   // console.log("=== departmentshape ===");
-  console.log(payload);
+  console.log(departments);
 
   return (
     <>
