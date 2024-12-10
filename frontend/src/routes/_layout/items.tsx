@@ -45,8 +45,8 @@ function ItemsTable() {
   const queryClient = useQueryClient()
   const { page } = Route.useSearch()
   const navigate = useNavigate({ from: Route.fullPath })
-  const setPage = (page: number) =>
-    navigate({ search: (prev) => ({ ...prev, page }) })
+  const setPage = (page: number) =>    navigate({ search: (prev) => ({ ...prev, page }) })
+
 
   const {
     data: items,

@@ -178,11 +178,8 @@ function CascadingDropdown({ department }: { department: HRDepartmentPublic }) {
     </div>
   );
 }
-function CascadingMenu({
-  departments = {},
-}: {
-  departments?: { [key: string]: HRDepartmentPublic };
-}) {
+// function CascadingMenu({  departments = {}}: {  departments?: { [key: string]: HRDepartmentPublic };}) {
+function CascadingMenu({ departments }: { departments: Departments }) {
   const rootDepartments = Object.values(departments).filter(
     (dept) => dept.dept_parentcode === 0
   );
@@ -300,17 +297,17 @@ const DepartmentsMenu: React.FC<{ departments: Departments }> = ({
 };
 
 function Employee() {
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
 
   const {
-    data: departments,
+    data: payload,
     isLoading,
     isError,
     error,
     isFetching,
   } = useQuery({
     ...getDepartmentService(),
-    placeholderData: { data: [], count: 0 },
+    placeholderData: { data: [] as HRDepartmentPublic[], count: 0 },
   });
 
   if (isLoading) {
@@ -320,22 +317,14 @@ function Employee() {
   if (isError) {
     return <div>Error loading departments: {error.message}</div>;
   }
-  // const departments = (payload?.data || []).reduce(
-  //   (acc, dept) => {
-  //     acc[dept.dept_code] = dept;
-  //     return acc;
-  //   },
-  //   {} as { [key: string]: HRDepartmentPublic }
-  // );
 
-  // const departments =
-  //   (payload?.data || []).reduce((acc, dept) => {
-  //     acc[dept.dept_code] = dept;
-  //     return acc;
-  //   }, {} as Departments) || {};
-  if (!departments) {
-    return <div>Departments data is not available.</div>;
-  }
+  const departmentshape = (payload?.data || []).reduce((acc, dept) => {
+    acc[dept.dept_code] = dept;
+    console.log(dept);
+    return acc;
+  }, {} as Departments);
+
+  console.log("departments");
 
   return (
     <>
@@ -343,14 +332,10 @@ function Employee() {
         <Heading size="lg" textAlign={{ base: "center", md: "left" }} py={12}>
           Employee Dashboard
         </Heading>
-        <CascadingMenu departments={departments} />
+        <CascadingMenu departments={departmentshape} />
         {isFetching && <div>Updating...</div>}
         <EmployeeTable />
       </Container>
     </>
   );
 }
-// riser height 18
-// tread depth 30
-// Width 90 
-// Headroom 2 m
