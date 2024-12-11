@@ -53,3 +53,10 @@ class HRDepartmentPublic(SQLModel):
     children: Dict[int, HRDepartmentExport]
     descendants: List[int]
     level: int
+
+class HRDepartmentOut(HRDepartmentBase):
+    id: int
+
+class HRDepartmentsOut(SQLModel):
+    data: List[HRDepartmentOut]
+    count: int

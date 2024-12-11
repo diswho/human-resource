@@ -1,5 +1,5 @@
 from typing import Any, Dict, List, Tuple
-from app.models.hr_department import HRDepartment, HRDepartmentPublic
+from app.models.hr_department import HRDepartment, HRDepartmentPublic, HRDepartmentsOut
 from fastapi import APIRouter, Depends
 from pydantic.networks import EmailStr
 
@@ -24,8 +24,8 @@ def test_email(email_to: EmailStr) -> Message:
     return Message(message="Test email sent")
 
 
-@router.get("/get-department/", response_model=Dict[int, HRDepartmentPublic], status_code=201)
-def get_department(departList: DepartList) -> Dict[int, HRDepartmentPublic]:
+@router.get("/get-department/", response_model=HRDepartmentsOut, status_code=201)
+def get_department(departList: DepartList) -> HRDepartmentsOut:
     """
     Get departments.
 
@@ -44,4 +44,5 @@ def get_department(departList: DepartList) -> Dict[int, HRDepartmentPublic]:
             raise
     except Exception as e:
         raise
-    return departs
+    # return departs
+    return HRDepartmentsOut(data=list(departs.values()),count=0)
