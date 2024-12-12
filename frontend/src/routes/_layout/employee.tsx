@@ -216,86 +216,38 @@ function CascadingMenu({ departments }: { departments: Departments }) {
     </>
   );
 }
-const DepartmentDropdown: React.FC<{ department: HRDepartmentPublic }> = ({
-  department,
-}) => {
-  const [isOpen, setIsOpen] = useState(false);
+interface Department {
+  deptCode: string;
+  deptParentCode?: string;
+  children?: Department[];
+}
 
-  const toggleDropdown = () => {
-    setIsOpen((prev) => !prev);
-  };
+// function buildDepartmentHierarchy(departments: HRDepartmentPublic[]): HRDepartmentPublic[] {
+//   const hierarchy: { [deptCode: string]: HRDepartmentPublic } = {};
 
-  return (
-    <div style={{ marginLeft: `${department.level * 20}px`, padding: "5px 0" }}>
-      <button
-        onClick={toggleDropdown}
-        style={{
-          cursor: "pointer",
-          background: "none",
-          border: "none",
-          textAlign: "left",
-          fontWeight: "bold",
-        }}
-      >
-        {department.dept_name} {department.children && (isOpen ? "▲" : "▼")}
-      </button>
-      {isOpen && department.children && (
-        <div
-          style={{
-            marginTop: "5px",
-            paddingLeft: "10px",
-            borderLeft: "1px solid #ccc",
-          }}
-        >
-          {Object.values(department.children).map((child) => (
-            <DepartmentDropdown key={child.dept_code} department={child} />
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
+//   departments.forEach((department) => {
+//     const deptCode = department.dept_code;
+//     const parentCode = department.dept_parentcode;
 
-const DepartmentsMenu: React.FC<{ departments: Departments }> = ({
-  departments,
-}) => {
-  const rootDepartments = Object.values(departments).filter(
-    (dept) => dept.dept_parentcode === 0
-  );
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleDropdown = () => {
-    setIsOpen((prev) => !prev);
-  };
-  return (
-    <>
-      <div style={{ padding: "5px 0" }}>
-        <button
-          onClick={toggleDropdown}
-          style={{
-            cursor: "pointer",
-            background: "none",
-            border: "none",
-            textAlign: "left",
-            fontWeight: "bold",
-          }}
-        >
-          Departent {isOpen ? "▲" : "▼"}
-        </button>
-        {isOpen && (
-          <div>
-            {rootDepartments.map((department) => (
-              <DepartmentDropdown
-                key={department.dept_code}
-                department={department}
-              />
-            ))}
-          </div>
-        )}
-      </div>
-    </>
-  );
-};
+//     if (parentCode) {
+//       if (!hierarchy[parentCode]) {
+//         hierarchy[parentCode] = { dept_code: parentCode, children: [] };
+//       }
+//       hierarchy[parentCode].children?.push(department);
+//     } else {
+//       hierarchy[deptCode] = department;
+//     }
+//   });
 
+//   function buildHierarchy(department: Department): Department {
+//     if (department.children) {
+//       department.children = department.children.map(buildHierarchy);
+//     }
+//     return department;
+//   }
+
+//   return Object.values(hierarchy).map(buildHierarchy);
+// }
 function Employee() {
   // const queryClient = useQueryClient();
 
@@ -317,15 +269,14 @@ function Employee() {
   if (isError) {
     return <div>Error loading departments: {error.message}</div>;
   }
+  // Builds a hierarchical structure of departments from a list of departments
+  // buildDepartmentHierarchy(departments?.data || []);
 
   const departmentshape = (departments?.data || []).reduce((acc, dept) => {
     acc[dept.dept_code] = dept;
-    console.log("=== departmentshape ===");
     return acc;
   }, {} as Departments);
 
-  // console.log("=== departmentshape ===");
-  console.log(departments);
 
   return (
     <>

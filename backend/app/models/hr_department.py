@@ -50,11 +50,11 @@ class HRDepartmentPublic(SQLModel):
     dept_code: int
     dept_name: str
     dept_parentcode: int
-    children: Dict[int, HRDepartmentExport]
+    # children: Dict[int, HRDepartmentExport]
     descendants: List[int]
     level: int
 
-class HRDepartmentOut(HRDepartmentBase):
+class HRDepartmentOut(HRDepartmentPublic):
     id: int
 
 class HRDepartmentsOut(SQLModel):
