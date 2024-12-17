@@ -222,7 +222,9 @@ function CascadingMenu({ departments }: { departments: Departments }) {
 //   children?: Department[];
 // }
 
-function buildDepartmentHierarchy(departments: HRDepartmentPublic[]): HRDepartmentPublic[] {
+function buildDepartmentHierarchy(
+  departments: HRDepartmentPublic[]
+): HRDepartmentPublic[] {
   const hierarchy: { [dept_code: string]: HRDepartmentPublic } = {};
 
   departments.forEach((department) => {
@@ -232,17 +234,16 @@ function buildDepartmentHierarchy(departments: HRDepartmentPublic[]): HRDepartme
 
     if (dept_parentcode) {
       if (!hierarchy[dept_parentcode]) {
-        hierarchy[dept_parentcode] = { ...department, children: {}} };
-      
-      const departmentJSON = JSON.stringify(department);
-      const departmentObject = JSON.parse(departmentJSON);
+        hierarchy[dept_parentcode] = { ...department, children: {} };
+      }
+
       hierarchy[dept_parentcode] = { ...department, children: {} };
       // hierarchy[dept_parentcode].children?.push(departmentObject);
       // hierarchy[dept_parentcode].children?.push(department);
-       } else {
+    } else {
       hierarchy[dept_code] = department;
-      }
-      console.log(hierarchy)
+    }
+    console.log(hierarchy);
   });
 
   // function buildHierarchy(department: HRDepartmentPublic): HRDepartmentPublic {
@@ -251,7 +252,7 @@ function buildDepartmentHierarchy(departments: HRDepartmentPublic[]): HRDepartme
   //   }
   //   return department;
   // }
-  // console.log(hierarchy)
+  console.log(hierarchy);
   // return Object.values(hierarchy).map(buildHierarchy);
   return [];
 }
@@ -277,14 +278,15 @@ function Employee() {
     return <div>Error loading departments: {error.message}</div>;
   }
   // Builds a hierarchical structure of departments from a list of departments
-  const departmentHierarchy = buildDepartmentHierarchy(departments?.data || []);
-  // console.log(departmentHierarchy)
 
   const departmentshape = (departments?.data || []).reduce((acc, dept) => {
+    const departmentHierarchy = buildDepartmentHierarchy(
+      departments?.data || []
+    );
+    console.log(departmentHierarchy);
     acc[dept.dept_code] = dept;
     return acc;
   }, {} as Departments);
-
 
   return (
     <>
