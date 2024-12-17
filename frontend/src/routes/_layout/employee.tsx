@@ -130,6 +130,7 @@ function EmployeeTable() {
     </>
   );
 }
+
 interface Departments {
   [key: string]: HRDepartmentPublic;
 }
@@ -178,7 +179,6 @@ function CascadingDropdown({ department }: { department: HRDepartmentPublic }) {
     </div>
   );
 }
-// function CascadingMenu({  departments = {}}: {  departments?: { [key: string]: HRDepartmentPublic };}) {
 function CascadingMenu({ departments }: { departments: Departments }) {
   const rootDepartments = Object.values(departments).filter(
     (dept) => dept.dept_parentcode === 0
@@ -216,38 +216,45 @@ function CascadingMenu({ departments }: { departments: Departments }) {
     </>
   );
 }
-interface Department {
-  deptCode: string;
-  deptParentCode?: string;
-  children?: Department[];
-}
-
-// function buildDepartmentHierarchy(departments: HRDepartmentPublic[]): HRDepartmentPublic[] {
-//   const hierarchy: { [deptCode: string]: HRDepartmentPublic } = {};
-
-//   departments.forEach((department) => {
-//     const deptCode = department.dept_code;
-//     const parentCode = department.dept_parentcode;
-
-//     if (parentCode) {
-//       if (!hierarchy[parentCode]) {
-//         hierarchy[parentCode] = { dept_code: parentCode, children: [] };
-//       }
-//       hierarchy[parentCode].children?.push(department);
-//     } else {
-//       hierarchy[deptCode] = department;
-//     }
-//   });
-
-//   function buildHierarchy(department: Department): Department {
-//     if (department.children) {
-//       department.children = department.children.map(buildHierarchy);
-//     }
-//     return department;
-//   }
-
-//   return Object.values(hierarchy).map(buildHierarchy);
+// interface Department {
+//   deptCode: string;
+//   deptParentCode?: string;
+//   children?: Department[];
 // }
+
+function buildDepartmentHierarchy(departments: HRDepartmentPublic[]): HRDepartmentPublic[] {
+  const hierarchy: { [dept_code: string]: HRDepartmentPublic } = {};
+
+  departments.forEach((department) => {
+    const dept_code = department.dept_code;
+    const dept_parentcode = department.dept_parentcode;
+    // console.log(department)
+
+    if (dept_parentcode) {
+      if (!hierarchy[dept_parentcode]) {
+        hierarchy[dept_parentcode] = { ...department, children: {}} };
+      
+      const departmentJSON = JSON.stringify(department);
+      const departmentObject = JSON.parse(departmentJSON);
+      hierarchy[dept_parentcode] = { ...department, children: {} };
+      // hierarchy[dept_parentcode].children?.push(departmentObject);
+      // hierarchy[dept_parentcode].children?.push(department);
+       } else {
+      hierarchy[dept_code] = department;
+      }
+      console.log(hierarchy)
+  });
+
+  // function buildHierarchy(department: HRDepartmentPublic): HRDepartmentPublic {
+  //   if (department.children) {
+  //     department.children = department.children.map(buildHierarchy);
+  //   }
+  //   return department;
+  // }
+  // console.log(hierarchy)
+  // return Object.values(hierarchy).map(buildHierarchy);
+  return [];
+}
 function Employee() {
   // const queryClient = useQueryClient();
 
@@ -270,7 +277,8 @@ function Employee() {
     return <div>Error loading departments: {error.message}</div>;
   }
   // Builds a hierarchical structure of departments from a list of departments
-  // buildDepartmentHierarchy(departments?.data || []);
+  const departmentHierarchy = buildDepartmentHierarchy(departments?.data || []);
+  // console.log(departmentHierarchy)
 
   const departmentshape = (departments?.data || []).reduce((acc, dept) => {
     acc[dept.dept_code] = dept;
