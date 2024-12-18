@@ -174,8 +174,8 @@ export type HRDepartmentPublic = {
   dept_code: number;
   dept_name: string;
   dept_parentcode: number;
-  // children: { [key: string]: HRDepartmentPublic };
-  children: {  };
+  // children?: { [key: string]: HRDepartmentPublic }[];
+  children: HRDepartmentPublic[];
   descendants: number[];
   level: number;
 };
