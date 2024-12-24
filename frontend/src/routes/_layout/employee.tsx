@@ -216,44 +216,41 @@ function CascadingMenu({ departments }: { departments: Departments }) {
     </>
   );
 }
-// interface Department {
-//   deptCode: string;
-//   deptParentCode?: string;
-//   children?: Department[];
-// }
 
-function buildDepartmentHierarchy(
-  departments: HRDepartmentPublic[]
-): HRDepartmentPublic[] {
-  const hierarchy: { [dept_code: string]: HRDepartmentPublic } = {};
-
-  departments.forEach((department) => {
-    const deptCode = department.dept_code;
-    const parentCode = department.dept_parentcode;
-
-    if (parentCode) {
-      if (!hierarchy[parentCode]) {
-        hierarchy[parentCode] = {
-          ...department,
-          children: [] as HRDepartmentPublic[],
-        };
-        // hierarchy[parentCode] = { dept_code: parentCode, children: [] };
-      }
-      hierarchy[parentCode].children?.push(department);
-    } else {
-      hierarchy[deptCode] = department;
-    }
-  });
-
-  function buildHierarchy(department: HRDepartmentPublic): HRDepartmentPublic {
-    if (department.children) {
-      department.children = department.children.map(buildHierarchy);
-    }
-    return department;
-  }
-
-  return Object.values(hierarchy).map(buildHierarchy);
+interface DepartmentProps {
+  data: HRDepartmentPublic[];
 }
+
+const buildHierarchy = (departments: HRDepartmentPublic[], parentCode: number = 0): HRDepartmentPublic[] => {
+  return departments
+    .filter(department => department.dept_parentcode === parentCode)
+    .map(department => ({
+      ...department,
+      children: buildHierarchy(departments, department.dept_code)
+    }));
+};
+
+const renderMenu = (departments: HRDepartmentPublic[]) => {
+  return (
+    
+    <ul>
+      {departments.map(department => (
+        <div style={{ marginLeft: `${department.level * 20}px`, padding: "5px 0" }}>
+        <li key={department.id}>
+          {department.dept_name}
+          {department.children && department.children.length > 0 && renderMenu(department.children)}
+        </li>
+        </div>
+      ))}
+    </ul>
+  );
+};
+
+const DepartmentMenu: React.FC<DepartmentProps> = ({ data }) => {
+  const hierarchy = buildHierarchy(data);
+  return <div>{renderMenu(hierarchy)}</div>;
+};
+
 function Employee() {
   // const queryClient = useQueryClient();
 
@@ -276,15 +273,14 @@ function Employee() {
     return <div>Error loading departments: {error.message}</div>;
   }
   // Builds a hierarchical structure of departments from a list of departments
-  // buildDepartmentHierarchy(departments?.data || []);
+  // const departmentHierarchy = DepartmentMenu(departments?.data || []);
+  // console.log(departmentHierarchy);
 
   const departmentShape = (departments?.data || []).reduce((acc, dept) => {
     acc[dept.dept_code] = dept;
     return acc;
   }, {} as Departments);
 
-  const result = buildDepartmentHierarchy(departments?.data || []);
-  console.log("result", result);
 
   return (
     <>
@@ -292,6 +288,7 @@ function Employee() {
         <Heading size="lg" textAlign={{ base: "center", md: "left" }} py={12}>
           Employee Dashboard
         </Heading>
+        <DepartmentMenu data={departments?.data || []} />
         <CascadingMenu departments={departmentShape} />
         {isFetching && <div>Updating...</div>}
         <EmployeeTable />
