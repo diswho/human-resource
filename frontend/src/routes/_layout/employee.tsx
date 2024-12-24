@@ -16,6 +16,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { z } from "zod";
 // import useAuth from "../../hooks/useAuth";
 import {
+  Departments,
   DepartmentService,
   EmployeesService,
   HRDepartmentPublic,
@@ -130,9 +131,10 @@ function EmployeeTable() {
     </>
   );
 }
-interface Departments {
-  [key: string]: HRDepartmentPublic;
-}
+
+// interface Departments {
+//   [key: string]: HRDepartmentPublic;
+// }
 
 function getDepartmentService() {
   return {
@@ -222,10 +224,6 @@ function CascadingMenu({ departments }: { departments: Departments }) {
   );
 }
 
-// interface DepartmentProps {
-//   data: HRDepartmentPublic[];
-// }
-
 const buildHierarchy = (
   departments: HRDepartmentPublic[],
   parentCode: number = 0
@@ -237,31 +235,6 @@ const buildHierarchy = (
       children: buildHierarchy(departments, department.dept_code),
     }));
 };
-
-// const renderMenu = (departments: HRDepartmentPublic[]) => {
-//   return (
-//     <ul>
-//       {departments.map((department) => (
-//         <div
-//           style={{ marginLeft: `${department.level * 20}px`, padding: "5px 0" }}
-//         >
-//           <li key={department.id}>
-//             {department.dept_name}
-//             {department.children &&
-//               department.children.length > 0 &&
-//               renderMenu(department.children)}
-//           </li>
-//         </div>
-//       ))}
-//     </ul>
-//   );
-// };
-
-// const DepartmentMenu: React.FC<DepartmentProps> = ({ data }) => {
-//   const hierarchy = buildHierarchy(data);
-//   // console.log(hierarchy);
-//   return <div>{renderMenu(hierarchy)}</div>;
-// };
 
 function Employee() {
   // const queryClient = useQueryClient();
@@ -284,9 +257,6 @@ function Employee() {
   if (isError) {
     return <div>Error loading departments: {error.message}</div>;
   }
-  // Builds a hierarchical structure of departments from a list of departments
-  // const departmentHierarchy = DepartmentMenu(departments?.data || []);
-  // console.log(departmentHierarchy);
 
   const departmentShape = (departments?.data || []).reduce((acc, dept) => {
     acc[dept.dept_code] = dept;

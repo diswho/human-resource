@@ -184,3 +184,7 @@ export type HRDepartmentsPublic = {
   data: Array<HRDepartmentPublic>;
   count: number;
 };
+
+export type Departments = {
+  [key: string]: HRDepartmentPublic;
+};
