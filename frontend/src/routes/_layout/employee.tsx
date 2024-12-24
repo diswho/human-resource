@@ -231,8 +231,7 @@ const buildHierarchy = (departments: HRDepartmentPublic[], parentCode: number = 
 };
 
 const renderMenu = (departments: HRDepartmentPublic[]) => {
-  return (
-    
+  return (    
     <ul>
       {departments.map(department => (
         <div style={{ marginLeft: `${department.level * 20}px`, padding: "5px 0" }}>
@@ -248,6 +247,7 @@ const renderMenu = (departments: HRDepartmentPublic[]) => {
 
 const DepartmentMenu: React.FC<DepartmentProps> = ({ data }) => {
   const hierarchy = buildHierarchy(data);
+  console.log(hierarchy);
   return <div>{renderMenu(hierarchy)}</div>;
 };
 
