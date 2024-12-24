@@ -160,7 +160,10 @@ function CascadingDropdown({ department }: { department: HRDepartmentPublic }) {
           fontWeight: "bold",
         }}
       >
-        {department.dept_name} {department.children && (isOpen ? "▲" : "▼")}
+        {department.dept_name}{" "}
+        {department.children &&
+          department.children.length > 0 &&
+          (isOpen ? "▲" : "▼")}
       </button>
       {isOpen && department.children && (
         <div
@@ -178,11 +181,12 @@ function CascadingDropdown({ department }: { department: HRDepartmentPublic }) {
     </div>
   );
 }
-// function CascadingMenu({  departments = {}}: {  departments?: { [key: string]: HRDepartmentPublic };}) {
 function CascadingMenu({ departments }: { departments: Departments }) {
-  const rootDepartments = Object.values(departments).filter(
-    (dept) => dept.dept_parentcode === 0
-  );
+  // function CascadingMenu({ departments }: { departments: HRDepartmentPublic }) {
+  // const rootDepartments = Object.values(departments).filter(
+  //   (dept) => dept.dept_parentcode === 0
+  // );
+  const hierarchy = buildHierarchy(Object.values(departments));
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropdown = () => {
     setIsOpen((prev) => !prev);
@@ -204,7 +208,8 @@ function CascadingMenu({ departments }: { departments: Departments }) {
         </button>
         {isOpen && (
           <div>
-            {rootDepartments.map((department) => (
+            {/* {rootDepartments.map((department) => ( */}
+            {hierarchy.map((department) => (
               <CascadingDropdown
                 key={department.dept_code}
                 department={department}
@@ -217,39 +222,46 @@ function CascadingMenu({ departments }: { departments: Departments }) {
   );
 }
 
-interface DepartmentProps {
-  data: HRDepartmentPublic[];
-}
+// interface DepartmentProps {
+//   data: HRDepartmentPublic[];
+// }
 
-const buildHierarchy = (departments: HRDepartmentPublic[], parentCode: number = 0): HRDepartmentPublic[] => {
+const buildHierarchy = (
+  departments: HRDepartmentPublic[],
+  parentCode: number = 0
+): HRDepartmentPublic[] => {
   return departments
-    .filter(department => department.dept_parentcode === parentCode)
-    .map(department => ({
+    .filter((department) => department.dept_parentcode === parentCode)
+    .map((department) => ({
       ...department,
-      children: buildHierarchy(departments, department.dept_code)
+      children: buildHierarchy(departments, department.dept_code),
     }));
 };
 
-const renderMenu = (departments: HRDepartmentPublic[]) => {
-  return (    
-    <ul>
-      {departments.map(department => (
-        <div style={{ marginLeft: `${department.level * 20}px`, padding: "5px 0" }}>
-        <li key={department.id}>
-          {department.dept_name}
-          {department.children && department.children.length > 0 && renderMenu(department.children)}
-        </li>
-        </div>
-      ))}
-    </ul>
-  );
-};
+// const renderMenu = (departments: HRDepartmentPublic[]) => {
+//   return (
+//     <ul>
+//       {departments.map((department) => (
+//         <div
+//           style={{ marginLeft: `${department.level * 20}px`, padding: "5px 0" }}
+//         >
+//           <li key={department.id}>
+//             {department.dept_name}
+//             {department.children &&
+//               department.children.length > 0 &&
+//               renderMenu(department.children)}
+//           </li>
+//         </div>
+//       ))}
+//     </ul>
+//   );
+// };
 
-const DepartmentMenu: React.FC<DepartmentProps> = ({ data }) => {
-  const hierarchy = buildHierarchy(data);
-  console.log(hierarchy);
-  return <div>{renderMenu(hierarchy)}</div>;
-};
+// const DepartmentMenu: React.FC<DepartmentProps> = ({ data }) => {
+//   const hierarchy = buildHierarchy(data);
+//   // console.log(hierarchy);
+//   return <div>{renderMenu(hierarchy)}</div>;
+// };
 
 function Employee() {
   // const queryClient = useQueryClient();
@@ -281,14 +293,12 @@ function Employee() {
     return acc;
   }, {} as Departments);
 
-
   return (
     <>
       <Container maxW="full">
         <Heading size="lg" textAlign={{ base: "center", md: "left" }} py={12}>
           Employee Dashboard
         </Heading>
-        <DepartmentMenu data={departments?.data || []} />
         <CascadingMenu departments={departmentShape} />
         {isFetching && <div>Updating...</div>}
         <EmployeeTable />
