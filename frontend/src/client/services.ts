@@ -368,6 +368,7 @@ export class UsersService {
 export type TDataReadEmployees = {
   limit?: number;
   skip?: number;
+  descendants?: number[];
 };
 
 export class EmployeesService {
@@ -378,15 +379,16 @@ export class EmployeesService {
    * @throws ApiError
    */
   public static readEmployees(
-    data: TDataReadEmployees = {}
+    params: TDataReadEmployees = {}
   ): CancelablePromise<EmployeesPublic> {
-    const { limit = 100, skip = 0 } = data;
+    const { limit = 100, skip = 0,descendants } = params;
     return __request(OpenAPI, {
       method: "GET",
       url: "/api/v1/employee/",
       query: {
         skip,
         limit,
+        descendants
       },
       errors: {
         422: "Validation Error",
@@ -394,6 +396,7 @@ export class EmployeesService {
     });
   }
 }
+
 // ============================================================
 export class DepartmentService {
   /**
