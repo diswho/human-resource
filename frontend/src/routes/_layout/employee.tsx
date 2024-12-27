@@ -23,6 +23,7 @@ import {
 } from "../../client";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
+import ActionsMenu from "../../components/Common/ActionsMenu";
 
 const employeesSearchSchema = z.object({
   page: z.number().catch(1),
@@ -87,6 +88,7 @@ function EmployeeTable({ selectedDepartment }: { selectedDepartment?: number[] }
               <Th>emp_hiredate</Th>
               <Th>emp_title</Th>
               <Th>emp_birthday</Th>
+              <Th>Actions</Th>
             </Tr>
           </Thead>
           {isPending ? (
@@ -111,6 +113,7 @@ function EmployeeTable({ selectedDepartment }: { selectedDepartment?: number[] }
                   <Td>{employee.emp_hiredate}</Td>
                   <Td>{employee.emp_title}</Td>
                   <Td>{employee.emp_birthday}</Td>
+                  <Td><ActionsMenu type={"Employee"} value={employee}/></Td>
                 </Tr>
               ))}
             </Tbody>

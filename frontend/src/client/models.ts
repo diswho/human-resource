@@ -154,7 +154,7 @@ export type EmployeePublic = {
   emp_ViceCard: string;
   department_id: number;
   position_id: number;
-  id: number;
+  id: string;
 };
 export type EmployeesPublic = {
   data: Array<EmployeePublic>;

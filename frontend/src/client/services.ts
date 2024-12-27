@@ -4,6 +4,7 @@ import { request as __request } from "./core/request";
 
 import type {
   Body_login_login_access_token,
+  EmployeePublic,
   EmployeesPublic,
   HRDepartmentsPublic,
   ItemCreate,
@@ -370,6 +371,10 @@ export type TDataReadEmployees = {
   skip?: number;
   descendants?: number[];
 };
+export type TDataUpdateEmployee = {
+  id: string;
+  requestBody: EmployeePublic;
+};
 
 export class EmployeesService {
   /**
@@ -395,7 +400,29 @@ export class EmployeesService {
       },
     });
   }
+
+  
+
+  public static updateEmployee(
+    data: TDataUpdateEmployee
+  ): CancelablePromise<EmployeePublic> {
+    const { id, requestBody } = data;
+    return __request(OpenAPI, {
+      method: "PATCH",
+      url: "/api/v1/employee/{id}",
+      path: {
+        id,
+      },
+      body: requestBody,
+      mediaType: "application/json",
+      errors: {
+        422: "Validation Error",
+      },
+    });
+  }
 }
+
+
 
 // ============================================================
 export class DepartmentService {
