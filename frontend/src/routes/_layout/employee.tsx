@@ -37,7 +37,13 @@ export const Route = createFileRoute("/_layout/employee")({
 const PER_PAGE = 15;
 
 // function getEmployeeService({ page }: { page: number }) {
-function getEmployeeService({ page, descendants }: { page: number, descendants?: number[] }) {
+function getEmployeeService({
+  page,
+  descendants,
+}: {
+  page: number;
+  descendants?: number[];
+}) {
   console.log("descendants", descendants);
   return {
     queryFn: () =>
@@ -51,7 +57,11 @@ function getEmployeeService({ page, descendants }: { page: number, descendants?:
 }
 
 // function EmployeeTable() {
-function EmployeeTable({ selectedDepartment }: { selectedDepartment?: number[] }) {
+function EmployeeTable({
+  selectedDepartment,
+}: {
+  selectedDepartment?: number[];
+}) {
   const queryClient = useQueryClient();
   const { page } = Route.useSearch();
   const navigate = useNavigate({ from: Route.fullPath });
@@ -70,7 +80,9 @@ function EmployeeTable({ selectedDepartment }: { selectedDepartment?: number[] }
 
   useEffect(() => {
     if (hasNextPage) {
-      queryClient.prefetchQuery(getEmployeeService({ page: page + 1, descendants: selectedDepartment }));
+      queryClient.prefetchQuery(
+        getEmployeeService({ page: page + 1, descendants: selectedDepartment })
+      );
     }
   }, [page, queryClient, hasNextPage, selectedDepartment]);
 
@@ -113,7 +125,9 @@ function EmployeeTable({ selectedDepartment }: { selectedDepartment?: number[] }
                   <Td>{employee.emp_hiredate}</Td>
                   <Td>{employee.emp_title}</Td>
                   <Td>{employee.emp_birthday}</Td>
-                  <Td><ActionsMenu type={"Employee"} value={employee}/></Td>
+                  <Td>
+                    <ActionsMenu type={"Employee"} value={employee} />
+                  </Td>
                 </Tr>
               ))}
             </Tbody>
@@ -139,9 +153,10 @@ function EmployeeTable({ selectedDepartment }: { selectedDepartment?: number[] }
   );
 }
 
-
 function Employee() {
-  const [selectedDepartment, setSelectedDepartment] = useState<number[] | undefined>(undefined);
+  const [selectedDepartment, setSelectedDepartment] = useState<
+    number[] | undefined
+  >(undefined);
 
   const {
     data: departments,
@@ -173,7 +188,10 @@ function Employee() {
         <Heading size="lg" textAlign={{ base: "center", md: "left" }} py={12}>
           Employee Dashboard
         </Heading>
-        <CascadingMenu departments={departmentShape} onSelectDepartment={setSelectedDepartment} />
+        <CascadingMenu
+          departments={departmentShape}
+          onSelectDepartment={setSelectedDepartment}
+        />
         {isFetching && <div>Updating...</div>}
         <EmployeeTable selectedDepartment={selectedDepartment} />
       </Container>
@@ -182,7 +200,13 @@ function Employee() {
 }
 
 // function CascadingMenu({ departments }: { departments: Departments }) {
-function CascadingMenu({ departments, onSelectDepartment }: { departments: Departments, onSelectDepartment: (descendants: number[]) => void }) {
+function CascadingMenu({
+  departments,
+  onSelectDepartment,
+}: {
+  departments: Departments;
+  onSelectDepartment: (descendants: number[]) => void;
+}) {
   const hierarchy = buildHierarchy(Object.values(departments));
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropdown = () => {
@@ -206,7 +230,11 @@ function CascadingMenu({ departments, onSelectDepartment }: { departments: Depar
         {isOpen && (
           <div>
             {hierarchy.map((department) => (
-              <CascadingDropdown key={department.dept_code} department={department} onSelectDepartment={onSelectDepartment} />
+              <CascadingDropdown
+                key={department.dept_code}
+                department={department}
+                onSelectDepartment={onSelectDepartment}
+              />
             ))}
           </div>
         )}
@@ -216,7 +244,13 @@ function CascadingMenu({ departments, onSelectDepartment }: { departments: Depar
 }
 
 // function CascadingDropdown({ department }: { department: HRDepartmentPublic }) {
-  function CascadingDropdown({ department, onSelectDepartment }: { department: HRDepartmentPublic, onSelectDepartment: (descendants: number[]) => void }) {
+function CascadingDropdown({
+  department,
+  onSelectDepartment,
+}: {
+  department: HRDepartmentPublic;
+  onSelectDepartment: (descendants: number[]) => void;
+}) {
   // multi cascading dropdown menu for departments
   const [isOpen, setIsOpen] = useState(false);
 
@@ -254,7 +288,11 @@ function CascadingMenu({ departments, onSelectDepartment }: { departments: Depar
           }}
         >
           {Object.values(department.children).map((child) => (
-            <CascadingDropdown key={child.dept_code} department={child} onSelectDepartment={onSelectDepartment} />
+            <CascadingDropdown
+              key={child.dept_code}
+              department={child}
+              onSelectDepartment={onSelectDepartment}
+            />
           ))}
         </div>
       )}
