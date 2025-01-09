@@ -6,10 +6,13 @@ from sqlmodel import Session, select
 from app.core.security import get_password_hash, verify_password
 from app.models.item import Item, ItemCreate
 from app.models.user import User, UserCreate, UserUpdate
+from app.models.types import PaymentTypes, DeductionTypes
 from app.models.hr_company import HRCompany, HRCompanyCreate
 from app.models.hr_department import HRDepartment
 from app.models.hr_employee import HREmployee
 from app.models.hr_position import HRPosition
+from app.models.hr_salaries import HRSalary
+from app.models.hr_performance import HRPerformance
 from app.models.att_day_summary import AttDaySummary
 from app.models.att_employee_shift import AttEmployeeShift
 from app.models.att_punches import AttPunches

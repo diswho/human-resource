@@ -1,14 +1,11 @@
-from sqlmodel import SQLModel, Field, Relationship
-from typing import TYPE_CHECKING, Optional
+from sqlmodel import SQLModel, Field
 from datetime import date
-
-if TYPE_CHECKING:
-    from .hr_employee import HREmployee
+from sqlalchemy import Numeric  
 
 
 class HRPaymentBase(SQLModel):
     payment_date: date
-    amount: float = Field(sa_column_kwargs={"decimal_places": 2, "max_digits": 10})
+    amount: float = Field(sa_column=Numeric(10, 2))
 
 
 class HRPayment(HRPaymentBase, table=True):
@@ -16,4 +13,3 @@ class HRPayment(HRPaymentBase, table=True):
     payment_id: int | None = Field(default=None, primary_key=True)
     employee_id: int = Field(foreign_key="hr_employee.id")
     payment_type: int = Field(foreign_key="payment_types.id")
-    employee: Optional["HREmployee"] = Relationship(back_populates="payments")
