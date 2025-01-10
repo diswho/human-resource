@@ -7,7 +7,7 @@ python /app/app/backend_pre_start.py
 # Run migrations
 
 # ```console
-# $ alembic revision --autogenerate -m "hr_performance"
+# $ alembic revision --autogenerate -m "description_of_changes"
 # ```
 # After creating the revision, run the migration in the database (this is what will actually change the database):
 alembic upgrade head
