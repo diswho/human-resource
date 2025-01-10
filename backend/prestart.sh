@@ -8,9 +8,11 @@ python /app/app/backend_pre_start.py
 
 # ```console
 # $ alembic revision --autogenerate -m "description_of_changes"
+# alembic revision -m "Update s column types"
 # ```
 # After creating the revision, run the migration in the database (this is what will actually change the database):
-alembic upgrade head
+# alembic upgrade head
+# alembic downgrade 4960ae64aad1
 
 # Create initial data in DB
 python /app/app/initial_data.py

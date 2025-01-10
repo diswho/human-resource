@@ -6,6 +6,7 @@ class PaymentTypes(SQLModel, table=True):
     id: int = Field(default=None, primary_key=True)
     la_name: str = Field(max_length=50)
     en_name: str = Field(max_length=50)
+    description: str = Field(max_length=150)
 
 
 class DeductionTypes(SQLModel, table=True):
@@ -13,3 +14,4 @@ class DeductionTypes(SQLModel, table=True):
     id: int = Field(default=None, primary_key=True)
     la_name: str = Field(max_length=50)
     en_name: str = Field(max_length=50)
+    description: str = Field(max_length=150)
