@@ -13,34 +13,36 @@ router = APIRouter()
 # def get_employees(session: SessionDep, skip: int = 0, limit: int = 100) -> Any:
 def get_employees(session: SessionDep, skip: int = 0, limit: int = 100, descendants: Optional[List[int]] = Query(None)) -> Any:
     count_statement = select(func.count()).select_from(HREmployee)
-    statement = select(HREmployee).offset(skip).limit(limit)       
-  
+    statement = select(HREmployee).offset(skip).limit(limit)
+
     if descendants:
         count_statement = count_statement.where(HREmployee.department_id.in_(descendants))
         statement = statement.where(HREmployee.department_id.in_(descendants))
-    
+
     count = session.exec(count_statement).one()
-    employees = session.exec(statement).all()        
+    employees = session.exec(statement).all()
     return HREmployeesOut(data=employees, count=count)
+
 
 @router.put("/{employee_id}", response_model=HREmployeesOut)
 def update_employee(employee_id: int, employee_update: HREmployeesOut, session: SessionDep) -> Any:
     employee = session.get(HREmployee, employee_id)
     if not employee:
         raise HTTPException(status_code=404, detail="Employee not found")
-    
+
     for key, value in employee_update.dict(exclude_unset=True).items():
         setattr(employee, key, value)
-    
+
     session.add(employee)
     session.commit()
     session.refresh(employee)
-    
+
     return employee
 
+
 @router.put("/update_salary/{employee_id}", response_model=HRSalaryUpdate)
-def update_employee_salary(employee_id: int, salary: int, session: SessionDep) -> Any:
-    # based on hr_salaries.py, build the logic to update the salary of an employee, 
+def update_employee_salary(*, session: SessionDep, employee_id: int, salary: HRSalaryUpdate) -> Any:
+    # based on hr_salaries.py, build the logic to update the salary of an employee,
     # where input is the employee_id and date.
     # condition: if the salary date(Month-Year) is already present in the database, update the salary, else create a new salary record.
     # return the updated employee record.
@@ -53,7 +55,7 @@ def update_employee_salary(employee_id: int, salary: int, session: SessionDep) -
 
     if not salary_record:
         salary_record = HRSalary(employee_id=employee_id, salary_date=salary_date)
-    
+
     salary_record.base_salary = salary
     session.add(salary_record)
     session.commit()

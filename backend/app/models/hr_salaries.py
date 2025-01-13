@@ -17,4 +17,5 @@ class HRSalary(HRSalaryBase, table=True):
 
 
 class HRSalaryUpdate(HRSalary):
-    id: int | None =  Field(default=None)
+    # id: int | None =  Field(default=None)
+    pass
