@@ -1,9 +1,11 @@
+from datetime import date
 from typing import Any, List, Optional
 from app.models.hr_employee import HREmployee, HREmployeesOut
 from fastapi import APIRouter, HTTPException, Query
 from sqlmodel import select, func
 from app.api.deps import SessionDep
 from sqlalchemy.dialects import postgresql
+from app.models.hr_salaries import HRSalary, HRSalaryUpdate
 router = APIRouter()
 
 
@@ -34,4 +36,27 @@ def update_employee(employee_id: int, employee_update: HREmployeesOut, session: 
     session.commit()
     session.refresh(employee)
     
+    return employee
+
+@router.put("/update_salary/{employee_id}", response_model=HRSalaryUpdate)
+def update_employee_salary(employee_id: int, salary: int, session: SessionDep) -> Any:
+    # based on hr_salaries.py, build the logic to update the salary of an employee, 
+    # where input is the employee_id and date.
+    # condition: if the salary date(Month-Year) is already present in the database, update the salary, else create a new salary record.
+    # return the updated employee record.
+    employee = session.get(HREmployee, employee_id)
+    if not employee:
+        raise HTTPException(status_code=404, detail="Employee not found")
+
+    salary_date = date.today().replace(day=1)
+    salary_record = session.exec(select(HRSalary).where(HRSalary.employee_id == employee_id, HRSalary.salary_date == salary_date)).first()
+
+    if not salary_record:
+        salary_record = HRSalary(employee_id=employee_id, salary_date=salary_date)
+    
+    salary_record.base_salary = salary
+    session.add(salary_record)
+    session.commit()
+    session.refresh(employee)
+
     return employee
