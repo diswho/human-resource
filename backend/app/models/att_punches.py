@@ -8,6 +8,8 @@ if TYPE_CHECKING:
 
 
 class AttPunchesBase(SQLModel):
+    id: int | None = Field(default=None, primary_key=True)
+    employee_id: int | None = Field(default=None, foreign_key="hr_employee.id")
     punch_time: datetime
     workcode: int | None = None
     workstate: int | None = None
@@ -26,7 +28,6 @@ class AttPunchesBase(SQLModel):
     status: int | None = None
     annotation: str | None = None
     processed: int | None = None
-    employee_id: int | None = Field(default=None, foreign_key="hr_employee.id")
 
 
 class AttPunchesCreate(AttPunchesBase):
@@ -40,4 +41,4 @@ class AttPunchesUpdate(AttPunchesBase):
 
 class AttPunches(AttPunchesBase, table=True):
     __tablename__ = "att_punches"
-    id: int | None = Field(default=None, primary_key=True)
+    # id: int | None = Field(default=None, primary_key=True)

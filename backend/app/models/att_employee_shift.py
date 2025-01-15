@@ -7,10 +7,11 @@ from datetime import datetime
 
 
 class AttEmployeeShiftBase(SQLModel):
+    id: int | None = Field(default=None, primary_key=True)
     startDate: datetime
     endDate: datetime
     employee_id: int
-    shift_id: int
+    shift_id: int | None = Field(default=None, foreign_key="att_shift.id")
     modifyDate: datetime | None = None
     NoEndDate: bool | None = None
 
@@ -30,7 +31,7 @@ class AttEmployeeShiftUpdate(AttEmployeeShiftBase):
 
 class AttEmployeeShift(AttEmployeeShiftBase, table=True):
     __tablename__ = "att_employee_shift"
-    id: int | None = Field(default=None, primary_key=True)
-    shift_id: int | None = Field(default=None, foreign_key="att_shift.id")
-    startDate: datetime
-    endDate: datetime
+    # id: int | None = Field(default=None, primary_key=True)
+    # shift_id: int | None = Field(default=None, foreign_key="att_shift.id")
+    # startDate: datetime
+    # endDate: datetime

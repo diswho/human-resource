@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS att_DayType;
 -- DROP TABLE IF EXISTS hr_deductions;
 -- DROP TABLE IF EXISTS hr_payments;
 -- DROP TABLE IF EXISTS deduction_types;

@@ -5,6 +5,7 @@ from datetime import datetime
 
 
 class AttTimetableBase(SQLModel):
+    id: int | None = Field(default=None, primary_key=True)
     timetableType: int | None = None
     timetable_color: int | None = None
     timetable_name: str
@@ -48,4 +49,4 @@ class AttTimetableUpdate(AttTimetableBase):
 
 class AttTimetable(AttTimetableBase, table=True):
     __tablename__ = "att_timetable"
-    id: int | None = Field(default=None, primary_key=True)
+    # id: int | None = Field(default=None, primary_key=True)

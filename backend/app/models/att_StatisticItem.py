@@ -5,6 +5,7 @@ from decimal import Decimal
 
 
 class AttStatisticItemBase(SQLModel):
+    id: int | None = Field(default=None, primary_key=True)
     item_code: int
     item_desc: str | None = None
     item_type: int | None = None
@@ -28,4 +29,4 @@ class AttStatisticItemUpdate(AttStatisticItemBase):
 
 class AttStatisticItem(AttStatisticItemBase, table=True):
     __tablename__ = "att_StatisticItem"
-    id: int | None = Field(default=None, primary_key=True)
+    # id: int | None = Field(default=None, primary_key=True)

@@ -6,6 +6,7 @@ from datetime import datetime
 
 
 class AttShiftBase(SQLModel):
+    id: int | None = Field(default=None, primary_key=True)
     shift_name: str
     cycle_available: bool
     cycle_type: int | None = None
@@ -27,4 +28,4 @@ class AttShiftUpdate(AttShiftBase):
 
 class AttShift(AttShiftBase, table=True):
     __tablename__ = "att_shift"
-    id: int | None = Field(default=None, primary_key=True)
+    # id: int | None = Field(default=None, primary_key=True)

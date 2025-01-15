@@ -9,6 +9,7 @@ if TYPE_CHECKING:
 
 
 class HREmployeeBase(SQLModel):
+    id: int | None = Field(default=None, primary_key=True)
     emp_email: str | None = None
     emp_pin: str | None = None
     emp_ssn: str | None = None
@@ -68,7 +69,7 @@ class HREmployeeBase(SQLModel):
 
 class HREmployee(HREmployeeBase, table=True):
     __tablename__ = "hr_employee"
-    id: int | None = Field(default=None, primary_key=True)
+    # id: int | None = Field(default=None, primary_key=True)
 
 
 class HREmployeeCreate(HREmployeeBase):
