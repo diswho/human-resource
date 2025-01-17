@@ -10,7 +10,7 @@ class AttDayTypeBase(SQLModel):
 
 
 class AttDayType(AttDayTypeBase, table=True):
-    __tablename__ = "att_daytype"
+    __tablename__ = "att_DayType"
 
 
 class AttDayTypeCreate(AttDayTypeBase):

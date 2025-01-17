@@ -1,6 +1,7 @@
 from array import ArrayType
 import logging
 # import sqlite3
+# from app.models.att_shift_details import AttShiftDetails
 from app.models.att_shift_details import AttShiftDetails
 from app.models.hr_company import HRCompany
 from app.models.hr_deductions import HRDeduction
@@ -29,8 +30,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # SQLite database connection details
-sqlite_db_path = '/home/sailom/Documents/Database/Xothavy/ZKTimeNet.db'
-# sqlite_db_path = "C:\\Users\\phuong\\OneDrive\\Private\\Xokthavi\\HR\\ZKTimeNet.db"
+# sqlite_db_path = '/home/sailom/Documents/Database/Xothavy/ZKTimeNet.db'
+sqlite_db_path = "C:\\Users\\phuong\\OneDrive\\Private\\Xokthavi\\HR\\ZKTimeNet.db"
 engine_sqlite = create_engine(f"sqlite:///{sqlite_db_path}")
 
 # PostgreSQL database connection details
@@ -70,32 +71,24 @@ def init_model(model: SQLModel) -> None:
 
 def main() -> None:
     logger.info("Creating import data")
-    init_model(HRCompany)
-    init_model(HRDepartment)
-    init_model(HRPosition)
-    init_model(AttDayType)
-    init_model(AttShift)
-    init_model(DeductionTypes)
-    init_model(PaymentTypes)
-    init_model(HREmployee)
-    init_model(PaymentTypes)
-    init_model(DeductionTypes)
-    init_model(HRPayment)
-    init_model(HRDeduction)
-    init_model(HRSalary)
-    init_model(HRPerformance)
-    init_model(AttTimetable)
-    init_model(AttStatisticItem)
-    init_model(AttShift)
-    init_model(AttShiftDetails)
-    init_model(AttPunches)
+    # init_model(HRCompany)
+    # init_model(HRDepartment)
+    # init_model(HRPosition)
+    # init_model(AttDayType)
+    # init_model(AttShift)
+    # init_model(HREmployee)
+    # init_model(AttTimetable)
+    # init_model(AttStatisticItem)
+    # init_model(AttShift)
+
+    # init_model(AttShiftDetails)
+    # init_model(AttPunches)
     init_model(AttEmployeeShift)
     init_model(AttDaySummary)
 
-    
     logger.info("import data finish")
 
 
 if __name__ == "__main__":
     main()
-# uvicorn backend.data_process.main:app
+# python data_process\import_database.py

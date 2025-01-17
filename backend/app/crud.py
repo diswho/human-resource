@@ -20,6 +20,7 @@ from app.models.att_shift import AttShift
 from app.models.att_StatisticItem import AttStatisticItem
 from app.models.att_timetable import AttTimetable
 from app.models.att_DayType import AttDayType
+from app.models.att_shift_details import AttShiftDetails
 
 
 def create_company(*, session: Session, company_create: HRCompanyCreate) -> HRCompany:

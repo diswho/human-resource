@@ -1,4 +1,5 @@
-from sqlmodel import SQLModel, Field, Integer, DateTime
+from datetime import datetime
+from sqlmodel import SQLModel, Field, Integer
 from typing import TYPE_CHECKING, Optional
 
 if TYPE_CHECKING:
@@ -7,7 +8,7 @@ if TYPE_CHECKING:
 
 class AttShiftDetailsBase(SQLModel):
     id: int | None = Field(default=None, primary_key=True)
-    shift_date: DateTime
+    shift_date: datetime
     dayTypeCode: int | None = None
     timetable_paycode: int | None = None
     shift_id: int | None = Field(default=None, foreign_key="att_shift.id")
@@ -19,7 +20,7 @@ class AttShiftDetailsCreate(AttShiftDetailsBase):
 
 
 class AttShiftDetailsUpdate(AttShiftDetailsBase):
-    shift_date: DateTime | None = None
+    shift_date: datetime | None = None
 
 # Set table name and foreign key constraint
 
