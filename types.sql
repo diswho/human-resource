@@ -1,7 +1,7 @@
 -- SELECT * FROM "att_DayType";
 
 -- DROP TABLE IF EXISTS att_day_summary;
-DROP TABLE IF EXISTS "att_daytype";
+-- DROP TABLE IF EXISTS "att_daytype";
 -- DROP TABLE IF EXISTS att_employee_shift 
 -- DROP TABLE IF EXISTS att_punches;
 -- DROP TABLE IF EXISTS att_shift_details;

@@ -40,6 +40,17 @@ def update_employee(employee_id: int, employee_update: HREmployeesOut, session: 
     return employee
 
 
+@router.post("/new_salary", response_model=HRSalary)
+def new_salary(salary_in: HRSalary, session: SessionDep) -> Any:
+    # based on hr_salaries.py, build the logic to create a new salary record.
+    # return the newly created salary record.
+    salary=HRSalary.model_validate(salary_in)
+    session.add(salary)
+    session.commit()
+    session.refresh(salary)
+    return salary
+
+
 @router.put("/update_salary/{employee_id}", response_model=HRSalaryUpdate)
 def update_employee_salary(*, session: SessionDep, employee_id: int, salary: HRSalaryUpdate) -> Any:
     # based on hr_salaries.py, build the logic to update the salary of an employee,

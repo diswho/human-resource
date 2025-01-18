@@ -83,8 +83,8 @@ def main() -> None:
 
     # init_model(AttShiftDetails)
     # init_model(AttPunches)
-    init_model(AttEmployeeShift)
-    init_model(AttDaySummary)
+    # init_model(AttEmployeeShift)
+    # init_model(AttDaySummary)
 
     logger.info("import data finish")
 
