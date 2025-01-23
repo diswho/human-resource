@@ -1,33 +1,43 @@
-# Report
+# Tables
 
-## Income
+## Income & Outcome
 
-| Monthly Income      | NonMonthly Income | |
-| ------------- | ----------- |-|
-| Amount        | Amount      | |
-| Accumulate    |             | |
-| Total         |             | |
-| From Date     |             | |
-| To Date       |             | |
-| Type          | Type        | (Salary, OT, Commission, Bonuses, Tips...)|
-| Status        | Status      | (Active, Update, Pending, Cancel, Done)| 
-| Issue Date    | Issue Date  | |
+| (Monthly Income) | (NonMonthly Income) | (Monthly OutCome) |
+| ---------------- | ------------------- | ----------------- |
+| Amount           | Amount              | Amount            |
+| Type             | Type                | Type              |
+| Status           | Status              | Status            |
+| Issue Date       | Issue Date          | Issue Date        |
+| From Date        | -                   | From Date         |
+| To Date          | -                   | To Date           |
+| Accumulate       | -                   | Accumulate        |
+| Total            | -                   | Total             |
 
-## Outcome
-|Monthly OutCome  |
-|-------------|
-|Amount       |
-|Accumulate   |
-|Total        |
-|From Date    |
-|To Date      |
-|Type         |
-|Status       |
-|Issue Date   |
+### Type and Status of Income / Outcome
+
+| (Type NonMonthly) | (Status) | (Type Monthly) |
+| ----------------- | -------- | -------------- |
+| OT                | Active   | Salary         |
+| Commission        | Update   | Position       |
+| Bonuses           | Pending  | Gasoline       |
+| Tips              | Cancel   | -              |
+| Allowances        | Done     | -              |
+| Severance Pay     | Initial  | -              |
+| Profit Sharing    | -        | -              |
+
+## Slip
+
+| Item                    |
+| ----------------------- |
+| Employee ID             |
+| List Incomes / Outcomes |
+| Amount                  |
+| Month                   |
 
 ## Diagram
 
 - Markdown Preview Mermaid Support
+
 ```mermaid
 sequenceDiagram
   participant Alice
