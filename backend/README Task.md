@@ -1,12 +1,33 @@
 # Report
 
-## Department Info
+## Income
 
-- Get list of Department, tree structure, JSON format.
-- Each node of tree include descendants id.
+| Monthly Income      | NonMonthly Income | |
+| ------------- | ----------- |-|
+| Amount        | Amount      | |
+| Accumulate    |             | |
+| Total         |             | |
+| From Date     |             | |
+| To Date       |             | |
+| Type          | Type        | (Salary, OT, Commission, Bonuses, Tips...)|
+| Status        | Status      | (Active, Update, Pending, Cancel, Done)| 
+| Issue Date    | Issue Date  | |
+
+## Outcome
+|Monthly OutCome  |
+|-------------|
+|Amount       |
+|Accumulate   |
+|Total        |
+|From Date    |
+|To Date      |
+|Type         |
+|Status       |
+|Issue Date   |
 
 ## Diagram
 
+- Markdown Preview Mermaid Support
 ```mermaid
 sequenceDiagram
   participant Alice
@@ -21,6 +42,15 @@ sequenceDiagram
   activate Charlie
   Charlie-->>Alice: I am great, thanks!
   deactivate Charlie
+```
+
+```mermaid
+stateDiagram
+    [*] --> First
+    state First {
+        [*] --> second
+        second --> [*]
+    }
 ```
 
 # User
