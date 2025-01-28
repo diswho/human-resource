@@ -1,5 +1,13 @@
 # Tables
 
+<font color="yellow">Tabels</font>
+
+> :warning: **Warning:** Do not push the big red button.
+
+> :memo: **Note:** Sunrises are beautiful.
+
+> :bulb: **Tip:** Remember to appreciate the little things in life.
+
 ## Income & Outcome
 
 | (Monthly Income) | (NonMonthly Income) | (Monthly OutCome) |
