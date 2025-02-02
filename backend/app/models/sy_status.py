@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class InOutStatus(Enum):
+class SyStatus(Enum):
     PENDING = "pending"
     APPROVED = "approved"
     REJECTED = "rejected"

@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class HrInOutType(Enum):
+class SyType(Enum):
     SALARY = "salary"
     POSITION = "position"
     GASOLINE = "gasoline"
@@ -12,3 +12,4 @@ class HrInOutType(Enum):
     ALLOWANCE = "allowance"
     SEVERANCE = "severance"
     PROFITSHARING = "profit sharing"
+    ADVANCE = "advance"
