@@ -1,15 +1,13 @@
 import uuid
-from app.models.sy_status import SyStatus
-from app.models.sy_type import SyType
 from sqlmodel import Field, SQLModel
 
 
-class SyNonMonthlyIncome(SQLModel, table=True):
+class SyNonMonthlyIncome(SQLModel):
     employee_id: int = Field(foreign_key='hr_employee.id')
     amount: float
-    type: SyType = Field(default_factory=SyType.ADVANCE, sa_column_kwargs={"type": "VARCHAR(50)"})
-    Status: SyStatus = Field(default_factory=SyStatus.INITIATED, sa_column_kwargs={"type": "VARCHAR(50)"})
     IssueDate: str = Field(max_length=50)
+    type: int | None = Field(default=None, foreign_key='sy_type.id')
+    status: int | None = Field(default=None, foreign_key='sy_status.id')
 
 
 class SyNonMonthlyIncomeBase(SyNonMonthlyIncome, table=True):

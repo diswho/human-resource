@@ -5,8 +5,12 @@ from app.core.config import settings
 from app.models.user import User, UserCreate
 from app.models.hr_company import HRCompany
 from app.models.hr_department import HRDepartment
-from app.models.hr_salaries import HRSalary
-from app.models.hr_payments import HRPayment
+from app.models.sy_monthly_income import SyMonthlyIncomeBase
+from app.models.sy_status import SyStatusBase
+from app.models.sy_type import SyTypeBase
+
+from app.models.sy_monthly_outcome import HrMonthlyOutcomeBase
+from app.models.sy_non_monthly_income import SyNonMonthlyIncomeBase
 
 engine = create_engine(str(settings.SQLALCHEMY_DATABASE_URI))
 

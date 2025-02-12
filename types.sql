@@ -1,4 +1,4 @@
--- SELECT * FROM "att_DayType";
+SELECT * FROM "att_DayType";
 
 -- DROP TABLE IF EXISTS att_day_summary;
 -- DROP TABLE IF EXISTS "att_daytype";
