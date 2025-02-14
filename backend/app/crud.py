@@ -18,6 +18,17 @@ from app.models.att_StatisticItem import AttStatisticItem
 from app.models.att_timetable import AttTimetable
 from app.models.att_DayType import AttDayType
 from app.models.att_shift_details import AttShiftDetails
+from app.models.sy_monthly_income import MonthlyIncomeBase, MonthlyIncomeCreate
+
+
+def create_monthly_income(
+    *, session: Session, monthly_income_create: MonthlyIncomeCreate
+) -> MonthlyIncomeBase:
+    db_obj = MonthlyIncomeBase.model_validate(monthly_income_create)
+    session.add(db_obj)
+    session.commit()
+    session.refresh(db_obj)
+    return db_obj
 
 
 def create_company(*, session: Session, company_create: HRCompanyCreate) -> HRCompany:

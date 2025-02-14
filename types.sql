@@ -1,6 +1,6 @@
--- SELECT * FROM "sy_status";
--- SELECT * FROM "sy_type";
-SELECT * FROM "hr_employee" order by emp_pin limit 10;
+SELECT * FROM "sy_status";
+SELECT * FROM "sy_type";
+-- SELECT * FROM "hr_employee" order by emp_pin limit 10;
 -- 0060
 
 -- INSERT INTO sy_status (id, name_en) VALUES

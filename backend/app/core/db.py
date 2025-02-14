@@ -5,7 +5,7 @@ from app.core.config import settings
 from app.models.user import User, UserCreate
 from app.models.hr_company import HRCompany
 from app.models.hr_department import HRDepartment
-from app.models.sy_monthly_income import SyMonthlyIncomeBase
+from app.models.sy_monthly_income import MonthlyIncomeBase
 from app.models.sy_status import SyStatusBase
 from app.models.sy_type import SyTypeBase
 
