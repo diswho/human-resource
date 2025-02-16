@@ -5,7 +5,8 @@ from fastapi import APIRouter, HTTPException, Query
 from sqlmodel import select, func
 from app.api.deps import SessionDep
 from sqlalchemy.dialects import postgresql
-from app.models.hr_salaries import HRSalary, HRSalaryUpdate
+# from app.models.hr_salaries import HRSalary, HRSalaryUpdate
+
 router = APIRouter()
 
 
@@ -44,7 +45,7 @@ def update_employee(employee_id: int, employee_update: HREmployeesOut, session: 
 def new_salary(salary_in: HRSalary, session: SessionDep) -> Any:
     # based on hr_salaries.py, build the logic to create a new salary record.
     # return the newly created salary record.
-    salary=HRSalary.model_validate(salary_in)
+    salary = HRSalary.model_validate(salary_in)
     session.add(salary)
     session.commit()
     session.refresh(salary)
