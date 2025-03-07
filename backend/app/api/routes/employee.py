@@ -40,37 +40,3 @@ def update_employee(employee_id: int, employee_update: HREmployeesOut, session: 
 
     return employee
 
-
-# @router.post("/new_salary", response_model=HRSalary)
-# def new_salary(salary_in: HRSalary, session: SessionDep) -> Any:
-#     # based on hr_salaries.py, build the logic to create a new salary record.
-#     # return the newly created salary record.
-#     salary = HRSalary.model_validate(salary_in)
-#     session.add(salary)
-#     session.commit()
-#     session.refresh(salary)
-#     return salary
-
-
-# @router.put("/update_salary/{employee_id}", response_model=HRSalaryUpdate)
-# def update_employee_salary(*, session: SessionDep, employee_id: int, salary: HRSalaryUpdate) -> Any:
-#     # based on hr_salaries.py, build the logic to update the salary of an employee,
-#     # where input is the employee_id and date.
-#     # condition: if the salary date(Month-Year) is already present in the database, update the salary, else create a new salary record.
-#     # return the updated employee record.
-#     employee = session.get(HREmployee, employee_id)
-#     if not employee:
-#         raise HTTPException(status_code=404, detail="Employee not found")
-
-#     salary_date = date.today().replace(day=1)
-#     salary_record = session.exec(select(HRSalary).where(HRSalary.employee_id == employee_id, HRSalary.salary_date == salary_date)).first()
-
-#     if not salary_record:
-#         salary_record = HRSalary(employee_id=employee_id, salary_date=salary_date)
-
-#     salary_record.base_salary = salary
-#     session.add(salary_record)
-#     session.commit()
-#     session.refresh(employee)
-
-#     return employee
