@@ -14,7 +14,7 @@ from sqlmodel import select
 router = APIRouter()
 
 
-@router.post("/monthly_income/", response_model=MonthlyIncomePublic)
+@router.post("/monthly_income/{employee_id}", response_model=MonthlyIncomePublic)
 async def create_monthly_income(*, session: SessionDep, income: MonthlyIncomeCreate):
     statement = select(MonthlyIncomeBase).where(
         MonthlyIncomeBase.employee_id == income.employee_id,
