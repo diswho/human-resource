@@ -9,7 +9,6 @@ from sqlalchemy.dialects import postgresql
 
 router = APIRouter()
 
-
 @router.get("/", response_model=HREmployeesOut)
 # def get_employees(session: SessionDep, skip: int = 0, limit: int = 100) -> Any:
 def get_employees(session: SessionDep, skip: int = 0, limit: int = 100, descendants: Optional[List[int]] = Query(None)) -> Any:
